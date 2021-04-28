@@ -23,9 +23,9 @@ const imageList = [Sky, Building1, Building2, Aeroplane];
 
 const BuildingParallax = (props) => {
 
+    
     const elementRef = useRef();
-    const [buildingsInitialValue, setBuildingValue]= useState(1);
-    const [planeInitialValue, setPlaneValue]= useState({x:0,y:200});
+    const [planeInitialValue]= useState({x:0,y:200});
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' })
     const [{ offset }, set] = useSpring(() => ({ offset: 0 }));
     const buildingStyle = useSpring(() => ({
@@ -39,20 +39,15 @@ const BuildingParallax = (props) => {
         delay: 3000,
     }));
 
+    const buildingsInitialValue = isMobile ? 1.5 : 1;
+
     useEffect(() => {
-        imageList.map((image)=>{
-            const img = new Image();
-            img.src = image;
-        })
+        
         if(props.images.allImagesLoaded && !props.loader.isHidden){
             props.dispatch(SET_LOADER({isHidden: true}))
         }
-
+        
         window.addEventListener('scroll', handleScroll);
-        if(isMobile){
-            setBuildingValue(1.5);
-        }
-    
         return () => {
           window.removeEventListener('scroll', handleScroll);
         };

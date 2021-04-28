@@ -14,8 +14,7 @@ const ProtectedRoute =({component:Component, ...rest})=>{
                 if(props.isAuthenticated){
                     return <Component {...insideProps} />
                 }
-                else{
-                    {/* If The User is Not Authenticated The User is Sent to the Login Page */}
+                else{       
                     return <Redirect to={{
                         pathname: "/userauthenticate",
                         state: {

@@ -1,6 +1,4 @@
 import React from 'react';
-import {useTransition, animated, config} from 'react-spring';
-
 
 
 const CauroselCard = (props)=>{
@@ -11,15 +9,15 @@ const CauroselCard = (props)=>{
     return(
         <React.Fragment>
 
-                    <article class="card">
-                        <div class="card-img" style={{backgroundImage: `url(${props.url})`}}></div>
-                        <div class="card-info">
-                            <h3 class="card-title">{props.title}</h3>
-                            <span class="card-message">{props.message}</span>
+                    <article className="card">
+                        <div className="card-img" style={{backgroundImage: `url(${props.url})`}}></div>
+                        <div className="card-info">
+                            <h3 className="card-title">{props.title}</h3>
+                            <span className="card-message">{props.message}</span>
                         </div>
                         <div className="card-shrink">
                             <button>
-                            <i class="fas fa-external-link-alt"></i>
+                            <i className="fas fa-external-link-alt"></i>
                             </button>
                         </div>
                     </article>

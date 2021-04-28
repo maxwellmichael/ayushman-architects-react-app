@@ -1,7 +1,7 @@
 import React from 'react';
 import {useForm} from 'react-hook-form';
 import {connect} from 'react-redux';
-import {ADD_PRODUCT, POST_PRODUCT} from '../../redux/products/products.actions';
+import {POST_PRODUCT} from '../../redux/products/products.actions';
 
 
 function AddProductForm(props){

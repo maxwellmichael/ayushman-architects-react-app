@@ -1,8 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {Modal} from 'react-bootstrap';
-import { Redirect } from 'react-router-dom';
-import {ADD_PRODUCT_FORM_MODAL} from '../../redux/utils/modals/modals.actions';
 import AddProduct from '../products/addProductForm';
 
 class Modals extends Component{

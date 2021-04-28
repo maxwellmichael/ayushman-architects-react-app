@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import {FLASH_A_MESSAGE_AND_REDIRECT, FLASH_A_MESSAGE} from '../utils/flashMessages/flaskMessages.actions';
+import {FLASH_A_MESSAGE_AND_REDIRECT} from '../utils/flashMessages/flaskMessages.actions';
 
 
 
@@ -63,7 +63,7 @@ export const USER_LOGIN = (data)=>(dispatch)=>{
     })
     .then(res=>{
         const csrf_access_token = Cookies.get('csrf_access_token');
-        if(res.status==200 && csrf_access_token){
+        if(res.status===200 && csrf_access_token){
             console.log("Login success", res);
             const values = {title:"Login Success", message:"You Have Successfully Logged In", shouldRedirect:true, redirectUrl:'/productsstore'}
             dispatch(SET_USER_AUTHENTICATED_IN_COOKIE(true));

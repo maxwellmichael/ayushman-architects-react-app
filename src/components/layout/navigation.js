@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, {useState } from 'react';
 import {Link} from 'react-router-dom';
 import {config, useTransition, animated} from 'react-spring';
 import {connect} from 'react-redux';
@@ -21,9 +21,9 @@ const NewNavigation = (props)=>{
 
     return(
         <React.Fragment>
-             <nav id="navbar" class="">
-                <div class="nav-wrapper">
-                <div class="logo">
+             <nav id="navbar" className="">
+                <div className="nav-wrapper">
+                <div className="logo">
                 <a href="/">AYUSHMAN</a>
                 </div>
 
@@ -41,13 +41,13 @@ const NewNavigation = (props)=>{
             </div>
             </nav>
 
-            <div class="menuIcon" onClick={()=>{setMenuToggle(!menuToggle)}}>
-                <span class="icon icon-bars"></span>
-                <span class="icon icon-bars overlay"></span>
+            <div className="menuIcon" onClick={()=>{setMenuToggle(!menuToggle)}}>
+                <span className="icon icon-bars"></span>
+                <span className="icon icon-bars overlay"></span>
             </div>
 
             {overlayTransition.map(({item, key, props: style})=>(
-                item && <animated.div key={key} style={style} class="overlay-menu">
+                item && <animated.div key={key} style={style} className="overlay-menu">
                         <ul id="menu">
                         <li><Link to="/">HOME</Link></li>
                         <li>{props.isAuthenticated ? <Link to="/productsstore">STORE</Link> : null}</li>
