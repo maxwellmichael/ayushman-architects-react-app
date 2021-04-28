@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ayushman-architects-react-app/static/css/main.f7c0c2d3.chunk.css",
+    "main.js": "/ayushman-architects-react-app/static/js/main.0c1f4df6.chunk.js",
+    "main.js.map": "/ayushman-architects-react-app/static/js/main.0c1f4df6.chunk.js.map",
+    "runtime-main.js": "/ayushman-architects-react-app/static/js/runtime-main.55272e10.js",
+    "runtime-main.js.map": "/ayushman-architects-react-app/static/js/runtime-main.55272e10.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/ayushman-architects-react-app/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.7d460cc9.chunk.js": "/ayushman-architects-react-app/static/js/2.7d460cc9.chunk.js",
+    "static/js/2.7d460cc9.chunk.js.map": "/ayushman-architects-react-app/static/js/2.7d460cc9.chunk.js.map",
+    "index.html": "/ayushman-architects-react-app/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/ayushman-architects-react-app/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.f7c0c2d3.chunk.css.map": "/ayushman-architects-react-app/static/css/main.f7c0c2d3.chunk.css.map",
+    "static/js/2.7d460cc9.chunk.js.LICENSE.txt": "/ayushman-architects-react-app/static/js/2.7d460cc9.chunk.js.LICENSE.txt",
+    "static/media/aeroplane.12e79c3a.png": "/ayushman-architects-react-app/static/media/aeroplane.12e79c3a.png",
+    "static/media/building1.f1ad1586.png": "/ayushman-architects-react-app/static/media/building1.f1ad1586.png",
+    "static/media/building2.3ae0f00a.png": "/ayushman-architects-react-app/static/media/building2.3ae0f00a.png",
+    "static/media/sky.99bfec34.png": "/ayushman-architects-react-app/static/media/sky.99bfec34.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.55272e10.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.7d460cc9.chunk.js",
+    "static/css/main.f7c0c2d3.chunk.css",
+    "static/js/main.0c1f4df6.chunk.js"
+  ]
+}
