@@ -1,0 +1,74 @@
+.caurosel-main{
+    top: 40px;
+    width: 98vw;
+    height: 700px;
+    background-color: white;
+    position: relative;
+    overflow-x: hidden;
+
+
+    .caurosel-buttons-container{
+        display: inline;
+        width: 100vw;
+        position: absolute;
+        left:0;
+        top: 40%;
+        z-index: 4;
+
+        button{
+            width: 80px;
+            height: 80px;
+            font-size: 60px;
+            color: black;
+            margin-top: auto;
+            margin-bottom: auto;
+            position: relative;
+            text-shadow: 0px 3px 4px rgb(226, 226, 226);
+        }
+        
+        button:nth-child(1) {
+            float:left;
+            background-color: transparent;
+        }
+        button:nth-child(2) {
+            float: right;
+            background-color: transparent;
+        }
+    }
+
+    .caurosel-cards-main{
+        background-color: white;
+        height: 650px;
+        width: auto;
+        overflow-x: hidden;
+        float: left;
+        box-sizing: border-box;
+
+        .caurosel-cards-container{
+            margin-top:0;
+            margin-right: 0;
+            padding: 12px;
+            display: inline-flex;
+            position: absolute;
+            float: left;
+            width: 100vw;
+            height: 500px;
+        }
+
+
+    }
+
+    @media screen and(max-width: 450px){
+
+        .caurosel-buttons-container{
+            button{
+                width: 50px;
+                height: 100px;
+                font-size: 50px;
+            }
+        }
+    }
+
+
+
+}

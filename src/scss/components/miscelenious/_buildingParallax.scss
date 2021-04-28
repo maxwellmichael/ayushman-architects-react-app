@@ -1,0 +1,88 @@
+
+.building-parallax{
+    margin-top: 5vh;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    .image-container{
+        background-color: white;
+        position: absolute;
+        margin: 0;
+        width: 100vw;
+        height: auto;
+
+        img{
+            width: 100vw;
+            height: auto;
+            position: absolute;
+            object-fit: contain;
+            object-position: 40% 70%;
+        }
+
+        .sky{
+            z-index: 3;
+        }
+
+        .aeroplane{
+            width: 20vw;
+            height: 20vh;
+            z-index: 4;
+            left: 40%;
+
+        }
+
+        .building1{
+            z-index: 5;
+        }
+        .building2{
+            z-index: 5;
+        }
+        
+    }
+
+    @media screen and(max-width:900px) {
+        height: 350px;
+        .image-container{
+            width: 100vw;
+            height: auto;
+    
+            img{
+                width: 100vw;
+                height: auto;
+                position: absolute;
+                object-fit: cover;
+                object-position: 40% 70%;
+            }
+
+            .sky{
+                height: 100vh;
+            }
+
+            .building1{
+                z-index: 5;
+            }
+            .building2{
+                z-index: 5;
+            }
+
+    
+           
+            
+        }
+    
+    
+        
+        
+    }
+
+
+    
+
+    
+
+}

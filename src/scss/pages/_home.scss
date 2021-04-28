@@ -1,0 +1,226 @@
+@import '../abstract/color_variables';
+
+
+@mixin home-content-container {
+  
+}
+
+
+.home-main{
+    width: 100%;
+    height: auto;
+    margin: 0;
+
+    
+
+
+
+    .home-banner{
+        width: 100%;
+        height: auto;
+        /* The image used */
+        background-color: white;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin:0;
+        box-sizing: border-box;
+        display: flex;
+
+        
+
+        .home-banner-title{
+            margin: auto;
+            padding-top: 50px;
+            font-size: 50px;
+
+           .heading{
+             text-decoration: none;
+             color:white;
+             font-size: 38px;
+             font-weight: 700;
+             font-family: Rajdhani,Arial,Verdana,Helvetica,sans-serif;
+             justify-content: center;
+             text-align: center;
+             font-family: 'Sora', sans-serif;
+             text-shadow: 4px 10px 10px rgba(0,0,0,.6);
+           }
+           .subheading{
+             color: white;
+             font-size: 0.5em;
+             justify-content: center;
+             text-align: center;
+           }
+
+          
+
+           .banner-button-container{
+             
+             justify-content: center;
+             text-align: center;
+             margin: auto;
+
+             .banner-link{
+               text-decoration: none;
+               
+             }
+
+             .banner-button{
+              border-radius: 6px;
+              width: 150px;
+              height: 7vh;
+              font-family: Rajdhani,Arial,Verdana,Helvetica,sans-serif;
+              color: white;
+              font-weight: bold;
+              background-color: black;
+              border: 2px solid $pink;
+              justify-content: center;
+              font-size: 0.4em;
+              padding: 5px;
+              transition-property: background-color;
+              transition-duration: 500ms;
+              transition-timing-function: ease-in;
+              transition-delay: 200ms;
+
+              &:hover{
+                padding: 4px;
+                outline: none;
+                color: black;
+                background-color: $pink;
+                border: 2px solid black;
+              }
+            }
+
+           }
+
+        }
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      .home-banner{
+        display: block;
+        
+        .home-banner-title{
+          margin: auto;
+          padding-top: 50px;
+          font-size: 50px;
+
+          .heading{
+            font-size: 50px;
+            
+          }
+          .subheading{
+            
+            font-size: 0.4em;
+          
+          }
+        }
+
+
+
+
+      }
+      
+
+    }
+
+
+
+
+
+    .home-content{
+      margin:0;
+      padding: 0;
+      width: 100%;
+      height: auto;
+      background-color: white;
+
+      .content-title{
+        padding-top: 5%;
+        color: black;
+        text-align: center;
+      }
+
+      .title-line{
+        width: 50%;
+        height: 0.5vh;
+        margin: auto;
+        border-radius: 2px;
+        background-color: black;
+      }
+
+      .title-verdict-container{
+        background-image: url("https://pcmonster.in/wp-content/uploads/2020/06/reflectereextreme-side2.jpg");
+        background-color: black;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: auto;
+        margin-top: -8%;
+        width: 90vw;
+        height: 60vh;
+        border-radius: 5px;
+
+
+        .title-verdict-overlay{
+          background-color: black;
+          opacity: 0.82;
+          width: 90vw;
+          height: 60vh;
+          position: absolute;
+          margin:0;
+        }
+
+        .title-verdict-content-container{
+          position: relative;
+          margin-left: 5%;
+          margin-right: 5%;
+          margin-top: 12%;
+          padding: auto;
+          padding-top: 5%;
+          text-align: center;
+          justify-content: center;
+
+          p{
+            line-height: 2.3;
+            font-size: 25px;
+            font-weight: 500;
+            text-align: center;
+            margin: auto;
+            color: white;
+            text-align: center;
+          }
+
+         
+
+        }
+
+        @media only screen and (max-width: 600px) {
+
+          .title-verdict-content-container{
+
+          p{
+            line-height: 1.8;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: .13rem;
+          }
+        }
+        
+        }
+
+      }
+      
+      .card-overline{
+        margin: auto;
+        width: 80vw;
+        height: 2px;
+        background-color: white;
+      }
+
+
+    }
+}
