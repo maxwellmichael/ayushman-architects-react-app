@@ -1,8 +1,8 @@
 
 let initialState = {
-    subdomain: "backend",
-    domain:"ayushman.com",
-    port: "5000",
+    subdomain: "nameless-tor-63252",
+    domain:"herokuapp.com",
+    port: "80",
     url: null,
 }
 
@@ -15,11 +15,11 @@ const backendReducer = (state=initialState, action)=>{
             newState.subdomain=action.payload.subdomain;
             newState.domain=action.payload.domain;
             newState.port=action.payload.port;
-            newState.url =`http://www.${action.payload.subdomain}.${action.payload.domain}:${action.payload.port}`;
+            newState.url =`https://www.${action.payload.subdomain}.${action.payload.domain}`;
             return newState;
 
         case 'SET_BACKEND_URL':
-            newState.url =`http://www.${state.subdomain}.${state.domain}:${state.port}`;
+            newState.url =`https://www.${state.subdomain}.${state.domain}:${state.port}`;
             return newState;
 
         default:

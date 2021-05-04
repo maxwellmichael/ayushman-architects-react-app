@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import {SET_MODALS_HIDDEN} from '../utils/modals/modals.actions'
 
 
-const backendUrl = "http://www.backend.ayushman.com:5000";
+const backendUrl = "https://nameless-tor-63252.herokuapp.com/";
 
 export const ADD_PROJECT = (project)=>{
 
