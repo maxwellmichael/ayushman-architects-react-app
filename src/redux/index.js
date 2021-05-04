@@ -6,6 +6,7 @@ import flashMessagesReducer from './utils/flashMessages/flashMessages.reducer';
 import backendReducer from './backend/backend.reducer';
 import loadImagesReducer from './loadImages';
 import loaderReducer from './utils/loader/loader.reducer';
+import projectsReducer from './projects/projects.reducer';
 
 
 
@@ -14,7 +15,7 @@ import loaderReducer from './utils/loader/loader.reducer';
 const rootReducer = combineReducers({products: productsReducer, modals: modalsReducer, 
                                     authentication: userAuthReducer, loadImages: loadImagesReducer,
                                     flashMessage: flashMessagesReducer, backend: backendReducer,
-                                    loader: loaderReducer,
+                                    loader: loaderReducer, projects: projectsReducer,
                                     });
 
 

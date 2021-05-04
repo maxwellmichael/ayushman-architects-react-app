@@ -21,20 +21,20 @@ class Footer extends Component{
 
                     <div className="footer-center">
 
-                    <div className="center-item">
-                    <i className="fa fa-map-marker"></i>
-                    <p><span>21 Revolution Street</span> Delhi, India</p>
-                    </div>
+                        <div className="center-item">
+                            <i className="fa fa-map-marker"></i>
+                            <p>21 Revolution Street Delhi, India</p>
+                        </div>
 
-                    <div className="center-item">
-                    <i className="fa fa-phone"></i>
-                    <p>+91 7356102087</p>
-                    </div>
+                        <div className="center-item">
+                            <i className="fa fa-phone"></i>
+                            <p>+91 7356102087</p>
+                        </div>
 
-                    <div className="center-item">
-                    <i className="fa fa-envelope"></i>
-                    <p><a href="mailto:maxwellmichael522@gmail.com">contact@</a>Ayushman-Architects.com</p>
-                    </div>
+                        <div className="center-item">
+                            <i className="fa fa-envelope"></i>
+                            <p><a href="mailto:maxwellmichael522@gmail.com">contact@</a>Ayushman-Architects.com</p>
+                        </div>
 
                     </div>
 

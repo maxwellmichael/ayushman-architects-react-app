@@ -1,0 +1,129 @@
+.project-page-main{
+    width: 100%;
+    height: auto;
+    background-color: rgba(0,0,0,.05);
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+
+    .project-page-content{
+        width: 75%;
+        height: auto;
+        left: 10%;
+        right: 15%;
+        position: relative;
+
+        .project-page-title{
+            padding-top: 20px;
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            color: #2b3747;
+            letter-spacing: 0.3em;
+            direction: ltr;
+            line-height: 1.3em;
+            display: inline-block;
+            position: relative;
+        }
+
+        .project-page-location{
+            padding-top: 20px;
+            position: relative;
+            text-align: left;
+            font-size: 18px;
+            color: #788693;
+            letter-spacing: 0.2em;
+            line-height: 1.3em;
+        }
+
+        .project-page-description{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            position: relative;
+            text-align: left;
+            font-size: 18px;
+            letter-spacing: 0.05em;
+            direction: ltr;
+            line-height: 1.55em;
+            font-weight: 400;
+            color: #2b3747;
+        }
+    }
+
+    .project-page-gallery{
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-bottom: 5%;
+
+        .project-page-image{
+            width: 50%;
+            height: 460px;
+            background-size: cover;
+            background-position: center;
+            display: inline-flex;
+        }
+    }
+
+    @media screen and (max-width:1000px){
+        
+        .project-page-content{
+            width: 90%;
+            height: auto;
+            left: 5%;
+            right: 5%;
+
+            .project-page-title{
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .project-page-location{
+                text-align: center;
+            }
+
+            .project-page-description{
+                text-align: justify;
+            }
+
+        }
+
+        .project-page-gallery{
+            width: 90%;
+            height: auto;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding-bottom: 5%;
+    
+            .project-page-image{
+                width: 100%;
+                height: 460px;
+                background-size: cover;
+                background-position: center;
+                display: inline-flex;
+            }
+        }
+    }
+
+    @media screen and (max-width:500px){
+        
+        .project-page-content{
+            width: 90%;
+            height: auto;
+            left: 5%;
+            right: 5%;
+
+
+            .project-page-title{
+                font-size: 17px;
+                letter-spacing: 0.1em;
+                line-height: 1.7em;
+            }
+
+            .project-page-description{
+                font-size: 14px;
+            }
+
+        }
+    }
+}

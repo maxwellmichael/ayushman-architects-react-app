@@ -1,7 +1,7 @@
 
 let initialState = {
     subdomain: "backend",
-    domain:"aishwan.com",
+    domain:"ayushman.com",
     port: "5000",
     url: null,
 }

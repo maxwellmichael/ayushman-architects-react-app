@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import {SET_MODALS_HIDDEN} from '../utils/modals/modals.actions'
 
 
-
+const backendUrl = "http://www.backend.ayushman.com:5000";
 
 export const ADD_PRODUCT = (product)=>{
 
@@ -34,7 +34,7 @@ export const POST_PRODUCT = (data)=>async (dispatch)=>{
 
     axios({
         method: 'post',
-        url: `http://www.backend.aishwan.com:5000/product`,
+        url: `${backendUrl}/product`,
         data: productFormData,
         withCredentials: true,
         headers:{
@@ -59,7 +59,7 @@ export const GET_PRODUCTS = ()=>(dispatch)=>{
 
     axios({
         method: 'get',
-        url: `http://www.backend.aishwan.com:5000/product`,
+        url: `${backendUrl}/product`,
         withCredentials: true,
         headers:{
           'Access-Control-Allow-Credentials': true,

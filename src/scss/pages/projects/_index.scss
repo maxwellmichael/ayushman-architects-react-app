@@ -1,0 +1,96 @@
+.projects-main{
+    width: 100%;
+    height: 100%;
+    background-color: #f6f6f6;
+    position: relative;
+
+    
+    .projects-nav{
+        width: 100%;
+        height: 40px;
+        top:0;
+        position: relative;
+        
+        .projects-nav-link-container{
+            position: relative;
+            width: auto;
+            height: 100%;
+            margin-left: 5%;
+            background: rgba(0,0,0,.05);
+            display: inline-flex;
+            border-bottom-left-radius: 12px;
+            border-top-right-radius: 12px;
+
+
+            .projects-label{
+                font-size: 13px;
+                height: 20px;
+                display: inline-flex;
+                padding: 10px 10px 10px 10px;
+                font-weight: bold;
+                font-family: 'Roboto', Arial, sans-serif;
+                letter-spacing: 0.1em;
+            }
+
+            .projects-nav-dropdown{
+                content: '';
+                text-decoration: none;
+                color: black;
+                padding:6px;
+                display: inline-flex;
+                background: rgba(0,0,0,.05);
+                font-size: 12px;
+                border-top-right-radius: 12px;
+                font-family: 'Roboto', Arial, sans-serif;
+                letter-spacing: 0.1em;
+
+                option {
+                    font-family: 'Roboto', Arial, sans-serif;
+                    font-size: 14px;
+                    color: #0d1a26;
+                    font-weight: 600;
+                }
+
+            }
+
+        }
+    }
+
+    .projects-container{
+        position: relative;
+        margin-top: 5%;
+        width: 100%;
+        height: auto;
+    }
+
+    @media screen and(max-width: 450px) {
+
+        .projects-nav{
+            height: 40px;
+            
+            .projects-nav-link-container{
+                margin-left: 4%;
+    
+    
+                .projects-label{
+                    font-size: 10px;
+                    height: 20px;
+                    display: inline-flex;
+                    padding: 10px 10px 10px 10px;
+                    font-weight: bold;
+                }
+    
+                .projects-nav-dropdown{
+                    text-decoration: none;
+                    color: black;
+                    padding:4px;
+                    display: inline-flex;
+                    background: rgba(0,0,0,.05);
+                    font-size: 12px;
+                }
+            }
+        }
+        
+    }
+}
+

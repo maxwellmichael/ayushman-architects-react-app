@@ -1,0 +1,118 @@
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+  }
+
+.form-main{
+    max-width: 360px;
+    height: 1100px;
+    position: relative;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+
+    .form-title{
+        margin: 0 0 30px 0;
+        font-size: 22px;
+        font-weight: bold;
+        color: #384047;
+        text-align: center;
+        padding: 6px;
+    }
+
+    .form-inputs-container{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: auto;
+
+        .form-input{
+            width: 100%;
+            display: block;
+            position: relative;
+            margin-bottom: 30px;
+
+
+            .label{
+                display: block;
+                font-weight: bold;
+                font-size: 16px;
+                color: #384047;
+                letter-spacing: 0.1em;
+                padding: 6px;
+            }
+
+            .input{
+                background: rgba(255,255,255,0.1);
+                border: none;
+                font-size: 16px;
+                height: auto;
+                margin: 0;
+                outline: 0;
+                padding: 15px;
+                width: 100%;
+                background-color: #e8eeef;
+                color: #8a97a0;
+                box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+            }
+
+            .textarea{
+                background: rgba(255,255,255,0.1);
+                border: none;
+                font-size: 16px;
+                height: auto;
+                margin: 0;
+                outline: 0;
+                padding: 15px;
+                width: 100%;
+                background-color: #e8eeef;
+                color: #8a97a0;
+                box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+            }
+
+            .select{
+                position: relative;
+                background: rgba(255,255,255,0.1);
+                border: none;
+                font-size: 16px;
+                margin: 0;
+                outline: 0;
+                width: 100%;
+                background-color: #e8eeef;
+                color: #8a97a0;
+                box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                margin-bottom: 30px;
+                padding: 6px;
+                height: 32px;
+                border-radius: 2px;
+            }
+
+        }
+
+    }
+
+    .form-submit{
+        margin-bottom: 6px;
+        position: relative;
+        width: 30%;
+        height: 50px;
+        background-color: black;
+        color: white;
+        padding: 6px;
+        border-radius: 8px;
+        float: right;
+    }
+
+    @media screen and (min-width: 480px) {
+
+        .form-main {
+          max-width: 480px;
+        }
+      
+      }
+
+}

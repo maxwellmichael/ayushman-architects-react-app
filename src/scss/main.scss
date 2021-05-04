@@ -5,6 +5,13 @@
 @import 'pages/authentication';
 @import 'pages/contact';
 
+@import 'pages/projects/index';
+@import 'pages/projects/project';
+@import 'pages/projects/addProjectForm';
+@import 'pages/projects/projectCard';
+
+
+
 @import 'layout/navigation';
 @import 'layout/footer';
 @import 'layout/layout';
@@ -14,12 +21,18 @@
 @import 'components/utils/loader';
 @import 'components/utils/FlashMessage';
 
+
+
 @import 'components/miscelenious/waveBackround';
 @import 'components/miscelenious/slide';
 @import 'components/miscelenious/slideContent';
 @import 'components/miscelenious/buildingParallax';
 @import 'components/miscelenious/caurosel';
 @import 'components/miscelenious/cauroselCard';
+@import 'components/miscelenious/parallaxInterior';
+@import 'components/miscelenious/article';
+
+
 
 
 

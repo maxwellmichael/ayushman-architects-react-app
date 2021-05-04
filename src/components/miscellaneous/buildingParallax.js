@@ -42,10 +42,10 @@ const BuildingParallax = (props) => {
     const buildingsInitialValue = isMobile ? 1.5 : 1;
 
     useEffect(() => {
-        
-        if(props.images.allImagesLoaded && !props.loader.isHidden){
+        // hides the Loader when all images are loaded
+        /*if(props.images.allImagesLoaded && !props.loader.isHidden){
             props.dispatch(SET_LOADER({isHidden: true}))
-        }
+        }*/
         
         window.addEventListener('scroll', handleScroll);
         return () => {
