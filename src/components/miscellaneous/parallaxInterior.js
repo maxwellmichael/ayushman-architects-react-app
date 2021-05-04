@@ -19,7 +19,7 @@ const ParallaxInterior = (props)=>{
         return () => {
             window.removeEventListener('scroll', debounce(handleScroll));
         };
-    }, [debounce])
+    }, [])
 
 
     const [{ animationOffsetY }, setAnimationOffsetY] = useSpring(() => ({

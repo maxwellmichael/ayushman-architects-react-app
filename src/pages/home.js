@@ -40,7 +40,7 @@ const Home = ()=>{
         return () => {
             window.removeEventListener('scroll', debounce(handleScroll));
         };
-    }, [debounce])
+    }, [])
 
     const [, setAnimationOffsetY] = useSpring(() => ({
         animationOffsetY: 0

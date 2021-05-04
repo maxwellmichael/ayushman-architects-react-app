@@ -20,7 +20,7 @@ const Article = (props)=>{
         return () => {
             window.removeEventListener('scroll', debounce(handleScroll));
         };
-    }, [debounce])
+    }, [])
 
     const [{ animationOffsetY }, setAnimationOffsetY] = useSpring(() => ({
         animationOffsetY: 0
