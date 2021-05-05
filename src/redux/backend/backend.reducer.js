@@ -14,11 +14,11 @@ const backendReducer = (state=initialState, action)=>{
             newState.subdomain=action.payload.subdomain;
             newState.domain=action.payload.domain;
             newState.port=action.payload.port;
-            newState.url =`http://${action.payload.subdomain}.${action.payload.domain}`;
+            newState.url =`https://${action.payload.subdomain}.${action.payload.domain}`;
             return newState;
 
         case 'SET_BACKEND_URL':
-            newState.url =`http://${state.subdomain}.${state.domain}`;
+            newState.url =`https://${state.subdomain}.${state.domain}`;
             return newState;
 
         default:
