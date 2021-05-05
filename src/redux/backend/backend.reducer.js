@@ -1,7 +1,7 @@
-
+https://backend.ayushmanarchitects.com
 let initialState = {
-    subdomain: "nameless-tor-63252",
-    domain:"herokuapp.com",
+    subdomain: "backend",
+    domain:"ayushmanarchitects.com",
     port: "80",
     url: null,
 }
