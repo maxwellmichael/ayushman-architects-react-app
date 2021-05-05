@@ -1,4 +1,3 @@
-https://backend.ayushmanarchitects.com
 let initialState = {
     subdomain: "backend",
     domain:"ayushmanarchitects.com",
