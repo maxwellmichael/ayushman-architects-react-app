@@ -70,8 +70,8 @@ class AuthenticationForms extends Component{
         return(
             <React.Fragment>
                 <Spring
-                    from={{ marginTop: -10 }}
-                    to={{ marginTop: 0 }}
+                    from={{ opacity: 0, transform: 'translateY(-100vh)'}}
+                    to={{ opacity: 1, transform: 'translateY(0)'}}
                     config={config.slow}
                     >
                     {props => 
