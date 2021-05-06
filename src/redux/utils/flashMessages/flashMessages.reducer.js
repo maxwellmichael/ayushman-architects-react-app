@@ -1,7 +1,7 @@
 
 let initialState = {
     hidden: true,
-    title: null,
+    type: 'NEUTRAL',
     message: null,
     shouldRedirect: false,
     redirectUrl: null,
@@ -20,7 +20,7 @@ const flashMessagesReducer = (state=initialState, action)=>{
             return newState;
         
         case 'SET_FLASH_MESSAGE':
-            newState.title = action.payload.title;
+            newState.type = action.payload.type;
             newState.message = action.payload.message;
             newState.shouldRedirect = action.payload.shouldRedirect;
             newState.redirectUrl = action.payload.redirectUrl;

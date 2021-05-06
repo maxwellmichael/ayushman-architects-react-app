@@ -6,7 +6,6 @@ import AddProduct from '../products/addProductForm';
 class Modals extends Component{
 
     setModalAsToType = (modalType)=>{
-        console.log(modalType);
         if(modalType==="ADD_PRODUCT_FORM_MODAL"){
             return(
                 <AddProduct />

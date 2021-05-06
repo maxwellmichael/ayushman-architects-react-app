@@ -40,7 +40,6 @@ class AuthenticationForms extends Component{
                     from={{ opacity: 0, transform: 'translateY(-100vh)'}}
                     to={{ opacity: 1, transform: 'translateY(0)'}}
                     config={config.slow}
-                    delay={1000}
                     >
                     {props => 
                     <div style={props}>
@@ -85,7 +84,7 @@ class AuthenticationForms extends Component{
                             </div>
                             <div className="form-input-material">
                                 <label htmlFor="email">Email</label>
-                                <input onChange={this.setEmail} type="email" name="email" id="username" placeholder=" " autoComplete="false" className="form-control-material" required />
+                                <input onChange={this.setEmail} type="email" name="email" id="email" placeholder=" " autoComplete="false" className="form-control-material" required />
                             </div>
                             <div className="form-input-material">
                                 <label htmlFor="password">Password</label>

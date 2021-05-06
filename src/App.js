@@ -16,6 +16,7 @@ import {connect} from 'react-redux';
 import {UPDATE_AUTHENTICATED_USER_STATUS, SET_USER_AUTHENTICATED_IN_COOKIE} from "./redux/userAuthentication/userAuth.actions";
 import {SET_LOADER} from './redux/utils/loader/loader.actions';
 import axios from 'axios';
+import FlashMessage from './components/utils/flashMessage';
 
 
 
@@ -86,6 +87,7 @@ class App extends Component{
     return(
       <React.Fragment>
         <Router>
+          <FlashMessage />
             <Switch>
                 <Layout>
                   <Route path="/" exact render={props=>(<Home/>)} />
@@ -97,8 +99,8 @@ class App extends Component{
                   <Route path="/userauthenticate" exact render={props=>(<AuthenticationForms props={props}/>)} />
                 </Layout>
             </Switch>
+            {this.axiosInterceptops()}
         </Router>
-        {this.axiosInterceptops()}
       </React.Fragment>
     );
   }

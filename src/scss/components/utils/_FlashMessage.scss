@@ -1,10 +1,15 @@
-$main-bg: turquoise;
+$main-bg: #e0e0e0;
 
+
+.success{
+    border-left-color: chartreuse;
+}
 
 .flash_container{
     width: 40vw;
-    height: 8vh;
+    height: 10vh;
     position: absolute;
+    border: 2px solid black;
     margin: auto;
     margin-top: 0;
     right: 2%;
@@ -12,35 +17,43 @@ $main-bg: turquoise;
     background-color: $main-bg;
     border-radius: 4px;
     border-left: 5px solid black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     z-index: 999;
 
     button{
         position: absolute;
-        width: 10%;
-        height: auto;
+        width: 32px;
+        height: 32px;
         margin: auto;
-        right: 0;
+        top: 22%;
+        right: 5%;
         background-color: $main-bg;
         border:0;
         outline: 0;
+
+        .icon{
+            width: 32px;
+            height: 32px;
+        }
     }
 
     .content{
         display: block;
+        background-color: $main-bg;
         margin:0;
         width: 80%;
         height: 100%;
 
-        .title{
-            font-size: 20px;
-            color: black;
-            padding-left: 2%;
-        }
 
         .message{
-            font-size: 14px;
+            padding: 14px;
+            font-size: 16px;
             color: black;
             padding-left: 2%;
+            text-align: center;
+            font-family: Rajdhani,Arial,Verdana,Helvetica,sans-serif;
+            font-weight: bold;
+            letter-spacing: 0.13em;
         }
     }
 }
@@ -48,7 +61,7 @@ $main-bg: turquoise;
 @media only screen and (max-width:600px){
     .flash_container{
         width: 80vw;
-        height: 10vh;
+        height: 8.5vh;
         right: 10%;
         left: 10%;
         
@@ -59,12 +72,10 @@ $main-bg: turquoise;
     
         .content{
             
-    
-            .title{
-                
-            }
-    
             .message{
+                position: relative;
+                padding: auto;
+                font-size: 15px;
                 
             }
         }

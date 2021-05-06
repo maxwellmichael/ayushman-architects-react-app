@@ -8,16 +8,16 @@ import {GET_PROJECTS} from '../../redux/projects/projects.actions';
 
 const Projects = (props)=>{
 
-    
+    const {dispatch, backendUrl} = props
 
     useEffect(() => {
         let mounted = true;
       
         if(mounted){
-            props.dispatch(GET_PROJECTS(null,props.backendUrl))
+            dispatch(GET_PROJECTS(null, backendUrl))
         }
         return () => mounted = false;
-      }, [props.dispatch, props.backendUrl])
+      }, [dispatch, backendUrl])
 
 
 
@@ -61,7 +61,7 @@ const Projects = (props)=>{
             </div>
 
             <div className="projects-container">
-                {props.projects.map(project=><ProjectCard data={project} />)}
+                {props.projects.map(project=><ProjectCard key={project.id} data={project} />)}
             </div>
             
            

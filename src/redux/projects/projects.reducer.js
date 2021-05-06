@@ -11,7 +11,7 @@ const projectsReducer = (state=initialState, action)=>{
             return projects;
         
         case 'CLEAR_PROJECTS':
-            return []
+            return [];
 
         default:
             return [...state];

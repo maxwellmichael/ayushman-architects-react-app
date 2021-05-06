@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import {FLASH_A_MESSAGE_AND_REDIRECT} from '../utils/flashMessages/flaskMessages.actions';
+import {FLASH_A_MESSAGE, FLASH_A_MESSAGE_AND_REDIRECT} from '../utils/flashMessages/flaskMessages.actions';
 
 
 
@@ -30,12 +30,17 @@ export const USER_LOGOUT = (data)=>(dispatch)=>{
     })
     .then(resp=>{
         if(resp.status===200){
+           
             console.log("Logout Success")
             dispatch(SET_USER_AUTHENTICATED_IN_COOKIE(false));
+            const values = {message:"You have been Logged Out", type:'NEUTRAL', shouldRedirect:true, redirectUrl:'/userauthenticate'}
+            dispatch(FLASH_A_MESSAGE_AND_REDIRECT(values));
         }
     })
     .catch(err=>{
         console.log(err)
+        const values = {message:"Network Error Couldnt Logg Out", type:'ERROR'}
+        dispatch(FLASH_A_MESSAGE(values));
     })
 
 }
@@ -65,7 +70,7 @@ export const USER_LOGIN = (data)=>(dispatch)=>{
         const csrf_access_token = Cookies.get('csrf_access_token');
         if(res.status===200 && csrf_access_token){
             console.log("Login success", res);
-            const values = {title:"Login Success", message:"You Have Successfully Logged In", shouldRedirect:true, redirectUrl:'/productsstore'}
+            const values = {message:"You Have Successfully Logged In", type:'SUCCESS', shouldRedirect:true, redirectUrl:'/'}
             dispatch(SET_USER_AUTHENTICATED_IN_COOKIE(true));
             dispatch(FLASH_A_MESSAGE_AND_REDIRECT(values)); 
         }
@@ -80,10 +85,14 @@ export const USER_LOGIN = (data)=>(dispatch)=>{
     .catch(err=>{
         /* If The Error contains a Response*/
         if(err.response){
-          console.log('RETRY LOGIN')
+            const values = {message: err.response.data, type:'ERROR'}
+            dispatch(FLASH_A_MESSAGE(values)); 
+            console.log('RETRY LOGIN')
         }
         /* If the Error Does not Contain a Response(Mainly Network Error) */
         else{
+            const values = {message: err.message, type:'ERROR'}
+            dispatch(FLASH_A_MESSAGE(values)); 
             console.log('Couldnt Connect to Network')
         }
       })
@@ -109,13 +118,25 @@ export const USER_REGISTER = (data)=>(dispatch)=>{
         if(res.status===200){
             console.log('Successfully Registered')
             dispatch(USER_AUTHENTICATION_FORM_SET_LOGIN(true))
+            const values = {message: 'Successfully Registered', type:'SUCCESS'}
+            dispatch(FLASH_A_MESSAGE(values));
         }
         else{
-            console.log(res)
+            console.log(res);
+            const values = {message: 'Registeration was Unsuccessfull', type:'ERROR'}
+            dispatch(FLASH_A_MESSAGE(values));
         }
     })
     .catch(err=>{
         console.log(err)
+        if(err.response){
+            const values = {message: err.response.data, type:'ERROR'}
+            dispatch(FLASH_A_MESSAGE(values));
+        }
+        else{
+            const values = {message: err.message, type:'ERROR'}
+            dispatch(FLASH_A_MESSAGE(values));
+        }
     })
 
 }

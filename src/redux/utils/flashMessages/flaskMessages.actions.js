@@ -20,7 +20,7 @@ export const SET_FLASH_MESSAGE = (values)=>{
     return({
         type: 'SET_FLASH_MESSAGE',
         payload:{
-            title: values.title,
+            type: values.type,
             message: values.message,
             shouldRedirect: values.shouldRedirect,
             redirectUrl: values.redirectUrl,
@@ -33,7 +33,7 @@ export const FLASH_A_MESSAGE_AND_REDIRECT = (values)=>(dispatch)=>{
     console.log('Called flash a message:', values);
     dispatch(SET_FLASH_MESSAGE(values));
     dispatch(SHOW_FLASH_MESSAGES());
-    setTimeout(()=>dispatch(HIDE_FLASH_MESSAGES()), 3000)
+    setTimeout(()=>dispatch(HIDE_FLASH_MESSAGES()), 100000)
     
 }
 
@@ -42,5 +42,5 @@ export const FLASH_A_MESSAGE = (values)=>(dispatch)=>{
     values.redirectUrl=null;
     dispatch(SET_FLASH_MESSAGE(values));
     dispatch(SHOW_FLASH_MESSAGES());
-    setTimeout(()=>dispatch(HIDE_FLASH_MESSAGES()), 3000)
+    setTimeout(()=>dispatch(HIDE_FLASH_MESSAGES()), 100000)
 }

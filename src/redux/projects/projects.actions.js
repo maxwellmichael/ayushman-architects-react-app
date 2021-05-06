@@ -14,7 +14,7 @@ export const ADD_PROJECT = (project)=>{
     });
 }
 
-export const CLEAR_PROJECTS = (project)=>{
+export const CLEAR_PROJECTS = ()=>{
 
   return({
       type: "CLEAR_projectS",
@@ -74,14 +74,13 @@ export const GET_PROJECTS = (data, backendUrl)=>(dispatch)=>{
       })
         .then(res=>{
             if(res.status===200){
-              const data=res.data;
               dispatch(CLEAR_PROJECTS());
+              const data=res.data;
               for(const project in data){
-                console.log('project',data[project]);
                 dispatch(ADD_PROJECT(data[project]));
               }
                 
-              }
+            }
         })
         .catch(err=>{
             console.log(err)
