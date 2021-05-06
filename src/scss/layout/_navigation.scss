@@ -34,7 +34,7 @@ $mobile-width: 1000px;
   .nav-wrapper {
     margin: auto;
     text-align: center;
-    width: 70%;
+    width: 100%;
   } 
   @media screen and(max-width: $mobile-width) {
       .nav-wrapper {
@@ -45,11 +45,34 @@ $mobile-width: 1000px;
   
   .logo {
     float: left;
-    margin-left: 20px;
-    font-size: 1.5em;
-    height: 40px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    margin-left: 10%;
+    height: 100%;
+    width:100%;
+    padding-top: 2px;
+    padding-bottom: 5px; 
+    display: inline;
+
+    .logo-image{
+      width: 60px;
+      height: 90%;
+      object-fit: cover;
+      position: absolute;
+    }
+    h1{
+      text-decoration: none;
+      text-align: left;
+      padding-left: 70px;
+      padding-top: 6px;
+      font-size: 20px;
+      position: absolute;
+    }
+    h3{
+      text-decoration: none;
+      padding-top: 28px;
+      padding-left: 86px;
+      font-size: 12px;
+    }
+    
   } 
   
   

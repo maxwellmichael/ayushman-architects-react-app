@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation } from "react-router-dom";
+import {connect} from 'react-redux';
 
 
 const ProjectPage = (props)=>{
@@ -31,4 +32,5 @@ const ProjectPage = (props)=>{
 }
 
 
-export default ProjectPage;
+
+export default connect()(ProjectPage);

@@ -11,7 +11,7 @@ const AddProjectForm = (props)=>{
 
     const onSubmit = (data)=>{
         
-        props.dispatch(POST_PROJECT(data));
+        props.dispatch(POST_PROJECT(data, props.backendUrl));
     }
 
     return(
@@ -67,4 +67,9 @@ const AddProjectForm = (props)=>{
 }
 
 
-export default connect()(AddProjectForm);
+const mapStateToProps = (state)=>({
+
+    backendUrl: state.backendUrl,
+})
+
+export default connect(mapStateToProps)(AddProjectForm);

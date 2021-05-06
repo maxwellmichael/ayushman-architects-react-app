@@ -8,16 +8,16 @@ import {GET_PROJECTS} from '../../redux/projects/projects.actions';
 
 const Projects = (props)=>{
 
-    const {dispatch} = props
+    
 
     useEffect(() => {
         let mounted = true;
       
         if(mounted){
-            dispatch(GET_PROJECTS())
+            props.dispatch(GET_PROJECTS(null,props.backendUrl))
         }
         return () => mounted = false;
-      }, [dispatch])
+      }, [props.dispatch, props.backendUrl])
 
 
 
@@ -74,6 +74,7 @@ const mapStateToProps = (state)=>{
 
     return({
         projects: state.projects,
+        backendUrl: state.backendUrl,
     })
 }
 

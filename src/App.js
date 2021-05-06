@@ -13,7 +13,6 @@ import AuthenticationForms from './pages/authentication';
 import ContactPage from './pages/contact';
 import Layout from './components/layout';
 import {connect} from 'react-redux';
-import {SET_BACKEND_URL} from './redux/backend/backend.actions';
 import {UPDATE_AUTHENTICATED_USER_STATUS, SET_USER_AUTHENTICATED_IN_COOKIE} from "./redux/userAuthentication/userAuth.actions";
 import {SET_LOADER} from './redux/utils/loader/loader.actions';
 import axios from 'axios';
@@ -27,7 +26,6 @@ import axios from 'axios';
 class App extends Component{
 
   componentDidMount(){
-    this.props.dispatch(SET_BACKEND_URL());
     if(window.location.pathname==='/'){
       this.props.dispatch(SET_LOADER({isHidden: true}));
     }
@@ -106,14 +104,8 @@ class App extends Component{
   }
 }
 
-const mapStateToProps = (state)=>{
 
-  return({
-    backendUrl: state.backend.url,
-  })
-}
-
-export default connect(mapStateToProps)(App);
+export default connect()(App);
 
 
 

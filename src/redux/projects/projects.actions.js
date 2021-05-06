@@ -3,7 +3,6 @@ import Cookies from 'js-cookie';
 import {SET_MODALS_HIDDEN} from '../utils/modals/modals.actions'
 
 
-const backendUrl = "https://backend.ayushmanarchitects.com";
 
 export const ADD_PROJECT = (project)=>{
 
@@ -39,7 +38,7 @@ export const POST_PROJECT = (data)=>async (dispatch)=>{
 
     axios({
         method: 'post',
-        url: `${backendUrl}/project`,
+        url: `${data.backendUrl}/project`,
         data: projectFormData,
         withCredentials: true,
         headers:{
@@ -62,7 +61,7 @@ export const POST_PROJECT = (data)=>async (dispatch)=>{
             console.log("err", err)})
 }
 
-export const GET_PROJECTS = ()=>(dispatch)=>{
+export const GET_PROJECTS = (data, backendUrl)=>(dispatch)=>{
 
     axios({
         method: 'get',

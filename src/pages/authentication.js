@@ -120,7 +120,7 @@ const mapStateToProps=(state)=>{
     return({
         isLogin: state.authentication.form.isLogin,
         isAuthenticated: state.authentication.user.isAuthenticated,
-        backendUrl: state.backend.url
+        backendUrl: state.backendUrl,
     })
 
 }
