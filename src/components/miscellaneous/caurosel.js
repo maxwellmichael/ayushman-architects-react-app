@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import {useTransition, animated, config} from 'react-spring';
 import CauroselCard from './cauroselCard';
 import { useMediaQuery } from 'react-responsive'
+import {ReactComponent as LeftArrow}from '../../images/icons/previous.svg';
+import {ReactComponent as RightArrow}from '../../images/icons/next.svg';
+
 
 
 
@@ -87,8 +90,8 @@ const Caurosel=()=>{
         <div className="caurosel-main">
 
             <div className="caurosel-buttons-container">
-                <button onClick={()=>handleLeftButtonClick()}><i className="fas fa-chevron-left"></i></button>
-                <button onClick={()=>handleRightButtonClick()}><i className="fas fa-chevron-right"></i></button>
+                <button onClick={()=>handleLeftButtonClick()}><LeftArrow /></button>
+                <button onClick={()=>handleRightButtonClick()}><RightArrow /></button>
             </div>
 
             <div className="caurosel-cards-main">

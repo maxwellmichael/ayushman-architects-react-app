@@ -41,8 +41,8 @@ const NewNavigation = (props)=>{
                     <li><Link to="/contact">CONTACT</Link></li>
                    
                     
-                    <li>{props.isAuthenticated ? <Link onClick={()=>props.dispatch(USER_LOGOUT({backendUrl:props.backendUrl}))} to="/userauthenticate" className="nav-link">Logout</Link> : null}</li>
-                    <li>{!props.isAuthenticated ? <Link  className="nav-link" to="/userauthenticate">Login/SignUp</Link>:null}</li>
+                    <li>{props.isAuthenticated ? <Link onClick={()=>props.dispatch(USER_LOGOUT({backendUrl:props.backendUrl}))} to="/userauthenticate">Logout</Link> : null}</li>
+                    <li>{!props.isAuthenticated ? <Link to="/userauthenticate">Login/SignUp</Link>:null}</li>
                 </ul>
                
                
@@ -64,8 +64,8 @@ const NewNavigation = (props)=>{
                         <li><Link onClick={()=>setMenuToggle(false)} to="/contact">CONTACT</Link></li>
                         <li><Link onClick={()=>setMenuToggle(false)} to="/contact">ABOUT</Link></li>
                         
-                        <li>{props.isAuthenticated ? <Link onClick={()=>{setMenuToggle(false); props.dispatch(USER_LOGOUT({backendUrl: props.backendUrl}))}} to="/userauthenticate" className="nav-link">Logout</Link> : null}</li>
-                        <li>{!props.isAuthenticated ? <Link onClick={()=>setMenuToggle(false)} className="nav-link" to="/userauthenticate">Login/SignUp</Link>:null}</li>
+                        <li>{props.isAuthenticated ? <Link onClick={()=>{setMenuToggle(false); props.dispatch(USER_LOGOUT({backendUrl: props.backendUrl}))}} to="/userauthenticate">Logout</Link> : null}</li>
+                        <li>{!props.isAuthenticated ? <Link onClick={()=>setMenuToggle(false)} to="/userauthenticate">Login/SignUp</Link>:null}</li>
                         </ul>
                 </animated.div>
             ))}

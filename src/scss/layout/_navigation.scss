@@ -29,6 +29,9 @@ $mobile-width: 1000px;
     width: 100%;
     z-index: 10;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
+    ul{
+      margin-bottom: 0;
+    }
   }
   
   .nav-wrapper {

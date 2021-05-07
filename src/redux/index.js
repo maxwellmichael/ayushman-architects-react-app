@@ -8,7 +8,6 @@ import loaderReducer from './utils/loader/loader.reducer';
 import projectsReducer from './projects/projects.reducer';
 
 
-
 const BACKEND_URL = "https://backend.ayushmanarchitects.com";
 //const BACKEND_URL = "http://backend.ayushman.com:5000";
 

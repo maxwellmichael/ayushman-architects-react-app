@@ -3,6 +3,7 @@
 }
 
 .parallax-main{
+    top:0;
     width: 100%;
     min-height: 100%;
     height:auto;
@@ -24,7 +25,7 @@
         height: 100vh;
         overflow: hidden;
         background-size: cover;
-        background-position: 20% 10%; 
+        background-position: center; 
     }
 
     .parallax-heading{

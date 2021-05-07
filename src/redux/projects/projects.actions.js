@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import {SET_MODALS_HIDDEN} from '../utils/modals/modals.actions'
+import {FLASH_A_MESSAGE} from '../utils/flashMessages/flaskMessages.actions';
 
 
 
@@ -21,7 +21,7 @@ export const CLEAR_PROJECTS = ()=>{
   });
 }
 
-export const POST_PROJECT = (data)=>async (dispatch)=>{
+export const POST_PROJECT = (data, backendUrl)=>async (dispatch)=>{
     console.log("Data", data.image1[0])
     let projectFormData = new FormData();
     projectFormData.append('title', data.title);
@@ -38,7 +38,7 @@ export const POST_PROJECT = (data)=>async (dispatch)=>{
 
     axios({
         method: 'post',
-        url: `${data.backendUrl}/project`,
+        url: `${backendUrl}/project`,
         data: projectFormData,
         withCredentials: true,
         headers:{
@@ -54,11 +54,19 @@ export const POST_PROJECT = (data)=>async (dispatch)=>{
       }).then(
           res=>{
             console.log(res.data)
-            dispatch(SET_MODALS_HIDDEN())
+            dispatch(FLASH_A_MESSAGE({type:'SUCCESS', message:'Project has been Saved'}))
           })
         .catch(err=>{
-            dispatch(SET_MODALS_HIDDEN())
-            console.log("err", err)})
+            console.log("err", err)
+
+            if(err.response){
+              dispatch(FLASH_A_MESSAGE({type:'ERROR', message:err.response.data}))
+            }
+            else{
+              dispatch(FLASH_A_MESSAGE({type:'ERROR', message:err.message}))
+            }
+        })
+
 }
 
 export const GET_PROJECTS = (data, backendUrl)=>(dispatch)=>{

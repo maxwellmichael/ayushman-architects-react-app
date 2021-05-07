@@ -31,16 +31,16 @@ const ParallaxInterior = (props)=>{
       const parallaxContent1HeaddingOffset = animationOffsetY.interpolate(o => `translateY(-${o*0.5}px)`);
 
     return(
-        <animated.div className="parallax-main">
-            <animated.div  className="parallax-container">
-                <animated.div style={{backgroundImage: `url(${InteriorBg})`}} className="parallax-content-img" >
+        <div className="parallax-main">
+            <div  className="parallax-container">
+                <div style={{backgroundImage: `url(${InteriorBg})`}} className="parallax-content-img" >
                     <animated.div style={{transform: parallaxContent1HeaddingOffset}} className="parallax-heading">AYUSHMAN.COM</animated.div>
                     <animated.div style={{transform: parallaxContent1HeaddingOffset}} className="parallax-description">
                         Architecture Design - Interior Design - Product Design - Construction        
                     </animated.div>
-                </animated.div>
-            </animated.div>
-        </animated.div>
+                </div>
+            </div>
+        </div>
     );
 }
 

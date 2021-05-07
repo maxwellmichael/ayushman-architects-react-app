@@ -7,7 +7,6 @@ import Home from './pages/home';
 import Projects from './pages/projects';
 import Project from './pages/projects/project';
 import AddProjectForm from './pages/projects/addProjectForm';
-
 import ProtectedRoute from './components/authorisation/ProtectedRoutes';
 import AuthenticationForms from './pages/authentication';
 import ContactPage from './pages/contact';
@@ -41,18 +40,19 @@ class App extends Component{
   axiosInterceptops=()=>{
     axios.interceptors.response.use(null, err => {
       const originalRequest = err.config;
-      console.log('Response Error',err)
+      console.log('Response',err)
       //IF The Response is Unauthorized
       // Refresh Token Has Expired
       // User Must Login
       if(err.response.status === 401 && originalRequest.url === `${this.props.backendUrl}/refreshaccesstoken`){
          console.log('User MUST LOGIN',err);
          this.props.dispatch(SET_USER_AUTHENTICATED_IN_COOKIE(false));
+         return axios(originalRequest);
       }
   
       // Access Token Has Expired 
       //Refreshes the Access Token
-      else if(err.response.status === 401 && !originalRequest._retry){
+      else if(err.response.status === 401 && !originalRequest._retry && originalRequest.url!==`${this.props.backendUrl}/userauthenticate`){
         console.log('Access Token Expired for Request:', originalRequest);
         originalRequest._retry = true;
         return axios({
@@ -70,7 +70,7 @@ class App extends Component{
           }
         })
         .catch(err=>{
-          console.log(err);
+          return axios(originalRequest);
         })
       }
      

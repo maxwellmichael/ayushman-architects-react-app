@@ -15,11 +15,12 @@ class FlashMessage extends Component{
             if(this.props.flashMessage.shouldRedirect){
                 this.props.history.push(this.props.flashMessage.redirectUrl);
             }
-        }, 2000);
+        }, 200);
     }
     
 
     render(){
+        console.log(this.props.flashMessage)
         return(
             <React.Fragment>
                 {this.props.flashMessage.hidden ? null :
