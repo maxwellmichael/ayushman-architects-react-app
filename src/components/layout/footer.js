@@ -49,7 +49,7 @@ class Footer extends Component{
                         <div className="footer-icons">
                             <a href="/"><Facebook/></a>
                             <a href="/"><Twitter/></a>
-                            <a href="/"><Instagram/></a>
+                            <a href="http://instagram.com/ayushman_architects"><Instagram/></a>
                         </div>
                     </div>
 

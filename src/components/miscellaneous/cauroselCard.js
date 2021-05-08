@@ -17,7 +17,7 @@ const CauroselCard = (props)=>{
                         </div>
                         <div className="card-shrink">
                             <button>
-                            <i className="fas fa-external-link-alt"></i>
+                                View
                             </button>
                         </div>
                     </article>

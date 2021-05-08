@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
+@import '../../ui/buttons';
+@import '../../ui/effects';
 
 
 
 .card {
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 12px;
-  margin-right: 12px;
-  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
-  background-color: #fff;
-  width: 33.3vw;
-  height: 600px;
+  margin-left: 1.6666vw;
+  margin-right: 1.6666vw;
+  transition: all 1s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: #e8eeef;
+  width: 30vw;
+  height: 560px;
   max-height: 600px;
   position: relative;
   border-radius: 12px;
@@ -22,71 +24,67 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 235px;
+    height: 60%;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-
-  
-}
-
-.card-info {
-  z-index: 2;
-  background-color: #fff;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  padding: 16px 24px 24px 24px;
-
-  .card-message{
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2px;
-    font-weight: 500;
-    color: #868686;
-  }
-  
-  .card-title {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    font-family: 'Roboto Slab', serif;
   }
 
+  .card-info {
+    z-index: 2;
+    height: 40%;
+    background-color: #e8eeef;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+    transition: position 1s ease-in-out;
 
-}
+    .card-message{
+      font-family: 'Raleway', sans-serif;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: #868686;
+    }
+  
+    .card-title {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      font-family: 'Roboto Slab', serif;
+    }
+  }
 
-.card-shrink{
-  display: none;
-  width: 100%;
-  height: 10%;
-  margin:0;
-  background: transparent;
-  position: absolute;
-  top: 88%;
-  left: 0;
-
-  button{
+  .card-shrink{
+    display: none;
+    width: 100%;
+    height: 10%;
+    margin:0;
     background: transparent;
-    color: black;
-    font-size: 30px;
-    opacity: 0;
-    transition: opacity 0.4s;
-    width: 30%;
-    height: 60px;
     position: absolute;
-    left: 35%;
+    top: 80%;
+    left: 0;
+
+    button{ 
+      @include BigButton;
+      background-color: #2b3747;
+      color: #868686;
+      transition: opacity 0.4s;
+      width: 30%;
+      border-radius: 8px;
+      position: absolute;
+      left: 35%;
+      transition: all 100ms ease-in-out;
+      &:hover{
+        @include GlowEffect;
+      }
+    }
   }
-
-}
-
-
-
 
   &:hover{
-    
+    background-color: black;
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
-    transform: scale(1.10, 1.10);
-
     .card-img{
+      transform: scale(1, 1.0001);
       position: absolute;
       width: 100%;
       height: 100%;
@@ -102,14 +100,28 @@
     
     .card-info {
       background-color: transparent;
-      position: relative;
       position: absolute;
       padding: 16px;
       width: 100%;
-      opacity: 0.8;
+      opacity: 1;
       top: 5%;
+      .card-title {
+        color: #e0e0e0;
+        text-align: center;
+        letter-spacing: 0.1em;
+      }
       .card-message{
-        color: #646363;
+        text-align: justify;
+        color: #e0e0e0;
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 200;
+      }
+    }
+    .card-shrink{
+      display: block;
+      button{
+        opacity: 1
       }
     }
 

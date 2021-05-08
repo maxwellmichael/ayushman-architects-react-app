@@ -36,7 +36,7 @@ const ParallaxInterior = (props)=>{
                 <div style={{backgroundImage: `url(${InteriorBg})`}} className="parallax-content-img" >
                     <animated.div style={{transform: parallaxContent1HeaddingOffset}} className="parallax-heading">AYUSHMAN.COM</animated.div>
                     <animated.div style={{transform: parallaxContent1HeaddingOffset}} className="parallax-description">
-                        Architecture Design - Interior Design - Product Design - Construction        
+                        Your Dream is Our Work        
                     </animated.div>
                 </div>
             </div>
