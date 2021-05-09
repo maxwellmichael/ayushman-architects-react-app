@@ -13,7 +13,7 @@ import Bridge from '../images/backgrounds/bridge.jpg';
 import {connect} from 'react-redux';
 import {debounce} from '../components/utils/debounce';
 import FadeInContainer,{FadeInFromRight, FadeInFromLeft} from '../components/utils/fadeInAnimation';
-import ParallaxContainer from '../components/utils/parallaxContainer';
+//import ParallaxContainer from '../components/utils/parallaxContainer';
 import {useSpring} from 'react-spring';
 
 
@@ -67,21 +67,21 @@ const Home = ()=>{
                 <ParallaxInterior />
             </div>
 
-            <ParallaxContainer bgUrl={null}>
-                <div  className="home-container">
-                    <FadeInContainer FadeIn={FadeInFromLeft}>
-                        <div className="content-title">
-                            Why Chose Us?
-                        </div>
-                    </FadeInContainer>
-                    <br/>
-                    <FadeInContainer FadeIn={FadeInFromRight}>
-                        <div className="content-description">
+            
+            <div style={{marginTop: '100px', marginBottom: '60vh'}}  className="home-container">
+                <FadeInContainer FadeIn={FadeInFromLeft}>
+                    <div className="content-title">
+                        Why Chose Us?
+                    </div>
+                </FadeInContainer>
+                <br/>
+                <FadeInContainer FadeIn={FadeInFromRight}>
+                    <div className="content-description">
                         As a Shopify Plus Partner Agency and eCommerce development agency, we leverage the power of the platform to design, develop, and optimize beautiful eCommerce websites for fashion & lifestyle brands. We love partnering with merchants to help them scale through data-backed ecommerce development & UX design services, conversion rate optimization, and Klaviyo email marketing services.
-                        </div>
-                    </FadeInContainer>
-                </div>
-            </ParallaxContainer>
+                    </div>
+                </FadeInContainer>
+            </div>
+            
 
             <div style={{marginTop: '100px'}} className="home-container">
                

@@ -35,7 +35,7 @@ const ParallaxContainer = (props)=>{
     return(
         <div ref={parallaxContainerRef} className="parallax-container-main">
             <animated.div style={{backgroundImage:`url(${props.bgUrl})`}} className="parallax-container-bg"></animated.div>
-            <animated.div style={{transform: offsetY<0 && PrallaxContentTranslateY}} className="parallax-container-content">{props.children}</animated.div>
+            <animated.div style={{transform: PrallaxContentTranslateY}} className="parallax-container-content">{props.children}</animated.div>
         </div>
     );
 }
