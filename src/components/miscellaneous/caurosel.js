@@ -4,6 +4,13 @@ import CauroselCard from './cauroselCard';
 import { useMediaQuery } from 'react-responsive'
 import {ReactComponent as LeftArrow}from '../../images/icons/previous.svg';
 import {ReactComponent as RightArrow}from '../../images/icons/next.svg';
+import ArchitectureBG from '../../images/backgrounds/architecture_bg2.jpg';
+import ConstructionBG from '../../images/backgrounds/construction.jfif';
+import ProjectPlanningBG from '../../images/backgrounds/project-planning.jpg';
+import EstimationBG from '../../images/backgrounds/estimation.jpg';
+
+
+
 
 
 
@@ -32,20 +39,14 @@ const Caurosel=()=>{
     };
     const [StartIndex, setStartIndex] = useState(Factor());
 
-    const totalCards = 9;
+    const totalCards = 4;
 
     const data=[
-        {title:'Eclectic Theme Interiors For Living Room', url:'https://super.homelane.com/products/07dec18/homeinteriors/6.jpg', message:'Live the way you deserve with beautiful living room spaces. Check out our complete range of home'},
-        {title:'Indian Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/1.jpg',message:'Cozy, beautiful bedrooms with clever storage designs are a must-have for all urbanites.'},
-        {title:'Kid Friendly Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/2.jpg',message:'Our interior designs for your bedroom ensure that you have a serene, beautiful hide-out to escap'},
-        
-        {title:'Eclectic Theme Interiors For Living Room', url:'https://super.homelane.com/products/07dec18/homeinteriors/6.jpg', message:'Live the way you deserve with beautiful living room spaces. Check out our complete range of home'},
-        {title:'Indian Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/1.jpg',message:'Cozy, beautiful bedrooms with clever storage designs are a must-have for all urbanites.'},
-        {title:'Kid Friendly Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/2.jpg',message:'Our interior designs for your bedroom ensure that you have a serene, beautiful hide-out to escap'},
-        
-        {title:'Eclectic Theme Interiors For Living Room', url:'https://super.homelane.com/products/07dec18/homeinteriors/6.jpg', message:'Live the way you deserve with beautiful living room spaces. Check out our complete range of home Live the way you deserve with beautiful living room spaces. Check out our complete range of home Live the way you deserve with beautiful living room spaces. Check out our complete range of home Live the way you deserve with beautiful living room spaces. Check out our complete range of home'},
-        {title:'Indian Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/1.jpg',message:'Cozy, beautiful bedrooms with clever storage designs are a must-have for all urbanites.'},
-        {title:'Kid Friendly Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/2.jpg',message:'Our interior designs for your bedroom ensure that you have a serene, beautiful hide-out to escap'},
+        {title:'Architecture Designs', url: ArchitectureBG, message:'Good architects are practical dreamers, balancing the visionary with the realistic.'},
+        {title:'Construction', url: ConstructionBG, message:'specializes in the design and construction of industrial, commercial and hotel projects. It has a nationwide network to provide a structure of efficiency and quality service.'},
+        {title:'Interior Designs', url:'https://super.homelane.com/products/07dec18/homeinteriors/2.jpg',message:'Our interior designs for your bedroom ensure that you have a serene, beautiful hide-out to escape'},     
+        {title:'Project Planning', url: ProjectPlanningBG, message:'Offering complete consultancy and designing services from conception to go-live for all types of projects including Architectural, Structural, Refrigeration, Thermal Insulation, Electrical and other allied consultancy services; all under one roof, in order to achieve the benefits of integrated project design and economy in implementation.'},
+        {title:'Estimation', url: EstimationBG,message:'We estimate and takeoff your entire project for you based on local pricing. We perform construction estimating services for busy contractors.'},
         
     ]
 

@@ -53,16 +53,17 @@
         }
 
         .article-title{
+            font-family: 'Libre Baskerville', serif;
             font-size: 2rem;
             color: #2b3747;
             font-weight: 400;
             line-height: 1.875;
-            font-style: normal;
             letter-spacing: 0;
             
         }
 
         .article-description{
+            font-family: 'Libre Baskerville', serif;
             font-size: 1rem;
             color: #2b3747;
             font-weight: 400;
@@ -106,6 +107,7 @@
         }
 
         .article-title{
+            font-family: 'Libre Baskerville', serif;
             text-align: right;
             font-size: 2rem;
             color: #2b3747;
@@ -117,7 +119,9 @@
         }
 
         .article-description{
+            font-family: 'Libre Baskerville', serif;
             text-align: right;
+            padding-right: 10px;
             font-size: 1rem;
             color: #2b3747;
             font-weight: 400;
