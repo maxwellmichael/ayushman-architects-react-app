@@ -75,6 +75,11 @@ $mobile-width: 1000px;
       padding-left: 86px;
       font-size: 12px;
     }
+
+    @media screen and(max-width: $mobile-width) {
+      margin-left: 1%;
+      
+    }
     
   } 
   

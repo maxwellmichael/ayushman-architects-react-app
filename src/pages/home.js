@@ -2,10 +2,14 @@ import React, {useEffect, useState} from 'react';
 import Caurosel from '../components/miscellaneous/caurosel';
 import ParallaxInterior from '../components/miscellaneous/parallaxInterior';
 import Article from '../components/miscellaneous/article';
+import Banner from '../components/miscellaneous/banner';
+import Bridge from '../images/backgrounds/bridge.jpg';
+
 
 import {connect} from 'react-redux';
 import {debounce} from '../components/utils/debounce';
-import {useSpring, animated} from 'react-spring';
+import FadeInContainer,{FadeInFromRight, FadeInFromLeft} from '../components/utils/fadeInAnimation';
+import {useSpring} from 'react-spring';
 
 
 
@@ -48,48 +52,65 @@ const Home = ()=>{
 
     setAnimationOffsetY({ animationOffsetY: offsetY });
 
+   
+
+  
 
     return(
         <div className="home-main">
-            <animated.div  className="home-container">
+            <div  className="home-container">
                 <ParallaxInterior />
-
-                
-
-            </animated.div>
+            </div>
 
            <br/><br/>
-            <animated.div className="home-container">
-                <animated.div className="content-title">
-                    Interiors Designed by Our Experts
-                </animated.div>
-                <animated.div className="content-description">
-                    Whether it’s a magazine-like dream kitchen or your entire home, enjoy end-to-end solutions from design to installation.
-                </animated.div>
+            <div style={{marginTop: '100px'}} className="home-container">
+               
+                <FadeInContainer FadeIn={FadeInFromLeft}>
+                    <div className="content-title">
+                        Interiors Designed by Our Experts
+                    </div>
+                </FadeInContainer>
+                 
+                <FadeInContainer FadeIn={FadeInFromRight}>
+                    <div className="content-description">
+                        Whether it’s a magazine-like dream kitchen or your entire home, enjoy end-to-end solutions from design to installation.
+                    </div>
+                </FadeInContainer>
                 <Caurosel />
-            </animated.div>
+            </div>
            
-            <animated.div style={{paddingBottom:'5vh', paddingTop:'10vh'}} className="home-container" >
+            <div style={{paddingBottom:'5vh', paddingTop:'10vh'}} className="home-container" >
                 <div className="home-container">
-                    <animated.div className="content-title">
-                        Flawless Architectures
-                    </animated.div>
-                    <animated.div className="content-description">
-                        Flawlessness is a rare commodity in the modern world, but you recognize it when you see it. That’s exactly what we have created at Ayushman.
-                    </animated.div>
+                    <FadeInContainer FadeIn={FadeInFromRight}>
+                        <div className="content-title">
+                            Flawless Architectures
+                        </div>
+                    </FadeInContainer>
+                    <FadeInContainer FadeIn={FadeInFromLeft}>
+                        <div className="content-description">
+                            Flawlessness is a rare commodity in the modern world, but you recognize it when you see it. That’s exactly what we have created at Ayushman.
+                        </div>
+                    </FadeInContainer>
                 </div>
-                <Article data={architectureArticlesData[0]} />
-                <Article data={architectureArticlesData[1]} contentSideLeft={true} />
-                <Article data={architectureArticlesData[0]} />
+
+            
                 <div className="home-container">
-                    
+                    <FadeInContainer FadeIn={FadeInFromRight}>
+                        <Article data={architectureArticlesData[0]} />
+                    </FadeInContainer>
+                    <FadeInContainer FadeIn={FadeInFromLeft}>
+                        <Article data={architectureArticlesData[1]} contentSideLeft={true} />
+                    </FadeInContainer>
+                    <FadeInContainer FadeIn={FadeInFromRight}>
+                        <Article data={architectureArticlesData[0]} />   
+                    </FadeInContainer>
+                  
                 </div>
-                
+            </div>
 
-            </animated.div>
-
-           
-
+            <div className="home-container">
+                <Banner imageUrl={Bridge} title="Ready to get started?" description="Let's schedule a time to discuss your goals." buttonText="CONTACT US" />
+            </div>
         </div>
     );
 }

@@ -14,43 +14,50 @@
   background-color: #e8eeef;
   width: 30vw;
   height: 560px;
-  max-height: 600px;
-  position: relative;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0,0.1);
 
   .card-img {
+    position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60%;
+    height: 336px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
   }
 
   .card-info {
+    position: relative;
     z-index: 2;
-    height: 40%;
+    height: 224px;
     background-color: #e8eeef;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     padding: 16px 24px 24px 24px;
-    transition: position 1s ease-in-out;
+
+    .card-title {
+      position: relative;
+      height: 60px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      font-family: 'Roboto Slab', serif;
+      font-size: 26px;
+      overflow: hidden;
+    }
 
     .card-message{
+      position: relative;
+      height: 90px;
+      padding-bottom: 10px;
       font-family: 'Raleway', sans-serif;
       text-transform: uppercase;
       font-size: 13px;
       letter-spacing: 2px;
       font-weight: 500;
       color: #868686;
-    }
-  
-    .card-title {
-      margin-top: 5px;
-      margin-bottom: 10px;
-      font-family: 'Roboto Slab', serif;
+      overflow: hidden;
     }
   }
 
@@ -101,7 +108,7 @@
     .card-info {
       background-color: transparent;
       position: absolute;
-      padding: 16px;
+      padding: 16px 12px 12px 12px;
       width: 100%;
       opacity: 1;
       top: 5%;
@@ -111,11 +118,13 @@
         letter-spacing: 0.1em;
       }
       .card-message{
-        text-align: justify;
+        padding: 10px 0px 12px 0px;
+        text-align: center;
         color: #e0e0e0;
         font-size: 13px;
         letter-spacing: 1px;
         font-weight: 200;
+        height: 160px;
       }
     }
     .card-shrink{
@@ -143,6 +152,24 @@
 
   @media screen and(max-width:450px){
     width: 90vw;
+
+    .card-info {
+      padding: 16px 24px 24px 24px;
+      transition: position 1s ease-in-out;
+
+      .card-title {
+        font-size: 20px;
+      }
+  
+      .card-message{
+        height: 92px;
+        font-size: 13px;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+    
+      
+    }
     &:hover{
       .card-shrink{
         display: block;

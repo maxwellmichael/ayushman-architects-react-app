@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {debounce} from '../../components/utils/debounce';
 import {useSpring, animated} from 'react-spring';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 
 
 
@@ -33,9 +33,6 @@ const Article = (props)=>{
 
 
     const content = (leftSide)=>{
-
-    
-
         return(
             <animated.div className={leftSide?"article-content-left":"article-content"}>
                 <div className="article-intro">{props.data.intro}</div>
@@ -44,7 +41,6 @@ const Article = (props)=>{
                 <button className="article-button">View</button>
             </animated.div>
         )
-
     }
 
     const image = ()=>{
@@ -93,12 +89,9 @@ const Article = (props)=>{
     }
 
 
-
     return(
         <div className="article-main">
-            
             {handleContentSide()}
-            
         </div>
     )
 }

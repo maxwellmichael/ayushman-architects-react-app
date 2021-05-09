@@ -13,7 +13,7 @@ const CauroselCard = (props)=>{
                         <div className="card-img" style={{backgroundImage: `url(${props.url})`}}></div>
                         <div className="card-info">
                             <h3 className="card-title">{props.title}</h3>
-                            <span className="card-message">{props.message}</span>
+                            <p className="card-message">{props.message}</p>
                         </div>
                         <div className="card-shrink">
                             <button>

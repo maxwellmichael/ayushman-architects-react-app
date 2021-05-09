@@ -43,7 +43,7 @@ const Caurosel=()=>{
         {title:'Indian Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/1.jpg',message:'Cozy, beautiful bedrooms with clever storage designs are a must-have for all urbanites.'},
         {title:'Kid Friendly Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/2.jpg',message:'Our interior designs for your bedroom ensure that you have a serene, beautiful hide-out to escap'},
         
-        {title:'Eclectic Theme Interiors For Living Room', url:'https://super.homelane.com/products/07dec18/homeinteriors/6.jpg', message:'Live the way you deserve with beautiful living room spaces. Check out our complete range of home'},
+        {title:'Eclectic Theme Interiors For Living Room', url:'https://super.homelane.com/products/07dec18/homeinteriors/6.jpg', message:'Live the way you deserve with beautiful living room spaces. Check out our complete range of home Live the way you deserve with beautiful living room spaces. Check out our complete range of home Live the way you deserve with beautiful living room spaces. Check out our complete range of home Live the way you deserve with beautiful living room spaces. Check out our complete range of home'},
         {title:'Indian Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/1.jpg',message:'Cozy, beautiful bedrooms with clever storage designs are a must-have for all urbanites.'},
         {title:'Kid Friendly Theme Home Interiors', url:'https://super.homelane.com/products/07dec18/homeinteriors/2.jpg',message:'Our interior designs for your bedroom ensure that you have a serene, beautiful hide-out to escap'},
         

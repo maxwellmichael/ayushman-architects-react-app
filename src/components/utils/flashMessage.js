@@ -20,7 +20,6 @@ class FlashMessage extends Component{
     
 
     render(){
-        console.log(this.props.flashMessage)
         return(
             <React.Fragment>
                 {this.props.flashMessage.hidden ? null :
