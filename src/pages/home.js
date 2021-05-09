@@ -4,11 +4,16 @@ import ParallaxInterior from '../components/miscellaneous/parallaxInterior';
 import Article from '../components/miscellaneous/article';
 import Banner from '../components/miscellaneous/banner';
 import Bridge from '../images/backgrounds/bridge.jpg';
+import Building1 from '../images/backgrounds/height1.jpg';
+import Pattern from '../images/backgrounds/pattern1.jpg';
+
+
 
 
 import {connect} from 'react-redux';
 import {debounce} from '../components/utils/debounce';
 import FadeInContainer,{FadeInFromRight, FadeInFromLeft} from '../components/utils/fadeInAnimation';
+import ParallaxContainer from '../components/utils/parallaxContainer';
 import {useSpring} from 'react-spring';
 
 
@@ -62,6 +67,22 @@ const Home = ()=>{
                 <ParallaxInterior />
             </div>
 
+            <ParallaxContainer bgUrl={null}>
+                <div  className="home-container">
+                    <FadeInContainer FadeIn={FadeInFromLeft}>
+                        <div className="content-title">
+                            Why Chose Us?
+                        </div>
+                    </FadeInContainer>
+                    <br/>
+                    <FadeInContainer FadeIn={FadeInFromRight}>
+                        <div className="content-description">
+                        As a Shopify Plus Partner Agency and eCommerce development agency, we leverage the power of the platform to design, develop, and optimize beautiful eCommerce websites for fashion & lifestyle brands. We love partnering with merchants to help them scale through data-backed ecommerce development & UX design services, conversion rate optimization, and Klaviyo email marketing services.
+                        </div>
+                    </FadeInContainer>
+                </div>
+            </ParallaxContainer>
+
             <div style={{marginTop: '100px'}} className="home-container">
                
                 <FadeInContainer FadeIn={FadeInFromLeft}>
@@ -77,6 +98,9 @@ const Home = ()=>{
                 </FadeInContainer>
                 <Caurosel />
             </div>
+
+            
+            
            
             <div style={{paddingBottom:'5vh', paddingTop:'10vh'}} className="home-container" >
                 <div className="home-container">
@@ -92,7 +116,6 @@ const Home = ()=>{
                     </FadeInContainer>
                 </div>
 
-            
                 <div className="home-container">
                     <FadeInContainer FadeIn={FadeInFromRight}>
                         <Article data={architectureArticlesData[0]} />
@@ -103,8 +126,8 @@ const Home = ()=>{
                     <FadeInContainer FadeIn={FadeInFromRight}>
                         <Article data={architectureArticlesData[0]} />   
                     </FadeInContainer>
-                  
                 </div>
+
             </div>
 
             <div className="home-container">
