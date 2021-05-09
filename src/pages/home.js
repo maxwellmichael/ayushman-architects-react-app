@@ -4,8 +4,8 @@ import ParallaxInterior from '../components/miscellaneous/parallaxInterior';
 import Article from '../components/miscellaneous/article';
 import Banner from '../components/miscellaneous/banner';
 import Bridge from '../images/backgrounds/bridge.jpg';
-import Building1 from '../images/backgrounds/height1.jpg';
-import Pattern from '../images/backgrounds/pattern1.jpg';
+//import Building1 from '../images/backgrounds/height1.jpg';
+//import Pattern from '../images/backgrounds/pattern1.jpg';
 
 
 

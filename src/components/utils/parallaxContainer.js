@@ -1,7 +1,6 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {useSpring, animated} from 'react-spring';
 import {debounce} from './debounce';
-import VisibilitySensor from 'react-visibility-sensor';
 
 
 
@@ -15,7 +14,6 @@ const ParallaxContainer = (props)=>{
 
 
     useEffect(()=>{
-        console.log(offsetY)
         const handleScroll = () => setOffsetY(parallaxContainerRef.current.getBoundingClientRect().y);
         window.addEventListener('scroll', debounce(handleScroll));
 

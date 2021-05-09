@@ -46,7 +46,7 @@ const FadeInContainer = ({ children, FadeIn }) => {
     };
 
   return (
-    <VisibilitySensor offset={5} onChange={onChange}>
+    <VisibilitySensor offset={50} onChange={onChange}>
       <FadeIn isVisible={isVisible}>{children}</FadeIn>
     </VisibilitySensor>
   );
