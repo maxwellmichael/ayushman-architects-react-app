@@ -7,7 +7,7 @@ import InteriorBg from '../../images/backgrounds/interior_bg.jpg';
 
 
 
-const ParallaxInterior = (props)=>{
+const ParallaxTextScroll = (props)=>{
 
     const [offsetY, setOffsetY] = useState(0);
 
@@ -45,4 +45,4 @@ const ParallaxInterior = (props)=>{
 }
 
 
-export default ParallaxInterior;
+export default ParallaxTextScroll;

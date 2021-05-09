@@ -32,7 +32,7 @@ export const FadeInFromRight = ({ isVisible, children }) => {
 export const FadeInFromBottom = ({ isVisible, children }) => {
     const props = useSpring({
       to: {opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(-10px)" : "translateY(100px)"},
-      config: config.slow,
+      config: config.gentle,
       delay: 10,
     });
     return <div><animated.div style={props}>{children}</animated.div></div>;

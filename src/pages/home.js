@@ -62,7 +62,6 @@ const Home = ()=>{
                 <ParallaxInterior />
             </div>
 
-           <br/><br/>
             <div style={{marginTop: '100px'}} className="home-container">
                
                 <FadeInContainer FadeIn={FadeInFromLeft}>
