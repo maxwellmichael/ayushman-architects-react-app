@@ -30,12 +30,11 @@ const ParallaxContainer = (props)=>{
     setAnimationOffsetY({ animationOffsetY: offsetY });
 
       const PrallaxContentTranslateY = animationOffsetY.interpolate(o => `translateY(${o*0.6}px)`);
-      const PrallaxBGTranslateY = animationOffsetY.interpolate(o => `translateY(${o*0.3}px)`);
 
 
     return(
         <div ref={parallaxContainerRef} className="parallax-container-main">
-            <animated.div style={{backgroundImage:`url(${props.bgUrl})`, transform: offsetY<0 && PrallaxBGTranslateY}} className="parallax-container-bg"></animated.div>
+            <animated.div style={{backgroundImage:`url(${props.bgUrl})`}} className="parallax-container-bg"></animated.div>
             <animated.div style={{transform: offsetY<0 && PrallaxContentTranslateY}} className="parallax-container-content">{props.children}</animated.div>
         </div>
     );
