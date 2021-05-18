@@ -1,0 +1,82 @@
+@mixin big-title {
+    text-align: center;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 68px;
+    line-height: 1.1em;
+    font-weight: 600;
+    z-index: 3;
+    position: relative;
+    letter-spacing: 2px;
+    color: white; 
+    padding: 20px 8px 20px 8px;
+}
+.big-title{
+    @include big-title;
+}
+
+
+@mixin title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 48px;
+    line-height: 1.1em;
+    font-weight: 500;
+    position: relative;
+    letter-spacing: 2px;
+    color: white; 
+}
+.title{
+    @include title;
+}
+
+
+@mixin title-center{
+    @include title;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.title-center{
+    @include title-center;
+}
+
+@mixin title-left{
+    @include title;
+    text-align: left;
+    padding-left: 12px;
+    padding-right: 6px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.title-left{
+    @include title-left;
+}
+
+@mixin title-right{
+    @include title;
+    text-align: right;
+    padding-left: 8px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.title-right{
+    @include title-right;
+}
+
+
+@mixin sub-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 30px;
+    line-height: 1.1em;
+    font-weight: 500;
+    position: relative;
+    letter-spacing: 2px;
+    color: white; 
+}
+
+.sub-title{
+    @include sub-title();
+}

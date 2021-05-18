@@ -19,7 +19,7 @@ const ParallaxTextScroll = (props)=>{
         return () => {
             window.removeEventListener('scroll', debounce(handleScroll));
         };
-    }, [offsetY])
+    },)
 
 
     const [{ animationOffsetY }, setAnimationOffsetY] = useSpring(() => ({

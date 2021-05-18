@@ -1,7 +1,123 @@
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+
+
+.home-title{
+  line-height: 1.4em;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  padding: 6px;
+  font-size: 35px;
+  margin-bottom: 1rem;
+  font-family: 'Libre Baskerville', serif;
+  letter-spacing: 0.05em;
+  color: $gold;
+  @media screen and(max-width: 900px) {
+    font-size: 22px;
+    padding: auto;
+    letter-spacing: 0.02em;
+    word-spacing: 0.01em;
+    line-height: 1.2em;
+  }
+}
+
+.home-description{
+  font-size: 16px;
+  letter-spacing: .1em;
+  line-height: 1.818181818em;
+  text-align: justify;
+  position: relative;
+  padding: 6px;
+  padding-right: 5%;
+  padding-left: 10%;
+  font-family: 'Roboto', Arial, sans-serif;
+  color: white;
+  @media screen and(max-width: 900px) {
+    font-size: 13px;
+    line-height: 1.918181818em;
+    padding: 12px 10px 12px 18px;
+
+  }
+
+}
+
+.home-line{
+  width: 60%;
+  margin: 6px auto 8px auto;
+  height: 2px;
+  background-color: $gold;
+  @media screen and(max-width: 900px) {
+    width: 40%;
+  }
+}
+
+.home-line-inverted{
+  width: 2px;
+  margin: auto 6px auto 8px;
+  height: 60%;
+  background-color: $gold;
+  @media screen and(max-width: 900px) {
+    width: 40%;
+  }
+}
+
+.home-image{
+   object-fit: cover;
+   object-position: top;
+   width: 80%;
+   height: 100%;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+   margin: auto;
+   margin-left: 13%;
+   border-radius: 8px;
+   @media screen and(max-width: 900px) {
+    border-radius: 0;
+    width: 100%;
+    margin: 0;
+   }
+}
+
+.home-button{
+  font-size: 12px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  line-height: 1.818181818em;
+  font-weight:700;
+  width: auto;
+  height: 60px;
+  padding: 12px;
+  border: 1px solid white;
+  transition: all 0.6s ease-in-out;
+
+  &:hover{
+    box-shadow: 0 0 17px 3px white,0 0 4px 2px white;
+    background-color: black;
+    color: $gold;
+  }
+
+  @media screen and(max-width: 900px) {
+     width: 80%;
+     margin-left: 10%;
+     margin-right: 10%;
+  }
+}
+
+.home-overlay{
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+
+
+//--------------------------------------------------------------------------------
 .home-main{
   width: 100%;
   height: 100%;
-  background-color: #e8e8e8;
+  background-color: white;
   box-sizing: border-box;
 
 
@@ -25,7 +141,7 @@
     padding-right: 10%;
     padding-left: 10%;
     font-size: 1.2em;
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Roboto', Arial, sans-serif;
     letter-spacing: 2px;
     color: black;
 
@@ -57,7 +173,7 @@
     height: 100%;
     top: 100%;
     position: absolute;
-    background-color:#e8e8e8;
+    background-color:white;
   }
 
   @media screen and(max-width: 900px) {

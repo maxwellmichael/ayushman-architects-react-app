@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import {FLASH_A_MESSAGE} from '../utils/flashMessages/flaskMessages.actions';
+import {FLASH_A_MESSAGE, FLASH_A_MESSAGE_AND_REDIRECT} from '../utils/flashMessages/flaskMessages.actions';
 
 
 
@@ -17,12 +17,11 @@ export const ADD_PROJECT = (project)=>{
 export const CLEAR_PROJECTS = ()=>{
 
   return({
-      type: "CLEAR_projectS",
+      type: "CLEAR_PROJECTS",
   });
 }
 
 export const POST_PROJECT = (data, backendUrl)=>async (dispatch)=>{
-    console.log("Data", data.image1[0])
     let projectFormData = new FormData();
     projectFormData.append('title', data.title);
     projectFormData.append('location', data.location);
@@ -60,7 +59,12 @@ export const POST_PROJECT = (data, backendUrl)=>async (dispatch)=>{
             console.log("err", err)
 
             if(err.response){
-              dispatch(FLASH_A_MESSAGE({type:'ERROR', message:err.response.data}))
+              console.log('Status Code', err.response.status)
+              if(err.response.status===401){
+                const values = {type:'ERROR', message:"Please Login To Continue", shouldRedirect:true, redirectUrl:'/userauthenticate'}
+                dispatch(FLASH_A_MESSAGE_AND_REDIRECT(values));
+              }
+              
             }
             else{
               dispatch(FLASH_A_MESSAGE({type:'ERROR', message:err.message}))
@@ -87,7 +91,6 @@ export const GET_PROJECTS = (data, backendUrl)=>(dispatch)=>{
               for(const project in data){
                 dispatch(ADD_PROJECT(data[project]));
               }
-                
             }
         })
         .catch(err=>{

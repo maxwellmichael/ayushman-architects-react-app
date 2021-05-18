@@ -11,16 +11,13 @@ const ParallaxContainer = (props)=>{
     const [offsetY, setOffsetY] = useState(0);
 
     let parallaxContainerRef = useRef();
-
+    const handleScroll = () => setOffsetY(parallaxContainerRef.current.getBoundingClientRect().y);
 
     useEffect(()=>{
-        const handleScroll = () => setOffsetY(parallaxContainerRef.current.getBoundingClientRect().y);
         window.addEventListener('scroll', debounce(handleScroll));
 
-        return () => {
-            window.removeEventListener('scroll', debounce(handleScroll));
-        };
-    }, [offsetY])
+        return () => window.removeEventListener('scroll', debounce(handleScroll));
+    }, [debounce()])
 
 
     const [{ animationOffsetY }, setAnimationOffsetY] = useSpring(() => ({
@@ -29,7 +26,8 @@ const ParallaxContainer = (props)=>{
 
     setAnimationOffsetY({ animationOffsetY: offsetY });
 
-      const PrallaxContentTranslateY = animationOffsetY.interpolate(o => `translateY(${o*0.6}px)`);
+      const PrallaxContentTranslateY = animationOffsetY.interpolate(o => `translateY(${o*1.01}px)`);
+
 
 
     return(

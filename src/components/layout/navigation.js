@@ -38,6 +38,7 @@ const NewNavigation = (props)=>{
                     <li><Link to="/projects">PROJECTS</Link></li>
                     <li><Link to="/newproject">New Project</Link></li>
                     <li><Link to="/productsstore">STORE</Link></li>
+                    <li><Link to="/about">ABOUT</Link></li>
                     <li><Link to="/contact">CONTACT</Link></li>
                    
                     
@@ -62,7 +63,7 @@ const NewNavigation = (props)=>{
                         <li><Link onClick={()=>setMenuToggle(false)} to="/newproject">New Project</Link></li>
                         <li><Link onClick={()=>setMenuToggle(false)} to="/productsstore">STORE</Link></li>
                         <li><Link onClick={()=>setMenuToggle(false)} to="/contact">CONTACT</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/contact">ABOUT</Link></li>
+                        <li><Link onClick={()=>setMenuToggle(false)} to="/about">ABOUT</Link></li>
                         
                         <li>{props.isAuthenticated ? <Link onClick={()=>{setMenuToggle(false); props.dispatch(USER_LOGOUT({backendUrl: props.backendUrl}))}} to="/userauthenticate">Logout</Link> : null}</li>
                         <li>{!props.isAuthenticated ? <Link onClick={()=>setMenuToggle(false)} to="/userauthenticate">Login/SignUp</Link>:null}</li>

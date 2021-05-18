@@ -4,6 +4,7 @@
 @import 'pages/home';
 @import 'pages/authentication';
 @import 'pages/contact';
+@import 'pages/about';
 
 @import 'pages/projects/index';
 @import 'pages/projects/project';
@@ -21,6 +22,8 @@
 @import 'components/utils/loader';
 @import 'components/utils/FlashMessage';
 @import 'components/utils/parallaxContainer';
+@import 'components/utils/fadeInAnimation';
+
 
 
 
@@ -36,6 +39,13 @@
 
 
 
+@import 'ui/effects';
+@import 'ui/buttons';
+@import 'ui/lines';
+
+
+
+
 
 
 
@@ -48,7 +58,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;600;700&display=swap'); //Rajadhani
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap'); //For Titles
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 
 
 

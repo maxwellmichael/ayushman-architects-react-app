@@ -2,3 +2,6 @@
     box-shadow: 0 0 17px 3px #0ff,0 0 4px 2px #0ff;
     color: #0ff;
 }
+.glow-effect{
+    @include GlowEffect();
+}
