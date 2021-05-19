@@ -11,7 +11,6 @@ import {ReactComponent as Marker} from '../../images/icons/map-marker.svg';
 
 
 
-
 class Footer extends Component{
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { useSpring, useTrail, animated, config } from "react-spring";
 import VisibilitySensor from "react-visibility-sensor";
 import { useMediaQuery } from 'react-responsive';
@@ -43,6 +43,29 @@ export const RevealFadeAnimation = ({children}) => {
         {list.map((props, i)=>(
           <animated.span key={i} style={{...props}}>{values[i]}</animated.span>
         ))}
+      </div>
+    </VisibilitySensor>
+  )
+};
+
+export const RevealCountingAnimation = ({children, addSign}) => {
+
+  const value = parseInt(children.props.children, 10);
+  const [isVisible, setVisibility] = useState(false);
+
+  const onChange = visiblity => {
+    visiblity && setVisibility(visiblity);
+  };
+
+  const props = useSpring({
+    config: config.slow,
+    from: {val:0},
+    to: {val: isVisible ? value : 0},
+  });
+  return(
+    <VisibilitySensor onChange={onChange}>
+      <div className={children.props.className} style={children.props.style?children.props.style:null}>
+        <animated.span>{props.val.interpolate(val => Math.floor(val))}</animated.span>{addSign}
       </div>
     </VisibilitySensor>
   )

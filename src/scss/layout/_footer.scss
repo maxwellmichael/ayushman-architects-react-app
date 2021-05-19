@@ -33,7 +33,7 @@ footer {
 		width: 35%;
 		display: inline-block;
 		.center-item{
-			margin-top: 16px;
+			margin-bottom: 16px;
 			i {
 				color: $text-main;
 				font-size: 25px;
@@ -120,7 +120,7 @@ footer {
 		}
 	}
 	.footer-icons {
-		margin-top: 25px;
+		margin-bottom: 25px;
 		a {
 			display: inline-block;
 			width: 43px;
@@ -131,8 +131,12 @@ footer {
 			color: $text-main;
 			text-align: center;
 			line-height: 35px;
-			margin-right: 12px;
-			margin-bottom: 5px;
+			margin: 0 0 5px 16px;
+		}
+
+		@media screen and(max-width: 900px) {
+			margin: 25px 16px 0 0;
+			
 		}
 	}
 }

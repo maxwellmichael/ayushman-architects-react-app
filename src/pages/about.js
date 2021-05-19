@@ -2,7 +2,7 @@ import React from 'react';
 import BG1 from '../images/backgrounds/sean-pollock-PhYq704ffdA-unsplash.jpg'; 
 import BG2 from '../images/backgrounds/daniel-chen-cNaEqXSsZ0k-unsplash.jpg';
 import {connect} from 'react-redux';
-import FadeInContainer,{FadeInFromRight, FadeInFromLeft, FadeInFromBottom} from '../components/utils/fadeInAnimation';
+import FadeInContainer,{FadeInFromRight, FadeInFromLeft, FadeInFromBottom, RevealCountingAnimation} from '../components/utils/fadeInAnimation';
 import {Container, Row, Col} from 'react-bootstrap';
 
 
@@ -89,17 +89,21 @@ const AboutPage = (props)=>{
                         </Row>
                     </FadeInContainer>
 
-                    <Row>
+                    <Row style={{margin:'60px 0 0 0'}}>
                         <div style={{width: '80%'}} className="about-line"></div>
                     </Row>
                     
                 </Col>
             </Row>
 
-            <Row md={3} xs={1} style={{paddingBottom: '100px', marginRight: 0}}>
+            <Row md={4} xs={1} style={{paddingBottom: '100px', marginRight: 0}}>
 
                 <Col style={{marginTop: '60px'}}>
-                    <Row><div style={{color: 'white'}} className="about-small-title">2</div></Row>
+                    <Row>
+                        <RevealCountingAnimation>
+                            <div style={{color: 'white'}} className="about-small-title">2</div>
+                        </RevealCountingAnimation>
+                    </Row>
                     <Row><div style={{fontSize: '25px'}} className="about-small-title">OFFICES</div></Row>
                     <Row xs={1} style={{margin:0}}>
                         <div style={{fontSize: '16px', fontWeight: '900'}} className="about-small-title">Kerala</div>
@@ -108,7 +112,24 @@ const AboutPage = (props)=>{
                 </Col>
 
                 <Col style={{marginTop: '60px'}}>
-                    <Row><div style={{color: 'white'}} className="about-small-title">65</div></Row>
+                    <Row>
+                        <RevealCountingAnimation addSign={"+"}>
+                            <div style={{color: 'white'}} className="about-small-title">100</div>
+                        </RevealCountingAnimation>
+                    </Row>
+                    <Row><div style={{fontSize: '25px'}} className="about-small-title">CLIENTS</div></Row>
+                    <Row xs={1} style={{margin:0}}>
+                        <div style={{fontSize: '16px', fontWeight: '900'}} className="about-small-title">Across India</div>
+                    </Row>
+                </Col>
+
+
+                <Col style={{marginTop: '60px'}}>
+                    <Row>
+                        <RevealCountingAnimation addSign={'+'}>
+                            <div style={{color: 'white'}} className="about-small-title">65</div>
+                        </RevealCountingAnimation>
+                    </Row>
                     <Row><div style={{fontSize: '25px'}} className="about-small-title">MEMBERS</div></Row>
                     <Row xs={1} style={{margin:0}}>
                         <div style={{fontSize: '16px', fontWeight: '900'}} className="about-small-title">Engineers</div>
@@ -118,7 +139,11 @@ const AboutPage = (props)=>{
                 </Col>
 
                 <Col style={{marginTop: '60px'}}>
-                    <Row><div style={{color: 'white'}} className="about-small-title">80+</div></Row>
+                    <Row>
+                        <RevealCountingAnimation addSign={'+'}>
+                            <div style={{color: 'white'}} className="about-small-title">80</div>
+                        </RevealCountingAnimation>
+                    </Row>
                     <Row><div style={{fontSize: '25px'}} className="about-small-title">PROJECTS</div></Row>
                     <Row xs={1} style={{margin:0}}><div style={{fontSize: '16px', fontWeight: '900'}} className="about-small-title">India</div></Row>
                 </Col>

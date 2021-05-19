@@ -8,7 +8,15 @@ import image1 from '../images/backgrounds/architecture_bg2.jpg';
 import image2 from '../images/backgrounds/lucas-franco-aRTjFXs6HNc-unsplash.jpg';
 import Building2 from '../images/backgrounds/sean-pollock-PhYq704ffdA-unsplash.jpg';
 
-import ArchitectureBG from '../images/backgrounds/architecture_bg2.jpg';
+import Slide1 from '../images/backgrounds/mobile/slide1.jpg';
+import Slide2 from '../images/backgrounds/mobile/slide2.jpg';
+import Slide3 from '../images/backgrounds/mobile/slide3.jpg';
+import Slide4 from '../images/backgrounds/mobile/slide4.jpg';
+
+
+
+import Building from '../images/backgrounds/building.jpg';
+import ArchitectureBG from '../images/backgrounds/4.-STRANY-PERSIDSKOGO-ZALIVA-CHastnaya-rezidentsiya-CITADEL-GULF-COUNTRIES-Private-residence-CITADEL.webp';
 import ConstructionBG from '../images/backgrounds/construction.jfif';
 import ProjectPlanningBG from '../images/backgrounds/project-planning.jpg';
 import EstimationBG from '../images/backgrounds/estimation.jpg';
@@ -21,10 +29,10 @@ const Home = (props)=>{
 
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
     const slides = [
-        { id: 0, url: Building1, content: 'Slide 1' },
-        { id: 1, url: Building2, content: 'Slide 2' },
-        { id: 2, url: image1, content: 'Slide 3' },
-        { id: 3, url: image2, content: 'Slide 4' },
+        { id: 0, url: isMobile?Slide1:Building1, content: 'Slide 1' },
+        { id: 1, url: isMobile?Slide2:Building2, content: 'Slide 2' },
+        { id: 2, url: isMobile?Slide3:image1, content: 'Slide 3' },
+        { id: 3, url: isMobile?Slide4:image2, content: 'Slide 4' },
       ]
     const [index, set] = useState(0)
     const transitions = useTransition(slides[index], item => item.id, {
@@ -34,14 +42,20 @@ const Home = (props)=>{
         config: config.molasses,
     })
 
-    useEffect(() => void setInterval(() => set(state => (state + 1) % 4), 4000), [])
+    useEffect(() =>{ 
+        const sliderInterval = setInterval(() => set(state => (state + 1) % 4), 4000)
+
+        return () => {
+            clearInterval(sliderInterval)
+          }
+    }, [index])
 
 
     return(
-        <Container fluid style={{ padding: 0, backgroundColor: 'black'}}>
+        <Container fluid style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Row style={{width: '100%', height: '100vh', overflow: 'hidden', margin:0, padding:0, position: 'relative'}}>
                 {transitions.map(({item, props, key})=>(
-                    <animated.div key={key} style={{...props, position: 'absolute', backgroundImage: `url(${item.url})`, backgroundSize: 'cover', height: '100%', width: '100%', margin: 0, paddingRight: 0, overflow: 'hidden'}}>
+                    <animated.div key={key} style={{...props, position: 'absolute', backgroundImage: `url(${item.url})`, backgroundSize:'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100%', width: '100%', margin: 0, paddingRight: 0, overflow: 'hidden'}}>
                         <Row md={1} style={{width: '100%', height: '100%', marginRight:0, marginLeft:0, padding:0}}>
                             <div style={{color:'#f5ca9f', zIndex: '3', paddingTop: isMobile?'50%':'20%', fontSize: '60px'}} className="home-title">Ayushman Architects</div>
                             <div style={{width: '100%', height: '100%', backgroundImage: 'radial-gradient(circle, hsla(240, 100%, 0%, 0.7) 41%, hsla(0, 0%, 0%, 0.4) 96%)', opacity: 0.6, margin:0}} className="home-overlay"></div>
@@ -65,7 +79,7 @@ const Home = (props)=>{
                 </Col>
 
                 <Col sm={{span:3}} xs={{span: 12, order: 1, offset:0}} style={{height: 500, marginBottom: isMobile?0:'20px', padding:0}}>
-                    <Image className='home-image' src={image1} />
+                    <Image className='home-image' src={Building} />
                 </Col>
                 
             </Row>
@@ -174,7 +188,7 @@ const Home = (props)=>{
                 <div style={{height: '400px'}} className="home-overlay"></div>
                 <Row md={1} xs={1} style={{zIndex: 2, marginRight:0, width: '100%'}}>
                     <Col md={8} style={{marginRight:0, marginTop: '100px'}}>
-                        <Row><div style={{textAlign: 'justify', color: '#ba9774', fontSize: isMobile?'32px':'50px', marginBottom:0, paddingLeft: '10%'}} className="home-title">Ready to get Started?</div></Row>
+                        <Row><div style={{textAlign: 'justify', color: '#ba9774', fontSize: isMobile?'28px':'50px', marginBottom:0, paddingLeft: '10%'}} className="home-title">Ready to get Started?</div></Row>
                         <Row style={{marginTop: 0}}><div style={{color: 'white', fontSize: '16px', paddingLeft: '10%'}} className="home-description">Let's schedule a time to discuss your goals.</div></Row>
                         <Row><button style={{width: '200px', marginLeft: '10%', marginTop: '2%', fontSize: isMobile?16:12}} onClick={()=>{props.history.push('/contact')}} className="home-button">CONTACT US</button></Row>
                     </Col>
