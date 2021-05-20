@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { withRouter } from 'react-router-dom';
 import {Spring} from 'react-spring/renderprops';
 import {connect} from 'react-redux';
-import {HIDE_FLASH_MESSAGES} from '../../redux/utils/flashMessages/flaskMessages.actions';
+import {HIDE_FLASH_MESSAGES} from '../../redux/utils/flashMessages/flashMessages.actions';
 import {ReactComponent as ExitIcon} from '../../images/icons/times-solid.svg';
 
 

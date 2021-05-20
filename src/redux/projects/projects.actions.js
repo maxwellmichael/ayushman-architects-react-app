@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import {FLASH_A_MESSAGE, FLASH_A_MESSAGE_AND_REDIRECT} from '../utils/flashMessages/flaskMessages.actions';
+import {FLASH_A_MESSAGE, FLASH_A_MESSAGE_AND_REDIRECT} from '../utils/flashMessages/flashMessages.actions';
 
 
 

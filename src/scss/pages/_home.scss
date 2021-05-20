@@ -1,5 +1,7 @@
 $gold: #ba9774;
 $light-gold: #f5ca9f;
+$gold-dark: rgba(243,149,59,0.73);
+
 
 
 .home-title{
@@ -79,22 +81,24 @@ $light-gold: #f5ca9f;
 }
 
 .home-button{
-  font-size: 12px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  line-height: 1.818181818em;
-  font-weight:700;
-  width: auto;
-  height: 60px;
-  padding: 12px;
-  border: 1px solid white;
-  transition: all 0.6s ease-in-out;
+  font-size: 13px;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+	line-height: 1.818181818em;
+	font-weight:700;
+	width: 200px;
+	height: 60px;
+	padding: 12px;
+	margin: 40px auto auto 0px;
+	border: 1px solid $gold;
+	transition: all 0.6s ease-in-out;
+	background-color: black;
+	color: $gold;
+	&:hover{
+		box-shadow: 0 0 17px 3px $gold-dark,0 0 4px 2px $gold-dark;
+		border: 1px solid $light-gold;
+	}
 
-  &:hover{
-    box-shadow: 0 0 17px 3px white,0 0 4px 2px white;
-    background-color: black;
-    color: $gold;
-  }
 
   @media screen and(max-width: 900px) {
      width: 80%;
