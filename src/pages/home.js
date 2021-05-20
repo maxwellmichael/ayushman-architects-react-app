@@ -140,35 +140,60 @@ const Home = (props)=>{
             <Row md={2} xs={1} style={{margin: '0 0 100px 0', padding:0}}>
                 <Col md={6} xs={12} style={{padding:isMobile?0:'100px 0 100px 0', margin:0}}>
                     <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'100px auto auto auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ArchitectureBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px'}}>
-                            <div style={{width:isMobile?'100%':'80%', height: '500px', backgroundImage: 'linear-gradient(360deg, rgba(0,0,0,1) 15%, rgba(255,255,255,0) 69%, rgba(0,0,0,0) 100%)', opacity: 0.5, margin:0}} className="home-overlay"></div>
-                            <div style={{zIndex:'3',top: '80%',color:'#f5ca9f'}} className="home-title">Architecture Designs</div>
+                        <div style={{margin:isMobile?0:'100px auto auto auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ArchitectureBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
+                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
+                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Architecture Design</div>
+                            <div className="home-service-type-line"></div>
+                            <div className="home-service-type-description">
+                                We believe architecture must leave a lasting impact on the people who live, work, and play in the buildings we design. 
+                                That’s why you’ll never see a boring style. 
+                                From the moment a project begins, we work with you to determine what’s most successful for your specific needs.
+                            </div>
                         </div>
                     </FadeInContainer>
                     <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'100px auto auto auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ConstructionBG})`, backgroundSize: 'cover',backgroundPosition:'center', borderRadius: isMobile?0:'8px'}}>
-                            <div style={{width:isMobile?'100%':'80%', height: '500px', backgroundImage: 'linear-gradient(360deg, rgba(0,0,0,1) 15%, rgba(255,255,255,0) 69%, rgba(0,0,0,0) 100%)', opacity: 0.5, margin:0}} className="home-overlay"></div>
-                            <div style={{zIndex:'3', top: '80%',color:'#f5ca9f'}} className="home-title">Construction</div>
+                        <div style={{margin:isMobile?0:'100px auto auto auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ConstructionBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
+                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
+                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Construction</div>
+                            <div className="home-service-type-line"></div>
+                            <div className="home-service-type-description">
+                                Building means creating. Buildings change our world. The roads, bridges, office or residential buildings, sports facilities and cultural centers creates living spaces. And that for more than 100 years all over India.
+                            </div>
                         </div>
                     </FadeInContainer>
                 </Col>
                 <Col md={6} xs={12} style={{padding:isMobile?0:'100px 0 100px 0', margin:0}}>
                     <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${InteriorBG})`, backgroundSize: 'cover',backgroundPosition:'center', borderRadius: isMobile?0:'8px'}}>
-                            <div style={{width:isMobile?'100%':'80%', height: '500px', backgroundImage: 'linear-gradient(360deg, rgba(0,0,0,1) 15%, rgba(255,255,255,0) 69%, rgba(0,0,0,0) 100%)', opacity: 0.5, margin:0}} className="home-overlay"></div>
-                            <div style={{zIndex:'3',top: '80%',color:'#f5ca9f'}} className="home-title">Interior Designs</div>
+                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${InteriorBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
+                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
+                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Interior Design</div>
+                            <div className="home-service-type-line"></div>
+                            <div className="home-service-type-description">
+                                Every material, surface, finish, and color contributes to the emotional impact of an interior space. So we consider the interrelatedness of every interior with the structure itself, 
+                                providing functional and aesthetic complements to architecture.
+                            </div>
                         </div>
                     </FadeInContainer>
                     <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ProjectPlanningBG})`, backgroundSize: 'cover',backgroundPosition:'center', borderRadius: isMobile?0:'8px'}}>
-                            <div style={{width:isMobile?'100%':'80%', height: '500px', backgroundImage: 'linear-gradient(360deg, rgba(0,0,0,1) 15%, rgba(255,255,255,0) 69%, rgba(0,0,0,0) 100%)', opacity: 0.5, margin:0}} className="home-overlay"></div>
-                            <div style={{zIndex:'3',top: '80%',color:'#f5ca9f'}} className="home-title">Project Planning</div>
+                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ProjectPlanningBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
+                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
+                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Project Planning</div>
+                            <div className="home-service-type-line"></div>
+                            <div className="home-service-type-description">
+                                Every material, surface, finish, and color contributes to the emotional impact of an interior space. So we consider the interrelatedness of every interior with the structure itself, 
+                                providing functional and aesthetic complements to architecture.
+                            </div>
                         </div>
                     </FadeInContainer>
                     <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${EstimationBG})`, backgroundSize: 'cover',backgroundPosition:'center', borderRadius: isMobile?0:'8px'}}>
-                            <div style={{width:isMobile?'100%':'80%', height: '500px', backgroundImage: 'linear-gradient(360deg, rgba(0,0,0,1) 15%, rgba(255,255,255,0) 69%, rgba(0,0,0,0) 100%)', opacity: 0.5, margin:0}} className="home-overlay"></div>
-                            <div style={{zIndex:'3',top: '80%',color:'#f5ca9f'}} className="home-title">Project Estimation</div>
+                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${EstimationBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
+                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
+                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Project Estimation</div>
+                            <div className="home-service-type-line"></div>
+                            <div className="home-service-type-description">
+                                Every material, surface, finish, and color contributes to the emotional impact of an interior space. So we consider the interrelatedness of every interior with the structure itself, 
+                                providing functional and aesthetic complements to architecture.
+                            </div>
                         </div>
                     </FadeInContainer>
                 </Col>
