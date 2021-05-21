@@ -24,7 +24,6 @@ import FlashMessage from './components/utils/flashMessage';
 class App extends Component{
 
   componentDidMount(){
-    console.log(this.props.backendUrl)
     if(window.location.pathname==='/'){
       this.props.dispatch(SET_LOADER({isHidden: true}));
     }
