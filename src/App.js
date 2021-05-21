@@ -21,12 +21,10 @@ import FlashMessage from './components/utils/flashMessage';
 
 
 
-
-
-
 class App extends Component{
 
   componentDidMount(){
+    console.log(this.props.backendUrl)
     if(window.location.pathname==='/'){
       this.props.dispatch(SET_LOADER({isHidden: true}));
     }
@@ -61,8 +59,9 @@ class App extends Component{
 
         // Access Token Has Expired 
         //Refreshes the Access Token
-        else if(err.response.status === 401 && !originalRequest._retry && originalRequest.url!==`${this.props.backendUrl}/userauthenticate`){
+        else if(err.response.status === 401 && !originalRequest._retry && originalRequest.url!==`${this.props.backendUrl}/userlogin`){
           console.log('Access Token Expired for Request:', originalRequest);
+          console.log(originalRequest.url)
           originalRequest._retry = true;
           return axios({
               method: 'get',
