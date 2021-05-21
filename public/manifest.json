@@ -1,6 +1,7 @@
 {
-  "short_name": "Online PC Builder",
-  "name": "Build Your PC Now",
+  "short_name": "Ayushman Architects",
+  "name": "Ayushman Architects",
+  "description": "Architecture Design, Interior Design, Construction, Project Planning, Project Estimation",
   "icons": [
     {
       "src": "favicon.ico",

@@ -2,23 +2,29 @@ import React from 'react';
 import BG1 from '../images/backgrounds/sean-pollock-PhYq704ffdA-unsplash.jpg'; 
 import BG2 from '../images/backgrounds/daniel-chen-cNaEqXSsZ0k-unsplash.jpg';
 import {connect} from 'react-redux';
-import FadeInContainer,{FadeInFromRight, FadeInFromLeft, FadeInFromBottom, RevealCountingAnimation} from '../components/utils/fadeInAnimation';
+import FadeInContainer,{FadeInFromRight, FadeInFromLeft, FadeInFromBottom, RevealCountingAnimation, RevealFadeAnimation} from '../components/utils/fadeInAnimation';
 import {Container, Row, Col} from 'react-bootstrap';
+import { useMediaQuery } from 'react-responsive';
 
 
 
 
 
 const AboutPage = (props)=>{
+    const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
 
     return(
         <Container fluid style={{padding: 0, backgroundColor: 'black'}}>
-            <Container fluid style={{backgroundImage:`url(${BG1})`, backgroundSize: 'cover', width: '100%', height: '70vh', padding: 0}}>
+            <Container fluid style={{backgroundImage:`url(${BG1})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '100vh', padding: 0, margin:0}}>
+                <Row style={{margin:0, padding:0}}><div className="about-overlay"></div></Row>
+                <RevealFadeAnimation>
+                    <div style={{color:'#f5ca9f',zIndex:3, textAlign:'center',paddingTop: isMobile?'50%':'20%', fontSize: '60px'}} className="about-title">About us</div>
+                </RevealFadeAnimation>
             </Container>
             
             <FadeInContainer FadeIn={FadeInFromBottom}>
                 <Col style={{marginTop: '100px'}} className="content-main">
-                    <Row><div className="about-title">About Us</div></Row>
+                    <Row><div className="about-title">Who we Are</div></Row>
                     <div className="about-line"></div>
                     <Row>
                         <div style={{color: 'white'}} className="about-description">
