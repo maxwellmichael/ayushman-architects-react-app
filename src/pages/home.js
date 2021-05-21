@@ -8,9 +8,9 @@ import image1 from '../images/backgrounds/architecture_bg2.jpg';
 import image2 from '../images/backgrounds/lucas-franco-aRTjFXs6HNc-unsplash.jpg';
 import Building2 from '../images/backgrounds/sean-pollock-PhYq704ffdA-unsplash.jpg';
 
-import Slide1 from '../images/backgrounds/mobile/slide1.jpg';
+import Slide3 from '../images/backgrounds/mobile/slide1.jpg';
 import Slide2 from '../images/backgrounds/mobile/slide2.jpg';
-import Slide3 from '../images/backgrounds/mobile/slide3.jpg';
+import Slide1 from '../images/backgrounds/mobile/slide3.jpg';
 import Slide4 from '../images/backgrounds/mobile/slide4.jpg';
 
 
