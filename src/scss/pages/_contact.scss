@@ -2,10 +2,18 @@ $gold: #ba9774;
 $light-gold: #f5ca9f;
 $gold-dark: rgba(243,149,59,0.73);
 
+.contact-overlay{
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+  }
+
 .contact-title{
 	line-height: 1.4em;
 	font-weight: 500;
-	text-align: center;
+	text-align: left;
 	position: relative;
 	padding: 6px;
 	font-size: 35px;
@@ -14,13 +22,29 @@ $gold-dark: rgba(243,149,59,0.73);
 	letter-spacing: 0.05em;
 	color: $gold;
 	@media screen and(max-width: 900px) {
-		font-size: 22px;
+		margin: 8px auto 16px auto;	
+		text-align: center;
+		font-size: 23px;
 		padding: auto;
-		letter-spacing: 0.02em;
-		word-spacing: 0.01em;
-		line-height: 1.2em;
   	}
+}
 
+.contact-description{
+	font-size: 16px;
+	letter-spacing: .1em;
+	line-height: 1.818181818em;
+	text-align: left;
+	position: relative;
+	padding: 6px;
+	padding-right: 5%;
+	font-family: 'Roboto', Arial, sans-serif;
+	color: white;
+	@media screen and(max-width: 900px) {
+		text-align: center;
+		font-size: 13px;
+		line-height: 1.918181818em;
+		padding: 12px 10px 12px 18px;
+	}
 }
 
 .contact-input{
@@ -41,7 +65,11 @@ $gold-dark: rgba(243,149,59,0.73);
 	&:focus{
 		border-color: $light-gold;
 		box-shadow: 0px 2px 19px -2px $gold-dark;
+	}
 
+	@media screen and(max-width: 900px) {
+		margin: 8px auto 8px auto;	
+		width: 92%;
 	}
 }
 
@@ -63,9 +91,12 @@ $gold-dark: rgba(243,149,59,0.73);
 	&:focus{
 		border-color: $light-gold;
 		box-shadow: 0px 2px 19px -2px $gold-dark;
-
 	}
 
+	@media screen and(max-width: 900px) {
+		margin: 8px auto 8px auto;	
+		width: 92%;
+	}
 }
 
 .contact-button{

@@ -7,8 +7,7 @@ import {ReactComponent as ExitIcon} from '../../images/icons/times-solid.svg';
 
 
 class FlashMessage extends Component{
-
-        
+    
 
     redirectUrl=()=>{
         setTimeout(()=>{

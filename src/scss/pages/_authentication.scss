@@ -1,35 +1,38 @@
 $primary-color: #384047;
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+$gold-dark: rgba(243,149,59,0.73);
 
 .mobile-form-main {
   align-items: center;
   height: 120vh;
-  width: 100vw;
+  width: 100%;
   margin:0;
   position: relative;
-  background-color: #e0e0e0;
+  background-color: black;
   font-family: 'Roboto', Arial, sans-serif;
+  overflow: 'hidden';
   
 
 
   .login-form, .register-form {
     width: 36%;
     height: 90%;
-    margin-top: 100px;
-    
-    margin-left: 32%;
+    margin: 100px auto auto auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 50px 40px;
     color: rgba(0, 0, 0, 0.8);
-    background-color: #f4f7f8;
+    background-color: white;
     border-radius: 50px;
+    border: 2px solid $gold-dark;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   
     h1 {
       margin: 0 0 24px 0;
       font-weight: bold;
-      color: #384047;
+      color: black;
       font-size: 29px;
       padding: 6px;
       letter-spacing: 0.15em;
@@ -37,7 +40,7 @@ $primary-color: #384047;
   
    
     .form-input-material {
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid $gold;
         width: 100%;
         margin: 12px 0;
         display: flex;
@@ -68,7 +71,7 @@ $primary-color: #384047;
         border-radius: 0;
         overflow: hidden;
         background-color: #6c757d;
-        color:cornsilk;
+        color:$light-gold;
         width: 70%;
         height: 10%;
         border:0;

@@ -1,5 +1,7 @@
-$main-bg: #e0e0e0;
-
+$main-bg: white;
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+$gold-dark: rgba(243,149,59,0.73);
 
 .success{
     border-left-color: chartreuse;
@@ -8,16 +10,16 @@ $main-bg: #e0e0e0;
 .flash_container{
     width: 40vw;
     height: 10vh;
-    position: absolute;
-    border: 2px solid black;
+    position: fixed;
     margin: auto;
     margin-top: 0;
     right: 2%;
     display: inline-block;
     background-color: $main-bg;
     border-radius: 4px;
+    border: 2px solid $light-gold;
     border-left: 5px solid black;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    box-shadow: 0 0 17px 3px $gold-dark,0 0 4px 2px $gold-dark;
     z-index: 999;
 
     button{
