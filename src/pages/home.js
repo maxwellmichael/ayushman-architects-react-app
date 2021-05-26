@@ -3,6 +3,7 @@ import { useTransition, animated, config } from 'react-spring'
 import {Image, Col, Row, Container} from 'react-bootstrap';
 import { useMediaQuery } from 'react-responsive';
 import { withRouter } from 'react-router-dom';
+import {Helmet} from 'react-helmet';
 import Building1 from '../images/backgrounds/daniel-chen-cNaEqXSsZ0k-unsplash.jpg';
 import image1 from '../images/backgrounds/architecture_bg2.jpg';
 import image2 from '../images/backgrounds/lucas-franco-aRTjFXs6HNc-unsplash.jpg';
