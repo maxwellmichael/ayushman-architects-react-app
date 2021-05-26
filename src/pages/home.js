@@ -53,6 +53,10 @@ const Home = (props)=>{
 
     return(
         <Container fluid style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
+            <Helmet>
+                <title>Ayushman Architects</title>
+                <meta name="description" content="Home, Ayushman Architects Home, Home Page, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools" />
+            </Helmet>
             <Row style={{width: '100%', height: '100vh', overflow: 'hidden', margin:0, padding:0, position: 'relative'}}>
                 {transitions.map(({item, props, key})=>(
                     <animated.div key={key} style={{...props, position: 'absolute', backgroundImage: `url(${item.url})`, backgroundSize:'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100%', width: '100%', margin: 0, paddingRight: 0, overflow: 'hidden'}}>
