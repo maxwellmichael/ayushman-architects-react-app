@@ -2,10 +2,6 @@ import React, {useState, useEffect} from 'react';
 import ProjectCard from './projectCard';
 import {connect} from 'react-redux';
 import {GET_PROJECTS} from '../../redux/projects/projects.actions';
-import FadeInContainer,{FadeInFromBottom} from '../../components/utils/fadeInAnimation';
-
-
-
 
 
 const Projects = (props)=>{
@@ -63,7 +59,7 @@ const Projects = (props)=>{
             </div>
 
             <div className="projects-container">
-                {props.projects.map(project=><FadeInContainer FadeIn={FadeInFromBottom} ><ProjectCard key={project.id} data={project} /></FadeInContainer>)}
+                {props.projects.map(project=><ProjectCard key={project.id} data={project} />)}
             </div>
             
            

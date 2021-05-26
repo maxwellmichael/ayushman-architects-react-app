@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import FadeInContainer,{FadeInFromRight, FadeInFromLeft, FadeInFromBottom, RevealCountingAnimation, RevealFadeAnimation} from '../components/utils/fadeInAnimation';
 import {Container, Row, Col} from 'react-bootstrap';
 import { useMediaQuery } from 'react-responsive';
+import {Helmet} from 'react-helmet';
+
 
 
 
@@ -15,6 +17,10 @@ const AboutPage = (props)=>{
 
     return(
         <Container fluid style={{padding: 0, backgroundColor: 'black'}}>
+            <Helmet>
+                <title>About</title>
+                <meta name="description" content="About, Ayushman Architects About, About Page, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools" />
+            </Helmet>
             <Container fluid style={{backgroundImage:`url(${BG1})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '100vh', padding: 0, margin:0}}>
                 <Row style={{margin:0, padding:0}}><div className="about-overlay"></div></Row>
                 <RevealFadeAnimation>

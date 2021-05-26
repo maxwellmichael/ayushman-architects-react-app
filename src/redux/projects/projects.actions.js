@@ -96,5 +96,72 @@ export const GET_PROJECTS = (data, backendUrl)=>(dispatch)=>{
         .catch(err=>{
             console.log(err)
         })
+}
+
+export const PUT_PROJECT = (data, backendUrl)=>async (dispatch)=>{
+  axios({
+      method: 'put',
+      url: `${backendUrl}/project`,
+      params: data,
+      withCredentials: true,
+      headers:{
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Methods': '*',
+        //Requires CSRF Header to access jwt_requireed protected routes
+        'X-CSRF-TOKEN-ACCESS': Cookies.get('csrf_access_token'),
+      }
+  })
+  .then(
+        res=>{
+          console.log(res.data)
+          dispatch(FLASH_A_MESSAGE({type:'SUCCESS', message:'Project has been Saved'}))
+      })
+  .catch(err=>{
+          console.log("err", err)
+          if(err.response){
+            console.log('Status Code', err.response.status)
+            if(err.response.status===401){
+              const values = {type:'ERROR', message:"Please Login To Continue", shouldRedirect:true, redirectUrl:'/userauthenticate'}
+              dispatch(FLASH_A_MESSAGE_AND_REDIRECT(values));
+            }    
+          }
+          else{
+            dispatch(FLASH_A_MESSAGE({type:'ERROR', message:err.message}))
+          }
+  })
+
+}
+
+export const DELETE_PROJECT = (data, backendUrl)=>async (dispatch)=>{
+  axios({
+      method: 'delete',
+      url: `${backendUrl}/project`,
+      params: data,
+      withCredentials: true,
+      headers:{
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Methods': '*',
+        //Requires CSRF Header to access jwt_requireed protected routes
+        'X-CSRF-TOKEN-ACCESS': Cookies.get('csrf_access_token'),
+      }
+  })
+  .then(
+        res=>{
+          console.log(res.data)
+          dispatch(FLASH_A_MESSAGE({type:'SUCCESS', message:'Project has been Saved'}))
+      })
+  .catch(err=>{
+          console.log("err", err)
+          if(err.response){
+            console.log('Status Code', err.response.status)
+            if(err.response.status===401){
+              const values = {type:'ERROR', message:"Please Login To Continue", shouldRedirect:true, redirectUrl:'/userauthenticate'}
+              dispatch(FLASH_A_MESSAGE_AND_REDIRECT(values));
+            }    
+          }
+          else{
+            dispatch(FLASH_A_MESSAGE({type:'ERROR', message:err.message}))
+          }
+  })
 
 }

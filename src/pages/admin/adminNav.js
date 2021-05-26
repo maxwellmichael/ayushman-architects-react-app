@@ -23,7 +23,7 @@ const NewNavigation = (props)=>{
 
     return(
         <React.Fragment>
-             <nav id="navbar" className="">
+             <nav id="navbar" style={{marginBottom:'100px'}}>
                 <div className="nav-wrapper">
                 <div className="logo">
                 <a href="/">
@@ -34,11 +34,8 @@ const NewNavigation = (props)=>{
                 </div>
 
                 <ul id="menu">
-                    <li><Link to="/">HOME</Link></li>
-                    <li><Link to="/projects">PROJECTS</Link></li>
-                    <li><Link to="/productsstore">STORE</Link></li>
-                    <li><Link to="/about">ABOUT</Link></li>
-                    <li><Link to="/contact">CONTACT</Link></li>
+                    <li><Link to="/admin">Admin</Link></li>
+                    <li><Link to="/newproject">New Project</Link></li>
                     <li>{props.isAuthenticated ? <Link onClick={()=>props.dispatch(USER_LOGOUT({backendUrl:props.backendUrl}))} to="/userauthenticate">Logout</Link> : null}</li>
                     <li>{!props.isAuthenticated ? <Link to="/userauthenticate">Login/SignUp</Link>:null}</li>
                 </ul>
@@ -55,11 +52,8 @@ const NewNavigation = (props)=>{
             {overlayTransition.map(({item, key, props: style})=>(
                 item && <animated.div key={key} style={style} className="overlay-menu">
                         <ul id="menu">
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/">HOME</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/projects">PROJECTS</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/productsstore">STORE</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/about">ABOUT</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/contact">CONTACT</Link></li>
+                        <li><Link onClick={()=>setMenuToggle(false)} to="/admin">Admin</Link></li>
+                        <li><Link onClick={()=>setMenuToggle(false)} to="/newproject">New Project</Link></li>
                         <li>{props.isAuthenticated ? <Link onClick={()=>{setMenuToggle(false); props.dispatch(USER_LOGOUT({backendUrl: props.backendUrl}))}} to="/userauthenticate">Logout</Link> : null}</li>
                         <li>{!props.isAuthenticated ? <Link onClick={()=>setMenuToggle(false)} to="/userauthenticate">Login/SignUp</Link>:null}</li>
                         </ul>

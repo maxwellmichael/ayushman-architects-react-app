@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLocation } from "react-router-dom";
 import {connect} from 'react-redux';
@@ -22,7 +23,7 @@ const ProjectPage = (props)=>{
             </div>
 
             <div className="project-page-gallery">
-                {location.state.images.map(image=>(<div style={{backgroundImage:`url(${image})`}} className="project-page-image"></div>))}
+                {location.state.images.map((image, i)=>(<div key={i} style={{backgroundImage:`url(${image})`}} className="project-page-image"></div>))}
 
                
             </div>

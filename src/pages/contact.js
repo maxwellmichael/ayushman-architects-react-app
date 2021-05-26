@@ -6,6 +6,7 @@ import {SUBMIT_CONTACT_FORM} from '../redux/contact/contact.actions';
 import {connect} from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import FadeInContainer, {FadeInFromRight, RevealFadeAnimation} from '../components/utils/fadeInAnimation';
+import {Helmet} from 'react-helmet';
 
 
 
@@ -21,6 +22,10 @@ const ContactPage = (props)=>{
 
   return(
     <Container fluid style={{backgroundColor: 'black', padding:0, maxWidth: '100vw', overflow:'hidden'}}>
+      <Helmet>
+        <title>Contact</title>
+        <meta name="description" content="Contact, Ayushman Architects Contact, Contact Page, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools" />
+      </Helmet>
       <Container fluid style={{backgroundImage:`url(${BG1})`, backgroundSize: 'cover', backgroundPosition:'center', width: '100%', height: '100vh', padding: 0, margin:0}}>
         <Row style={{margin:0}}><div className="contact-overlay"></div></Row>
         <RevealFadeAnimation>

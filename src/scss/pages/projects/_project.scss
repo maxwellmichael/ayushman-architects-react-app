@@ -1,9 +1,14 @@
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+$gold-dark: rgba(243,149,59,0.73);
+
 .project-page-main{
     width: 100%;
     height: auto;
     background-color: rgba(0,0,0,.05);
     box-sizing: border-box;
     font-family: 'Roboto', Arial, sans-serif;
+    padding-top: 60px;
 
     .project-page-content{
         width: 75%;
@@ -13,16 +18,17 @@
         position: relative;
 
         .project-page-title{
+            font-family: 'Libre Baskerville', serif;
             padding-top: 20px;
             text-align: left;
-            font-size: 24px;
-            font-weight: bold;
-            color: #2b3747;
-            letter-spacing: 0.3em;
-            direction: ltr;
-            line-height: 1.3em;
+            font-size: 26px;
+            font-weight: 500;
+            color: $gold;
+            letter-spacing: 0.05em;
+            line-height: 1.4em;
             display: inline-block;
             position: relative;
+            text-transform: uppercase;
         }
 
         .project-page-location{
@@ -30,7 +36,7 @@
             position: relative;
             text-align: left;
             font-size: 18px;
-            color: #788693;
+            color: $gold-dark;
             letter-spacing: 0.2em;
             line-height: 1.3em;
         }
@@ -43,9 +49,9 @@
             font-size: 18px;
             letter-spacing: 0.05em;
             direction: ltr;
-            line-height: 1.55em;
+            line-height: 2em;
             font-weight: 400;
-            color: #2b3747;
+            color: $gold;
         }
     }
 
@@ -59,6 +65,7 @@
         .project-page-image{
             width: 50%;
             height: 460px;
+            margin: auto;
             background-size: cover;
             background-position: center;
             display: inline-flex;
@@ -115,9 +122,10 @@
 
 
             .project-page-title{
-                font-size: 17px;
+                font-size: 20px;
                 letter-spacing: 0.1em;
                 line-height: 1.7em;
+                text-align: 'center';
             }
 
             .project-page-description{
