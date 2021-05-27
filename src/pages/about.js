@@ -19,9 +19,7 @@ const AboutPage = (props)=>{
         <Container fluid style={{padding: 0, backgroundColor: 'black'}}>
             <Helmet>
                 <title>About</title>
-                <meta name="description" content="About Ayushman Architects, Ayushman Architects, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools, ayushmanarchitects, AyushmanArchitects, AYUSHMANARCHITECTS, AYUSHMAN, ARCHITECTS, indian architects, best architects, architects in india, interiors, interior
-                construction, project estimation, project planning, planning, PLANNING, Planning, Estimation, Estimation, PROJECT ESTIMATION, PROJECTESTIMATION, projectestimation, interiordesigns, interiors for home, homeinteriors, architecturedesigns, architectures, architecture companies, architecture designs, architecture planning, architecture and interior designs
-                Interiors for home, interior for my home, best architecture companies" />
+                <meta name="description" content="Architecture,Interiors,Construction,Project Planning,Project Estimation,Architecture Designs,Architecture Designing,Beautiful Interior Designs,Best Architecture Designs,Interior Designs,Interior Designing,Interior Designing Companies,Best Interior Designs,Beautiful Interior Designs,Best Project Planning,Project Planning Companies,Project Estimation Companies,Best Project Estimation Companies" />
             </Helmet>
             <Container fluid style={{backgroundImage:`url(${BG1})`, backgroundSize: 'cover', backgroundPosition: 'center', width: '100%', height: '100vh', padding: 0, margin:0}}>
                 <Row style={{margin:0, padding:0}}><div className="about-overlay"></div></Row>
