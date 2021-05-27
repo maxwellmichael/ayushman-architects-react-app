@@ -56,7 +56,7 @@ const Home = (props)=>{
         <Container fluid style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Helmet>
                 <title>Ayushman Architects</title>
-                <meta name="description" content="Home, Ayushman Architects Home, Home Page, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools" />
+                <meta name="description" content="Home, Ayushman Architects Home, Home Page, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools, ayushmanarchitects, AyushmanArchitects, AYUSHMANARCHITECTS, AYUSHMAN, ARCHITECTS, indian architects, best architects, architects in india" />
             </Helmet>
             <Row style={{width: '100%', height: '100vh', overflow: 'hidden', margin:0, padding:0, position: 'relative'}}>
                 {transitions.map(({item, props, key})=>(
