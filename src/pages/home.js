@@ -56,7 +56,9 @@ const Home = (props)=>{
         <Container fluid style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Helmet>
                 <title>Ayushman Architects</title>
-                <meta name="description" content="Home, Ayushman Architects Home, Home Page, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools, ayushmanarchitects, AyushmanArchitects, AYUSHMANARCHITECTS, AYUSHMAN, ARCHITECTS, indian architects, best architects, architects in india" />
+                <meta name="description" content="Home, Ayushman Architects, Architecture design, Interior design, Product design And Construction, Architecture, Interior, Project, Architecture Tools, ayushmanarchitects, AyushmanArchitects, AYUSHMANARCHITECTS, AYUSHMAN, ARCHITECTS, indian architects, best architects, architects in india, interiors, interior
+                construction, project estimation, project planning, planning, PLANNING, Planning, Estimation, Estimation, PROJECT ESTIMATION, PROJECTESTIMATION, projectestimation, interiordesigns, interiors for home, homeinteriors, architecturedesigns, architectures, architecture companies, architecture designs, architecture planning, architecture and interior designs
+                Interiors for home, interior for my home, best architecture companies" />
             </Helmet>
             <Row style={{width: '100%', height: '100vh', overflow: 'hidden', margin:0, padding:0, position: 'relative'}}>
                 {transitions.map(({item, props, key})=>(
@@ -84,7 +86,7 @@ const Home = (props)=>{
                 </Col>
 
                 <Col sm={{span:3}} xs={{span: 12, order: 1, offset:0}} style={{height: 500, marginBottom: isMobile?0:'20px', padding:0}}>
-                    <Image className='home-image' src={Building} />
+                    <Image alt="Architecture Image" className='home-image' src={Building} />
                 </Col>
                 
             </Row>
@@ -109,7 +111,8 @@ const Home = (props)=>{
                     <Row md={{span: 1, offset: 2}}>
                         <Col style={{marginLeft: `${isMobile?0:60}px`}}>
                             <FadeInContainer FadeIn={FadeInFromRight}>
-                                <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">Architecture Designs</div>
+                                <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">, architecture planning, architecture and interior designs
+                                Interiors for home, interior for my home, best architecture companies</div>
                             </FadeInContainer>
                             <FadeInContainer FadeIn={FadeInFromLeft}>
                                 <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">Interior Designs</div>
@@ -130,7 +133,7 @@ const Home = (props)=>{
                     </Row>
                 </Col>
                 <Col md={{span:5, order:0}} xs={{span:12, order:1}} style={{padding: 0}}>
-                    <Image className="home-image" style={{height: '400px', marginTop: '4%'}} src={Building2} />
+                    <Image alt="Architecture Building" className="home-image" style={{height: '400px', marginTop: '4%'}} src={Building2} />
                 </Col>
             </Row>
 
