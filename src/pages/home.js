@@ -109,11 +109,10 @@ const Home = (props)=>{
                     <Row md={{span: 1, offset: 2}}>
                         <Col style={{marginLeft: `${isMobile?0:60}px`}}>
                             <FadeInContainer FadeIn={FadeInFromRight}>
-                                <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">, architecture planning, architecture and interior designs
-                                Interiors for home, interior for my home, best architecture companies</div>
+                                <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">Architecture Designing</div>
                             </FadeInContainer>
                             <FadeInContainer FadeIn={FadeInFromLeft}>
-                                <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">Interior Designs</div>
+                                <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">Interior Designing</div>
                             </FadeInContainer>
                             <FadeInContainer FadeIn={FadeInFromRight}>
                                 <div style={{position: 'relative', textAlign: 'left', color: 'white', fontSize: '16px'}} className="home-description">Construction</div>
