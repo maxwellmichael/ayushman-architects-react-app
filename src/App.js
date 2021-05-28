@@ -1,25 +1,13 @@
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/main.scss';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
-import AdminPage from './pages/admin';
-import Products from './pages/products'; 
-import Home from './pages/home';
-import Projects from './pages/projects';
-import Project from './pages/projects/project';
-import AddProjectForm from './pages/projects/addProjectForm';
-import ProtectedRoute from './components/authorisation/ProtectedRoutes';
-import AuthenticationForms from './pages/authentication';
-import ContactPage from './pages/contact';
-import AboutPage from './pages/about';
-import Layout from './components/layout';
 import {connect} from 'react-redux';
 import {UPDATE_AUTHENTICATED_USER_STATUS, SET_USER_AUTHENTICATED_IN_COOKIE} from "./redux/userAuthentication/userAuth.actions";
 import {SET_LOADER} from './redux/utils/loader/loader.actions';
 import axios from 'axios';
+import Routes from './routes';
+import Layout from './components/layout';
 import FlashMessage from './components/utils/flashMessage';
-
 
 
 
@@ -108,23 +96,10 @@ class App extends Component{
     return(
       <React.Fragment>
         {this.axiosInterceptops()}
-        <Router>
-          <FlashMessage />
-            <Switch>
-                <Layout>
-                  <Route path="/" exact render={props=>(<Home/>)} />
-                  <Route path="/contact" exact render={props=>(<ContactPage/>)} />
-                  <Route path="/about" exact render={props=>(<AboutPage/>)} />
-                  <Route path="/projects" exact render={props=>(<Projects/>)} />
-                  <ProtectedRoute path="/productsstore" exact component={Products} />
-                  <Route path="/project" exact render={props=>(<Project props={props}/>)} />
-                  <Route path="/userauthenticate" exact render={props=>(<AuthenticationForms props={props}/>)} />
-                  <Route path="/admin" exact render={props=>(<AdminPage/>)} />
-                  <Route path="/newproject" exact render={props=>(<AddProjectForm/>)} />
-                </Layout>
-            </Switch>
-           
-        </Router>
+        <FlashMessage />
+        <Layout>
+          <Routes />
+        </Layout>
       </React.Fragment>
     );
   }

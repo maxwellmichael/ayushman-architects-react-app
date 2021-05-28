@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './redux';
 import axios from 'axios';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import {BrowserRouter as Router} from 'react-router-dom';
 
 
 
@@ -24,7 +25,9 @@ axios.interceptors.request.use((request)=>{
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
