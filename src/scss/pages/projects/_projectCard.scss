@@ -58,8 +58,7 @@ $circle: 50%;
     z-index: 1;
 
     &:hover{
-        transform: scale(1.1);
-
+        
         .title{
             z-index:3;
             opacity: 1;
@@ -94,10 +93,10 @@ $circle: 50%;
   
 }
 .title{
-  position: absolute;
+  position: relative;
   opacity: 0;
-  top: 25%;
   left: 10%;
+  top: 100px;
   font-family: $primary-font;
   font-size: $large-font-size;
   font-weight: $thick-font-weight;
@@ -107,10 +106,10 @@ $circle: 50%;
 }
 
 .subtitle{
-    position: absolute;
+    position: relative;
     opacity: 0;
-    top: 10%;
     left: 10%;
+    top: 100px;
     font-family: $primary-font;
     font-size: $medium-font-size;
     font-weight: $thick-font-weight;
@@ -135,7 +134,12 @@ $circle: 50%;
   font-weight: $thick-font-weight;
   color: $neutral-gray;
   text-transform: $uppercase-transform;
-  transition: opacity 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  &:hover{
+    border-color: $light-gold;
+    box-shadow: 0px 2px 19px -2px $gold-dark;
+    color: $gold;
+}
 }
 
 
@@ -176,17 +180,23 @@ $circle: 50%;
     }
     .title{
         font-size: $mobile-large-font-size;
-        top: 20%;
+        text-align: center;
+        left: auto;
+        font-size: 24px;
     }
 
     .subtitle{
         font-size: $mobile-small-font-size;
+        text-align: center;
+        left: auto;
+
     }
 
     .cta-button{
         font-size: $mobile-extra-small-font-size;
         padding: 6px;
         width: 30%;
+        left: 35%;
     }
 
     .branding-logo{
