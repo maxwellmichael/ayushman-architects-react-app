@@ -1,56 +1,47 @@
 import React, {useState, useEffect} from 'react';
 import ProjectCard from './projectCard';
 import {connect} from 'react-redux';
-import {GET_PROJECTS} from '../../redux/projects/projects.actions';
-
-
-const Projects = (props)=>{
-
-    const {dispatch, backendUrl} = props
-
-    useEffect(() => {
-        let mounted = true;
-      
-        if(mounted){
-            dispatch(GET_PROJECTS(null, backendUrl))
-        }
-        return () => mounted = false;
-      }, [dispatch, backendUrl])
+import useFirestore from '../../firebase/useFirestore';
+import {Container, Row} from 'react-bootstrap';
+import MainBG from '../../images/backgrounds/uwe-hensel-44Uz2J7z9Rg-unsplash.jpg'
+import MobileBG from '../../images/backgrounds/sebastian-bednarek-OxC3gdWzB-8-unsplash.jpg'
+import {RevealFadeAnimation} from '../../components/utils/fadeInAnimation';
+import { useMediaQuery } from 'react-responsive';
 
 
 
-    const [projects, setProjects] = useState({type:'ARCHITECTURE', sort:'FEATURED'});
-
-    const handleProjectsSortType = (event)=>{
-        let newProjectsType = {...projects};
-        newProjectsType.sort=event.target.value;
-        console.log(newProjectsType);
-        setProjects(newProjectsType)
-    }
-
-    const handleProjectsType = (event)=>{
-        let newProjectsType = {...projects};
-        newProjectsType.type=event.target.value;
-        console.log(newProjectsType);
-        setProjects(newProjectsType);
-    }
+const Projects = ()=>{
+    const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
+    const {docs} = useFirestore('projects')
+    const [projectsType, setProjectsType] = useState('ARCHITECTURE');
+    const [projectsSort, setProjectsSort] = useState('FEATURED');
+    
+    useEffect(()=>{
+        console.log(projectsType,projectsSort)
+    }, [projectsType, projectsSort])
 
     
     return(
+        <React.Fragment>
+            <Container fluid style={{margin:0, padding:0, height: '100vh', backgroundImage:`url(${isMobile?MobileBG:MainBG})`, backgroundSize:'cover'}}>
+                <div className="contact-overlay"></div>
+                <Row style={{padding:isMobile?'60% 0 0 0':'20% 0 0 0', margin:0, zIndex:3}}>
+                    <RevealFadeAnimation>
+                        <div style={{fontSize:'60px', margin:'auto', zIndex:3}} className="projects-title">Our Work</div>
+                    </RevealFadeAnimation>
+                </Row>
+            </Container>
         <div className="projects-main">
             <div className="projects-nav">
-
                 <div className="projects-nav-link-container">
-                    <div className="projects-label">SORT</div>
-                    <select onChange={(event)=>{handleProjectsSortType(event)}} className="projects-nav-dropdown" >
+                    <select onChange={(event)=>{setProjectsSort(event.target.value)}} className="projects-nav-dropdown" >
                         <option className="projects-nav-dropdown-option" value='FEATURED'>Featured</option>
                         <option className="projects-nav-dropdown-option" value='NEWEST'>Newest</option>
                     </select>
                 </div>
 
                 <div className="projects-nav-link-container">
-                    <div className="projects-label">PROJECT</div>
-                    <select onChange={(event)=>{handleProjectsType(event)}} className="projects-nav-dropdown">
+                    <select onChange={(event)=>{setProjectsType(event.target.value)}} className="projects-nav-dropdown">
                         <option className="projects-nav-dropdown-option" value='ARCHITECTURE'>Architecture</option>
                         <option className="projects-nav-dropdown-option" value='INTERIOR_DESIGN'>Interior Design</option>
                         <option className="projects-nav-dropdown-option" value='CONSTRUCTION'>Construction</option>
@@ -58,13 +49,12 @@ const Projects = (props)=>{
                 </div>
             </div>
 
-            <div className="projects-container">
-                {props.projects.map(project=><ProjectCard key={project.id} data={project} />)}
+            <div style={{minHeight:'100vh'}} className="projects-container">
+                {docs.map((project, i)=><ProjectCard key={i} data={project} />)}
             </div>
             
-           
-
         </div>
+        </React.Fragment>
     )
 }
 
@@ -72,7 +62,6 @@ const mapStateToProps = (state)=>{
 
     return({
         projects: state.projects,
-        backendUrl: state.backendUrl,
     })
 }
 

@@ -23,9 +23,7 @@ const ProjectPage = (props)=>{
             </div>
 
             <div className="project-page-gallery">
-                {location.state.images.map((image, i)=>(<div key={i} style={{backgroundImage:`url(${image})`}} className="project-page-image"></div>))}
-
-               
+                {location.state.images.map((image, i)=>(<div key={i} style={{backgroundImage:`url(${image.url})`}} className="project-page-image"></div>))}
             </div>
 
         </div>

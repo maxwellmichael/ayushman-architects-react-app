@@ -6,7 +6,7 @@ const ProjectCard = (props)=>{
     
     return(
             <div className="project-card-main">
-                <div className="project-card-container" style={{backgroundImage:`url(${props.data.images[0]})`}}>
+                <div className="project-card-container" style={{backgroundImage:`url(${props.data.images?props.data.images[0].url:'#'})`}}>
                     <div className="title">{props.data.title}</div>
                     <div className="subtitle">{props.data.location}</div>
                     <button onClick={()=>props.history.push({pathname:'/project', state:{...props.data}})} className="cta-button">View</button>

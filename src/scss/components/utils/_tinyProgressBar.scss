@@ -1,0 +1,15 @@
+.tiny-progress{
+    width: 150px;
+    height: 18px;
+    background-color: transparent;
+    padding: 0;
+    border: 2px solid black;
+
+    .filler{
+        color: red;
+        margin:0;
+        height: 18px;
+        position: relative;
+        transition: width 0.5s ease-in-out;
+    }
+}

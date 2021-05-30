@@ -2,7 +2,6 @@ import React, {useState } from 'react';
 import {Link} from 'react-router-dom';
 import {config, useTransition, animated} from 'react-spring';
 import {connect} from 'react-redux';
-import {USER_LOGOUT} from '../../redux/userAuthentication/userAuth.actions';
 import { ReactComponent as Svglogo } from '../../images/ayushman_logo.svg';
 
 
@@ -36,11 +35,8 @@ const NewNavigation = (props)=>{
                 <ul id="menu">
                     <li><Link to="/">HOME</Link></li>
                     <li><Link to="/projects">PROJECTS</Link></li>
-                    <li><Link to="/productsstore">STORE</Link></li>
                     <li><Link to="/about">ABOUT</Link></li>
                     <li><Link to="/contact">CONTACT</Link></li>
-                    <li>{props.isAuthenticated ? <Link onClick={()=>props.dispatch(USER_LOGOUT({backendUrl:props.backendUrl}))} to="/userauthenticate">Logout</Link> : null}</li>
-                    <li>{!props.isAuthenticated ? <Link to="/userauthenticate">Login/SignUp</Link>:null}</li>
                 </ul>
                
                
@@ -57,11 +53,8 @@ const NewNavigation = (props)=>{
                         <ul id="menu">
                         <li><Link onClick={()=>setMenuToggle(false)} to="/">HOME</Link></li>
                         <li><Link onClick={()=>setMenuToggle(false)} to="/projects">PROJECTS</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/productsstore">STORE</Link></li>
                         <li><Link onClick={()=>setMenuToggle(false)} to="/about">ABOUT</Link></li>
                         <li><Link onClick={()=>setMenuToggle(false)} to="/contact">CONTACT</Link></li>
-                        <li>{props.isAuthenticated ? <Link onClick={()=>{setMenuToggle(false); props.dispatch(USER_LOGOUT({backendUrl: props.backendUrl}))}} to="/userauthenticate">Logout</Link> : null}</li>
-                        <li>{!props.isAuthenticated ? <Link onClick={()=>setMenuToggle(false)} to="/userauthenticate">Login/SignUp</Link>:null}</li>
                         </ul>
                 </animated.div>
             ))}
@@ -70,11 +63,6 @@ const NewNavigation = (props)=>{
     )
 
 }
-
-
-
-
-
 
 
 const mapStateToProps=(state)=>{

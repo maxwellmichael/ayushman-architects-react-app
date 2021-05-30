@@ -4,11 +4,15 @@
 $primary: #E62E50;
 $accent: #EE9BAA;
 $primary-background: rgba(90%, 18%, 31%, 0.85), rgba(90%, 18%, 31%, 0.95);
-$neutral-white-background: rgba(100%, 100%, 100%, 0.15), rgba(100%, 100%, 100%, 0.35);
+$neutral-white-background: rgba(0, 0, 0, 0.61), rgba(0, 0, 0, 0.61);
 $neutral-white: #ffffff;
 $faded-white: rgba(255,255,255,0.8);
 $neutral-gray: #424246;
 $background-color: #D31A42; 
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+$dark-gold: rgba(243,149,59,0.73);
+
 
 //fonts
 $primary-font: "Ubuntu";
@@ -56,8 +60,23 @@ $circle: 50%;
     &:hover{
         transform: scale(1.1);
 
+        .title{
+            z-index:3;
+            opacity: 1;
+        }
+
+        .subtitle{
+            z-index:3;
+            opacity: 1;
+        }
+
+        .cta-button{
+            z-index:3;
+            opacity: 1;
+        }
+
         .right-triangle{
-            height: 50%;
+            height: 100%;
         }
     }
 }
@@ -71,37 +90,39 @@ $circle: 50%;
     width: 100%;
     background: linear-gradient($neutral-white-background);
     background-size: cover;
-    -webkit-clip-path: $triangle;
-    clip-path: $triangle;
     transition: height 1.5s;
   
 }
 .title{
   position: absolute;
-  opacity: 1.0;
+  opacity: 0;
   top: 25%;
   left: 10%;
   font-family: $primary-font;
   font-size: $large-font-size;
   font-weight: $thick-font-weight;
-  color: $faded-white;
+  color: $light-gold;
   text-transform: $uppercase-transform;
+  transition: opacity 1s ease-in-out;
 }
 
 .subtitle{
     position: absolute;
-    opacity: 1.0;
+    opacity: 0;
     top: 10%;
     left: 10%;
     font-family: $primary-font;
     font-size: $medium-font-size;
     font-weight: $thick-font-weight;
-    color: $neutral-gray;
+    color: $dark-gold;
     text-transform: $uppercase-transform;
+    transition: opacity 1s ease-in-out;
+
   }
 
 .cta-button{
   position: absolute;
+  opacity: 0;
   width: 25%;
   height: 10%;
   bottom: 25%;
@@ -114,6 +135,7 @@ $circle: 50%;
   font-weight: $thick-font-weight;
   color: $neutral-gray;
   text-transform: $uppercase-transform;
+  transition: opacity 1s ease-in-out;
 }
 
 

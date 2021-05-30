@@ -1,18 +1,18 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import {connect} from 'react-redux';
-import {POST_PROJECT} from '../../redux/projects/projects.actions';
-
+import {ADD_PROJECT_TO_FIRESTORE} from '../../redux/firebase/projects/projects.actions'
+import AddProjectImagesForm from './addProjectImagesForm'
 
 
 const AddProjectForm = (props)=>{
-
     const {register, handleSubmit} = useForm();
 
     const onSubmit = (data)=>{
-        
-        props.dispatch(POST_PROJECT(data, props.backendUrl));
+        data.images=props.projectImages;
+        props.dispatch(ADD_PROJECT_TO_FIRESTORE(data));
     }
+
 
     return(
         <form onSubmit={handleSubmit(onSubmit)} className="form-main">
@@ -49,13 +49,7 @@ const AddProjectForm = (props)=>{
 
                 <div className="form-input">
                     <div className="label">Images:</div>
-                    <input name="image1" className="input" type="file" accept=".jpg,.jpeg,.png" ref={register} />
-                    <input name="image2" className="input" type="file" accept=".jpg,.jpeg,.png" ref={register} />
-                    <input name="image3" className="input" type="file" accept=".jpg,.jpeg,.png" ref={register} />
-                    <input name="image4" className="input" type="file" accept=".jpg,.jpeg,.png" ref={register} />
-                    <input name="image5" className="input" type="file" accept=".jpg,.jpeg,.png" ref={register} />
-                    <input name="image6" className="input" type="file" accept=".jpg,.jpeg,.png" ref={register} />
-
+                    <AddProjectImagesForm />
                 </div>
 
             </div>
@@ -67,9 +61,12 @@ const AddProjectForm = (props)=>{
 }
 
 
-const mapStateToProps = (state)=>({
 
-    backendUrl: state.backendUrl,
-})
+const mapStateToProps = (state)=>{
+    return({
+        projectImages: state.projectImages,
+    })
+}
+
 
 export default connect(mapStateToProps)(AddProjectForm);

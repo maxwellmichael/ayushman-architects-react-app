@@ -1,31 +1,58 @@
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+$dark-gold: rgba(243,149,59,0.73);
+
+
+.projects-title{
+	line-height: 1.4em;
+	font-weight: 500;
+	text-align: left;
+	position: relative;
+	padding: 6px;
+	font-size: 35px;
+	margin-bottom: 1rem;
+	font-family: 'Libre Baskerville', serif;
+	letter-spacing: 0.05em;
+	color: $light-gold;
+	@media screen and(max-width: 900px) {
+		margin: 8px auto 16px auto;	
+		text-align: center;
+		font-size: 23px;
+		padding: auto;
+  	}
+}
+
 .projects-main{
     width: 100%;
     height: 100%;
-    background-color: #f6f6f6;
+    background-color: black;
     position: relative;
-
+    top: 100px;
+    bottom: 60px;
+    
     
     .projects-nav{
         width: 100%;
         height: 40px;
-        top:0;
+        top:6px;
         position: relative;
+        display: inline-flex;
+        justify-content: center;
+        border-bottom: 2px solid $gold;
+
         
         .projects-nav-link-container{
             position: relative;
             width: auto;
             height: 100%;
-            margin-left: 5%;
-            background: rgba(0,0,0,.05);
-            display: inline-flex;
-            border-bottom-left-radius: 12px;
-            border-top-right-radius: 12px;
+            background: black;
+            border:0;
 
 
             .projects-label{
+                color: $light-gold;
                 font-size: 13px;
                 height: 20px;
-                display: inline-flex;
                 padding: 10px 10px 10px 10px;
                 font-weight: bold;
                 font-family: 'Roboto', Arial, sans-serif;
@@ -35,11 +62,11 @@
             .projects-nav-dropdown{
                 content: '';
                 text-decoration: none;
-                color: black;
+                color: $light-gold;
                 padding:6px;
                 display: inline-flex;
                 background: rgba(0,0,0,.05);
-                font-size: 12px;
+                font-size: 15px;
                 border-top-right-radius: 12px;
                 font-family: 'Roboto', Arial, sans-serif;
                 letter-spacing: 0.1em;
@@ -58,7 +85,7 @@
 
     .projects-container{
         position: relative;
-        margin-top: 5%;
+        margin-top: 100px;
         width: 100%;
         height: auto;
     }
@@ -73,7 +100,7 @@
     
     
                 .projects-label{
-                    font-size: 10px;
+                    font-size: 12px;
                     height: 20px;
                     display: inline-flex;
                     padding: 10px 10px 10px 10px;
@@ -82,11 +109,9 @@
     
                 .projects-nav-dropdown{
                     text-decoration: none;
-                    color: black;
                     padding:4px;
                     display: inline-flex;
-                    background: rgba(0,0,0,.05);
-                    font-size: 12px;
+                    font-size: 16px;
                 }
             }
         }
