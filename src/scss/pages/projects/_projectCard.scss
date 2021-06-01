@@ -42,8 +42,8 @@ $circle: 50%;
 .project-card-main{
     display: inline-flex;
     position: relative;
-    margin: 1% 2.5% 0% 2.5%;
-    width: 45%;
+    margin: auto;
+    width: 100%;
     height: 420px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     overflow: hidden;
@@ -171,8 +171,8 @@ $circle: 50%;
 @media all and (max-width: 450px) {
 
     .project-card-main{
-        width: 80%;
-        margin: 5% 10% 0% 10%;
+        width: 100%;
+        margin: auto;
     }
 
     .project-card-container{

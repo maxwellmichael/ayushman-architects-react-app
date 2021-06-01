@@ -1,6 +1,6 @@
 $gold: #ba9774;
 $light-gold: #f5ca9f;
-$gold-dark: rgba(243,149,59,0.73);
+$dark-gold: rgba(243,149,59,0.73);
 
 
 
@@ -85,7 +85,7 @@ $gold-dark: rgba(243,149,59,0.73);
 	text-transform: uppercase;
 	line-height: 1.818181818em;
 	font-weight:700;
-	width: 200px;
+	width: 250px;
 	height: 60px;
 	padding: 12px;
 	margin: 40px auto auto 0px;
@@ -94,7 +94,7 @@ $gold-dark: rgba(243,149,59,0.73);
 	background-color: black;
 	color: $gold;
 	&:hover{
-		box-shadow: 0 0 17px 3px $gold-dark,0 0 4px 2px $gold-dark;
+		box-shadow: 0 0 17px 3px $dark-gold,0 0 4px 2px $dark-gold;
 		border: 1px solid $light-gold;
 	}
 
@@ -186,3 +186,90 @@ $gold-dark: rgba(243,149,59,0.73);
 }
 
 
+
+.home-card{
+  width: 100%;
+  height: 350px;
+  min-height: 350px;
+  background-color: black;
+  border: 2px solid $gold;
+  padding:0;
+  margin:0;
+  transition: all 0.5s linear;
+    &:hover{
+      box-shadow: 0 0 17px 3px $dark-gold,0 0 4px 2px $dark-gold;
+    }
+
+  .card-logo{
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    background-color: $light-gold;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .card-title{
+    line-height: 1.4em;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+    padding: 6px;
+    font-size: 30px;
+    font-family: 'Libre Baskerville', serif;
+    letter-spacing: 0.05em;
+    color: $gold;
+    margin-bottom: 20px;
+    @media screen and(max-width: 900px) {
+      font-size: 22px;
+      padding: auto;
+      letter-spacing: 0.02em;
+      word-spacing: 0.01em;
+      line-height: 1.2em;
+    }
+  }
+
+  .card-description{
+    font-size: 14px;
+    letter-spacing: .05em;
+    line-height: 1.818181818em;
+    text-align: center;
+    position: relative;
+    margin: 0 5% auto 5%;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: white;
+    @media screen and(max-width: 900px) {
+      font-size: 16px;
+      line-height: 1.918181818em;
+      margin: auto 10px 12px 10px;
+    }
+  }
+
+  .card-button{
+    font-size: 13px;
+    letter-spacing: .2em;
+    line-height: 1.818181818em;
+    font-weight:700;
+    width: 40%;
+    height: 40px;
+    padding: auto;
+    margin: 20px auto auto 30%;
+    border: 1px solid $gold;
+    transition: all 0.6s ease-in-out;
+    background-color: white;
+    color: black;
+    &:hover{
+      box-shadow: 0 0 17px 3px $dark-gold,0 0 4px 2px $dark-gold;
+      border: 1px solid $light-gold;
+    }
+
+  }
+
+  @media screen and(max-width:900px){
+    height: 400px;
+    
+  }
+
+}

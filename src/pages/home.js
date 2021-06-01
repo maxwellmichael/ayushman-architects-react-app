@@ -3,11 +3,24 @@ import { useTransition, animated, config } from 'react-spring'
 import {Image, Col, Row, Container} from 'react-bootstrap';
 import { useMediaQuery } from 'react-responsive';
 import { withRouter } from 'react-router-dom';
+import useFirestore from '../firebase/useFirestore';
 import {Helmet} from 'react-helmet';
+import ProjectCard from './projects/projectCard';
+
 import Building1 from '../images/backgrounds/daniel-chen-cNaEqXSsZ0k-unsplash.jpg';
 import image1 from '../images/backgrounds/architecture_bg2.jpg';
 import image2 from '../images/backgrounds/lucas-franco-aRTjFXs6HNc-unsplash.jpg';
 import Building2 from '../images/backgrounds/sean-pollock-PhYq704ffdA-unsplash.jpg';
+import ArchitectureDrawings from '../images/backgrounds/architecture_drawings.png';
+
+
+import {ReactComponent as ArchitectureLogo} from '../images/icons/services/architecture.svg';
+import {ReactComponent as ConstructionLogo} from '../images/icons/services/construction.svg';
+import {ReactComponent as PlanningLogo} from '../images/icons/services/planning.svg';
+import {ReactComponent as EstimationLogo} from '../images/icons/services/estimation.svg';
+import {ReactComponent as InteriorLogo} from '../images/icons/services/interior.svg';
+
+
 
 import Slide3 from '../images/backgrounds/mobile/slide1.jpg';
 import Slide2 from '../images/backgrounds/mobile/slide2.jpg';
@@ -17,17 +30,12 @@ import Slide4 from '../images/backgrounds/mobile/slide4.jpg';
 
 
 import Building from '../images/backgrounds/building.jpg';
-import ArchitectureBG from '../images/backgrounds/4.-STRANY-PERSIDSKOGO-ZALIVA-CHastnaya-rezidentsiya-CITADEL-GULF-COUNTRIES-Private-residence-CITADEL.webp';
-import ConstructionBG from '../images/backgrounds/construction.jfif';
-import ProjectPlanningBG from '../images/backgrounds/project-planning.jpg';
-import EstimationBG from '../images/backgrounds/estimation.jpg';
-import InteriorBG from '../images/backgrounds/interior_bg.jpg';
 
 
 import FadeInContainer, {FadeInFromLeft, FadeInFromRight, FadeInFromBottom, FadeInFromTop, RevealFadeAnimation} from '../components/utils/fadeInAnimation';
 
 const Home = (props)=>{
-
+    const {docs} = useFirestore('projects') 
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
     const slides = [
         { id: 0, url: isMobile?Slide1:Building1, content: 'Slide 1' },
@@ -86,15 +94,101 @@ const Home = (props)=>{
                 <Col sm={{span:3}} xs={{span: 12, order: 1, offset:0}} style={{height: 500, marginBottom: isMobile?0:'20px', padding:0}}>
                     <Image alt="Architecture Image" className='home-image' src={Building} />
                 </Col>
-                
             </Row>
 
-            <Row style={{margin:'100px 0 100px 0', padding:0}}>
+            <Row style={{margin:'200px 0 200px 0', padding:0}}>
+                <FadeInContainer FadeIn={FadeInFromBottom}>
+                    <div style={{fontSize:isMobile?'22px':'26px',textAlign:'center',color:'#f5ca9f'}} className="home-description">
+                        We believe that well designed spaces encourage joy and connectivity between people. We design by exploring, investigating and testing which creates meaningful spaces to live, work and play.
+                    </div>
+                </FadeInContainer>
+            </Row>
+            
+            {/*-----------------------Services Start---------------------*/}
+            <Row xs={1} style={{margin:'100px 0 40px 0', padding:0}}>
                 <RevealFadeAnimation>
-                    <div style={{fontSize:'60px', margin:'auto'}} className="home-title">What we Do</div>
+                    <div style={{fontSize:isMobile?'40px':'60px', margin:'auto'}} className="home-title">What we do</div>
                 </RevealFadeAnimation>
+                <div style={{padding:0,margin:'auto',textAlign:'center',fontSize:'18px'}} className="home-description">We are a full service architecture, interiors, construction, planning & estimation firm.</div>
             </Row>
+            <div style={{width: '100%', margin:'0px 0px 80px 0px'}} className="home-line"></div>
+            <Row md={3} xs={1} style={{width:'100%', margin:0, padding:0}}>
+                <Col style={{margin:'auto', padding:'40px 30px 20px 30px'}}>
+                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
+                    <div className="home-card">
+                        <div className="card-logo"><ArchitectureLogo /></div>
+                        <div className="card-title">Architecture</div>
+                        <div className="card-description">Building Design, Feasibility Studies & Zoning Studies Adaptive Re-Use, Building Evaluation & Analysis...</div>
+                        <button className="card-button">View More</button>
+                    </div>
+                    </FadeInContainer>
+                </Col>
+                <Col style={{margin:'auto', padding:'40px 30px 20px 30px'}}>
+                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
+                    <div className="home-card">
+                        <div className="card-logo"><InteriorLogo /></div>
+                        <div className="card-title">Interior</div>
+                        <div className="card-description">Space Planning/Test Fits, Full Service Interior Design, Furniture Selection, 3-D Visualization..</div>
+                        <button className="card-button">View More</button>
+                    </div>
+                    </FadeInContainer>
+                </Col>
+                <Col style={{margin:'auto', padding:'40px 30px 20px 30px'}}>
+                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
+                    <div className="home-card">
+                        <div className="card-logo"><PlanningLogo style={{width:'56px', height:'56px'}} /></div>
+                        <div className="card-title">Planning</div>
+                        <div className="card-description">Site Evaluation & Analysis Site/Master/Campus Planning Green Roof Design, Site Logistic Planning...</div>
+                        <button className="card-button">View More</button>
+                    </div>
+                    </FadeInContainer>
+                </Col>
+                <Col style={{margin:'auto', padding:'40px 30px 20px 30px'}}>
+                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
+                    <div className="home-card">
+                        <div className="card-logo"><ConstructionLogo style={{width:'56px', height:'56px'}} /></div>
+                        <div className="card-title">Construction</div>
+                        <div className="card-description">Marking & Grading, Excavation, Concreting, Brick masonry, Plumbing, Welding, Electrical, Roof laying...</div>
+                        <button className="card-button">View More</button>
+                    </div>
+                    </FadeInContainer>
+                </Col>
+                <Col style={{margin:'auto', padding:'40px 30px 20px 30px'}}>
+                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
+                    <div className="home-card">
+                        <div className="card-logo"><EstimationLogo style={{width:'56px', height:'56px'}} /></div>
+                        <div className="card-title">Estimation</div>
+                        <div className="card-description">Top-down estimate, Comparative or analogous estimation, Bottom-up estimate & Expert judgement...</div>
+                        <button className="card-button">View More</button>
+                    </div>
+                    </FadeInContainer>
+                </Col>
+            </Row>
+            <Row style={{margin:'100px 0px 100px 0px',padding:0,width:'100%',height:isMobile?'50vh':'80vh',backgroundColor:'white',position:'relative'}}>
+                <div style={{width:'100%',height:'100%',margin:0,position:'absolute',backgroundImage:`url(${ArchitectureDrawings})`,backgroundAttachment:'fixed',backgroundSize:'cover'}}>
+                </div>
+                <Col style={{margin:isMobile?'60px auto auto auto':'150px auto auto auto'}}>
+                    <RevealFadeAnimation>
+                        <div style={{textTransform: 'uppercase', margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'20px':'30px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'#f5ca9f',textAlign:isMobile?'justify':'center',zIndex:3}} className="home-title">
+                            "A GREAT BUILDING MUST BEGIN WITH THE IMMEASURABLE, MUST GO THROUGH MEASURABLE MEANS WHEN IT IS BEING DESIGNED, AND IN THE END MUST BE UNMEASURED."
+                        </div>
+                    </RevealFadeAnimation>
+                    <div style={{textTransform: 'uppercase', margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'30px':'40px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'black',textAlign:'center',zIndex:3}} className="home-title">
+                    -   LOUIS KAHN - 
+                    </div>
+                </Col>
+                <div style={{height:'100%',width:'100%',backgroundColor:'black',opacity:0.7,position:'absolute'}}></div>        
+            </Row>
+            {/*-----------------------Services End---------------------*/}
 
+
+            {/*------------------------Projects Start------------------- */}
+            <Row xs={1} style={{margin:'200px 0 40px 0', padding:0}}>
+                <RevealFadeAnimation>
+                    <div style={{fontSize:isMobile?'40px':'60px', margin:'auto'}} className="home-title">What we have Built</div>
+                </RevealFadeAnimation>
+                <div style={{padding:0,margin:'auto',textAlign:'center',fontSize:'18px'}} className="home-description">We Build Your Dream</div>
+            </Row>
             <Row md={3} xs={2} style={{backgroundColor:'black', width: '100%', height: 'auto', margin: '0px 0px 0px 0px', paddingBottom: '40px'}}>
                 <Col md={1} xs={1} >
                     <div style={{height: '80%', backgroundColor: '#ba9774', marginLeft: '80%'}} className="home-line-inverted"></div>   
@@ -102,7 +196,7 @@ const Home = (props)=>{
                 <Col md={{span:5, order:1}} xs={{span:8, order:0}} style={{marginTop: '4%', marginLeft:'20px'}} >
                     <FadeInContainer FadeIn={FadeInFromTop}>
                         <Row style={{marginBottom: '8%'}}>
-                            <div style={{textAlign: 'right', color: '#ba9774', fontSize: '20px', paddingBottom:0, paddingLeft:0, letterSpacing: '0.1em'}} className="home-description">SERVICES</div>
+                            <div style={{textAlign: 'right', color: '#ba9774', fontSize: '20px', paddingBottom:0, paddingLeft:0, letterSpacing: '0.1em'}} className="home-description">CATEGORIES</div>
                             <div style={{width: '100%', marginTop:0}} className="home-line"></div>
                         </Row>
                     </FadeInContainer>
@@ -126,7 +220,7 @@ const Home = (props)=>{
                         </Col>
                     </Row>
                     <Row style={{marginTop: '80px', marginLeft: isMobile?0:'60%'}}>
-                        <button onClick={()=>{props.history.push('/projects')}} className='home-button'>View Projects</button>
+                        <button onClick={()=>{props.history.push('/projects')}} className='home-button'>View All Projects</button>
                     </Row>
                 </Col>
                 <Col md={{span:5, order:0}} xs={{span:12, order:1}} style={{padding: 0}}>
@@ -134,76 +228,22 @@ const Home = (props)=>{
                 </Col>
             </Row>
 
+                
             <Row style={{margin:'100px 0 100px 0', padding:0}}>
-                <FadeInContainer FadeIn={FadeInFromBottom}>
-                    <div style={{fontSize:isMobile?'22px':'26px',textAlign:'center',color:'#f5ca9f'}} className="home-description">
-                        We believe that well designed spaces encourage joy and connectivity between people. We design by exploring, investigating and testing which creates meaningful spaces to live, work and play.
-                    </div>
-                </FadeInContainer>
+                <RevealFadeAnimation>
+                    <div style={{fontSize:'60px', margin:'auto'}} className="home-title">Featured Projects</div>
+                </RevealFadeAnimation>
             </Row>
-            
-            <Row md={2} xs={1} style={{margin: '0 0 100px 0', padding:0}}>
-                <Col md={6} xs={12} style={{padding:isMobile?0:'100px 0 100px 0', margin:0}}>
-                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'100px auto auto auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ArchitectureBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
-                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
-                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Architecture Design</div>
-                            <div className="home-service-type-line"></div>
-                            <div className="home-service-type-description">
-                                We believe architecture must leave a lasting impact on the people who live, work, and play in the buildings we design. 
-                                That’s why you’ll never see a boring style. 
-                                From the moment a project begins, we work with you to determine what’s most successful for your specific needs.
-                            </div>
-                        </div>
-                    </FadeInContainer>
-                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'100px auto auto auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ConstructionBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
-                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
-                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Construction</div>
-                            <div className="home-service-type-line"></div>
-                            <div className="home-service-type-description">
-                                Building means creating. Buildings change our world. The roads, bridges, office or residential buildings, sports facilities and cultural centers creates living spaces. And that for more than 100 years all over India.
-                            </div>
-                        </div>
-                    </FadeInContainer>
-                </Col>
-                <Col md={6} xs={12} style={{padding:isMobile?0:'100px 0 100px 0', margin:0}}>
-                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${InteriorBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
-                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
-                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Interior Design</div>
-                            <div className="home-service-type-line"></div>
-                            <div className="home-service-type-description">
-                                Every material, surface, finish, and color contributes to the emotional impact of an interior space. So we consider the interrelatedness of every interior with the structure itself, 
-                                providing functional and aesthetic complements to architecture.
-                            </div>
-                        </div>
-                    </FadeInContainer>
-                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${ProjectPlanningBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
-                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
-                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Project Planning</div>
-                            <div className="home-service-type-line"></div>
-                            <div className="home-service-type-description">
-                                Every material, surface, finish, and color contributes to the emotional impact of an interior space. So we consider the interrelatedness of every interior with the structure itself, 
-                                providing functional and aesthetic complements to architecture.
-                            </div>
-                        </div>
-                    </FadeInContainer>
-                    <FadeInContainer partialVisibility FadeIn={FadeInFromBottom}>
-                        <div style={{margin:isMobile?0:'auto auto 100px auto',width:isMobile?'100%':'80%',height:'500px',backgroundImage: `url(${EstimationBG})`, backgroundSize: 'cover',backgroundPosition:'center',borderRadius: isMobile?0:'8px', overflow:'hidden'}} className="home-service-type">
-                            <div style={{width:isMobile?'100%':'80%', height: '500px'}} className="home-service-type-overlay"></div>
-                            <div style={{color:'#f5ca9f',fontSize:isMobile?'30px':'35px'}} className="home-title home-service-type-title">Project Estimation</div>
-                            <div className="home-service-type-line"></div>
-                            <div className="home-service-type-description">
-                                Every material, surface, finish, and color contributes to the emotional impact of an interior space. So we consider the interrelatedness of every interior with the structure itself, 
-                                providing functional and aesthetic complements to architecture.
-                            </div>
-                        </div>
-                    </FadeInContainer>
-                </Col>
+            <Row md={2} xs={1} style={{width:'100%', margin:0, padding:0}}>
+                    {docs.map((project, i)=><Col key={i} style={{marginTop: 60}}>
+                                            <FadeInContainer FadeIn={FadeInFromBottom}>
+                                                <ProjectCard data={project} />
+                                            </FadeInContainer>
+                                            </Col>)}
             </Row>
-            
+             {/*------------------------Projects End------------------- */}
+
+    
             <Row md={1} xs={1} style={{height: isMobile?'200px':'150px', width: '100%', margin: '100px 0 100px 0', padding:0, overflow: 'hidden'}} >
                 <Col style={{margin:0}}>
                     <RevealFadeAnimation>

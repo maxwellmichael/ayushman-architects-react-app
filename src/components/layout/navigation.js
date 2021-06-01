@@ -51,10 +51,10 @@ const NewNavigation = (props)=>{
             {overlayTransition.map(({item, key, props: style})=>(
                 item && <animated.div key={key} style={style} className="overlay-menu">
                         <ul id="menu">
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/">HOME</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/projects">PROJECTS</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/about">ABOUT</Link></li>
-                        <li><Link onClick={()=>setMenuToggle(false)} to="/contact">CONTACT</Link></li>
+                            <li><Link onClick={()=>setMenuToggle(false)} to="/">HOME</Link></li>
+                            <li><Link onClick={()=>setMenuToggle(false)} to="/projects">PROJECTS</Link></li>
+                            <li><Link onClick={()=>setMenuToggle(false)} to="/about">ABOUT</Link></li>
+                            <li><Link onClick={()=>setMenuToggle(false)} to="/contact">CONTACT</Link></li>
                         </ul>
                 </animated.div>
             ))}

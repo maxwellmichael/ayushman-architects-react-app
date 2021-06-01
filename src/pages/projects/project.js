@@ -18,7 +18,7 @@ const ProjectPage = (props)=>{
 
                 <div className="project-page-location">{location.state.location}</div>
 
-                <div className="project-page-description">{location.state.description}</div>
+                <div className="project-page-description">{location.state.content}</div>
 
             </div>
 

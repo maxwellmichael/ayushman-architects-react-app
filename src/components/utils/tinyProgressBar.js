@@ -6,6 +6,7 @@ import {ADD_IMAGE} from '../../redux/firebase/images/project_images/images.actio
 const ProgressBar = ({file, setFile, dispatch})=>{
     const {url, progress} = useStorage(file);
     console.log(url, progress)
+    const progressInPixels = (progress/100)*150;
     
     useEffect(()=>{
         if(url){
@@ -17,7 +18,8 @@ const ProgressBar = ({file, setFile, dispatch})=>{
 
     return(
         <div className="tiny-progress">
-            <div style={{width: `${progress}%`}} className="filler"></div>
+            <div style={{width: `${progressInPixels}px`}} className="filler"></div>
+            <div className="percentage">{Math.floor(progress)}%</div>
         </div>
     )
 }

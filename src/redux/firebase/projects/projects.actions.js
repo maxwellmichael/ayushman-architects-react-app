@@ -49,7 +49,7 @@ export const REMOVE_PROJECT_FROM_FIRESTORE = (id)=>async (dispatch)=>{
 }
 
 export const ADD_PROJECT_TO_FIRESTORE = (data)=>async (dispatch)=>{
-    const project = {title:data.title, location:data.location, description:data.description, category:data.category, images:data.images}
+    const project = {title:data.title, subtitle:data.subtitle, location:data.location, content:data.content, category:data.category, images:data.images, size:data.size, projectStartDate:data.projectStartDate, projectEndDate:data.projectEndDate, createdAt:data.createdAt, featured:data.featured}
     const collectionRef = projectDatabase.collection('projects');
     collectionRef.add(project).then((docRef) => {
         console.log("Document written with ID: ", docRef.id);

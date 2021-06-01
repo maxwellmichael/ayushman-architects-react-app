@@ -3,13 +3,25 @@
     height: 18px;
     background-color: transparent;
     padding: 0;
-    border: 2px solid black;
+    border: 1px solid black;
+    overflow: hidden;
+    position: relative;
 
     .filler{
-        color: red;
+        width:0px;
         margin:0;
+        background-color: rgba(255, 0, 0, 0.842);
+        opacity:0.5;
         height: 18px;
-        position: relative;
-        transition: width 0.5s ease-in-out;
+        position:absolute;
+        z-index: 1;
+    }
+    .percentage{
+        color: black;
+        font-weight: 700;
+        z-index:3;
+        text-align: center;
+        margin:auto;
+        font-size: 12px;
     }
 }
