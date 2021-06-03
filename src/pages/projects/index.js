@@ -22,7 +22,7 @@ const Projects = ()=>{
     
     return(
         <React.Fragment>
-            <Container fluid style={{margin:0, padding:0, height: '100vh', backgroundImage:`url(${isMobile?MobileBG:MainBG})`, backgroundSize:'cover'}}>
+            <Container fluid style={{margin:'0px 0px 100px 0px', padding:0, height: '100vh', backgroundImage:`url(${isMobile?MobileBG:MainBG})`, backgroundSize:'cover'}}>
                 <div className="contact-overlay"></div>
                 <Row style={{padding:isMobile?'60% 0 0 0':'20% 0 0 0', margin:0, zIndex:3}}>
                     <RevealFadeAnimation>
@@ -30,30 +30,29 @@ const Projects = ()=>{
                     </RevealFadeAnimation>
                 </Row>
             </Container>
-        <div className="projects-main">
-            <div className="projects-nav">
-                <div className="projects-nav-link-container">
-                    <select onChange={(event)=>{setProjectsSort(event.target.value)}} className="projects-nav-dropdown" >
-                        <option className="projects-nav-dropdown-option" value='FEATURED'>Featured</option>
-                        <option className="projects-nav-dropdown-option" value='NEWEST'>Newest</option>
-                    </select>
-                </div>
+            <div className="projects-main">
+                <div className="projects-nav">
+                    <div className="projects-nav-link-container">
+                        <select onChange={(event)=>{setProjectsSort(event.target.value)}} className="projects-nav-dropdown" >
+                            <option className="projects-nav-dropdown-option" value='FEATURED'>Featured</option>
+                            <option className="projects-nav-dropdown-option" value='NEWEST'>Newest</option>
+                        </select>
+                    </div>
 
-                <div className="projects-nav-link-container">
-                    <select onChange={(event)=>{setProjectsType(event.target.value)}} className="projects-nav-dropdown">
-                        <option className="projects-nav-dropdown-option" value='ALL'>All</option>
-                        <option className="projects-nav-dropdown-option" value='ARCHITECTURE'>Architecture</option>
-                        <option className="projects-nav-dropdown-option" value='INTERIOR_DESIGN'>Interior Design</option>
-                        <option className="projects-nav-dropdown-option" value='CONSTRUCTION'>Construction</option>
-                    </select>
+                    <div className="projects-nav-link-container">
+                        <select onChange={(event)=>{setProjectsType(event.target.value)}} className="projects-nav-dropdown">
+                            <option className="projects-nav-dropdown-option" value='ALL'>All</option>
+                            <option className="projects-nav-dropdown-option" value='ARCHITECTURE'>Architecture</option>
+                            <option className="projects-nav-dropdown-option" value='INTERIOR_DESIGN'>Interior Design</option>
+                            <option className="projects-nav-dropdown-option" value='CONSTRUCTION'>Construction</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
-            <Row md={2} xs={1} style={{width:'100%', margin:0, padding:0}}>
+            <Row md={2} xs={1} style={{width:'100%', margin:'0px 0px 100px 0px', padding:0}}>
                 {docs.map((project, i)=><Col key={i} style={{marginTop: 60}}><ProjectCard data={project} /></Col>)}
             </Row>
-            
-        </div>
         </React.Fragment>
     )
 }
