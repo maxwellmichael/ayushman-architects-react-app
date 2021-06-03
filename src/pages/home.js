@@ -79,7 +79,7 @@ const Home = (props)=>{
 
             <Row md={2} xs={1} style={{margin: '100px 0px 0px 0px', padding: 0}} >
                 <Col md={{span: 6, order: 0}} xs={{span: 12, order: 0}} style={{margin: `${isMobile?20:80} 0 0 0`}}>
-                    <FadeInContainer FadeIn={FadeInFromLeft}>
+                    <FadeInContainer partialVisibility FadeIn={FadeInFromLeft}>
                         <div style={{textAlign: 'left', fontSize: isMobile?'40px':'60px', paddingLeft: isMobile?'10%':'auto'}} className="home-title">
                             We shape what’s beyond
                         </div>
@@ -220,7 +220,7 @@ const Home = (props)=>{
                         </Col>
                     </Row>
                     <Row style={{marginTop: '80px', marginLeft: isMobile?0:'60%'}}>
-                        <button onClick={()=>{props.history.push('/projects')}} className='home-button'>View All Projects</button>
+                        <button onClick={()=>{props.history.push('/projects')}} className='home-button'>All Projects</button>
                     </Row>
                 </Col>
                 <Col md={{span:5, order:0}} xs={{span:12, order:1}} style={{padding: 0}}>
@@ -229,7 +229,7 @@ const Home = (props)=>{
             </Row>
 
                 
-            <Row style={{margin:'100px 0 100px 0', padding:0}}>
+            <Row style={{margin:'100px 0 20px 0', padding:0}}>
                 <RevealFadeAnimation>
                     <div style={{fontSize:'60px', margin:'auto'}} className="home-title">Featured Projects</div>
                 </RevealFadeAnimation>

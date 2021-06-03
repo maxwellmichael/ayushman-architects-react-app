@@ -9,8 +9,6 @@ import Routes from './routes';
 import Layout from './components/layout';
 import FlashMessage from './components/utils/flashMessage';
 
-
-
 class App extends Component{
 
   componentDidMount(){

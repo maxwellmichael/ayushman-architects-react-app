@@ -10,11 +10,36 @@ import ProtectedRoute from './components/authorisation/ProtectedRoutes';
 import AuthenticationForms from './pages/authentication';
 import ContactPage from './pages/contact';
 import AboutPage from './pages/about';
+import RoutesWithSubRoutes from './components/utils/RouteWithSubRoutes';
 
 
 
 
 const Routes = ()=>{
+
+    const ServiceRoutes = [
+        {
+            path:'/services/architecture',
+            component: Home
+        },
+        {
+            path:'/services/interiordesign',
+            component: Home
+        },
+        {
+            path:'/services/construction',
+            component: Home
+        },
+        {
+            path:'/services/planning',
+            component: Home
+        },
+        {
+            path:'/services/estimation',
+            component: Home
+        }
+
+    ];
 
     return(
             <Switch>
@@ -27,6 +52,7 @@ const Routes = ()=>{
                   <Route path="/newproject" exact component={AddProjectForm} />
                   <Route path="/userauthenticate" exact render={props=>(<AuthenticationForms props={props}/>)} />
                   <Route path="/admin" exact component={AdminPage} />
+                  {ServiceRoutes.map((route, i)=><RoutesWithSubRoutes key={i} {...route} />)}
             </Switch>
     )
 }
