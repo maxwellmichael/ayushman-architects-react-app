@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import { useTransition, animated, config } from 'react-spring'
-import {Image, Col, Row, Container} from 'react-bootstrap';
+import {Image, Col, Row} from 'react-bootstrap';
 import { useMediaQuery } from 'react-responsive';
 import { withRouter } from 'react-router-dom';
 import useFirestore from '../firebase/useFirestore';
 import {Helmet} from 'react-helmet';
+import {motion} from 'framer-motion';
 import ProjectCard from './projects/projectCard';
 
 import Building1 from '../images/backgrounds/daniel-chen-cNaEqXSsZ0k-unsplash.jpg';
@@ -61,7 +62,7 @@ const Home = (props)=>{
 
 
     return(
-        <Container fluid style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
+        <motion.div exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Helmet>
                 <title>Ayushman Architects</title>
                 <meta name="description" content="Architecture,Interiors,Construction,Project Planning,Project Estimation,Architecture Designs,Architecture Designing,Beautiful Interior Designs,Best Architecture Designs,Interior Designs,Interior Designing,Interior Designing Companies,Best Interior Designs,Beautiful Interior Designs,Best Project Planning,Project Planning Companies,Project Estimation Companies,Best Project Estimation Companies" />
@@ -265,7 +266,7 @@ const Home = (props)=>{
                 </Row>
             </Row>
 
-        </Container>
+        </motion.div>
     );
 }
 

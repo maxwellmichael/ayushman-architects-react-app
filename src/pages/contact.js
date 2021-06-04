@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import { useMediaQuery } from 'react-responsive';
 import FadeInContainer, {FadeInFromRight, RevealFadeAnimation} from '../components/utils/fadeInAnimation';
 import {Helmet} from 'react-helmet';
-
+import {motion} from 'framer-motion';
 
 
 const ContactPage = (props)=>{
@@ -21,7 +21,7 @@ const ContactPage = (props)=>{
   }
 
   return(
-    <Container fluid style={{backgroundColor: 'black', padding:0, maxWidth: '100vw', overflow:'hidden'}}>
+    <motion.div exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
       <Helmet>
         <title>Contact</title>
         <meta name="description" content="Architecture,Interiors,Construction,Project Planning,Project Estimation,Architecture Designs,Architecture Designing,Beautiful Interior Designs,Best Architecture Designs,Interior Designs,Interior Designing,Interior Designing Companies,Best Interior Designs,Beautiful Interior Designs,Best Project Planning,Project Planning Companies,Project Estimation Companies,Best Project Estimation Companies" />
@@ -58,8 +58,7 @@ const ContactPage = (props)=>{
           </FadeInContainer>
         </Col>
       </Row>
-
-    </Container>
+    </motion.div>
   );
 }
 

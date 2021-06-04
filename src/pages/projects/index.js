@@ -7,7 +7,7 @@ import MainBG from '../../images/backgrounds/uwe-hensel-44Uz2J7z9Rg-unsplash.jpg
 import MobileBG from '../../images/backgrounds/sebastian-bednarek-OxC3gdWzB-8-unsplash.jpg'
 import {RevealFadeAnimation} from '../../components/utils/fadeInAnimation';
 import { useMediaQuery } from 'react-responsive';
-
+import {motion} from 'framer-motion';
 
 const Projects = ()=>{
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
@@ -21,7 +21,7 @@ const Projects = ()=>{
 
     
     return(
-        <React.Fragment>
+        <motion.div exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Container fluid style={{margin:'0px 0px 100px 0px', padding:0, height: '100vh', backgroundImage:`url(${isMobile?MobileBG:MainBG})`, backgroundSize:'cover'}}>
                 <div className="contact-overlay"></div>
                 <Row style={{padding:isMobile?'60% 0 0 0':'20% 0 0 0', margin:0, zIndex:3}}>
@@ -53,7 +53,7 @@ const Projects = ()=>{
             <Row md={2} xs={1} style={{width:'100%', margin:'0px 0px 100px 0px', padding:0}}>
                 {docs.map((project, i)=><Col key={i} style={{marginTop: 60}}><ProjectCard data={project} /></Col>)}
             </Row>
-        </React.Fragment>
+        </motion.div>
     )
 }
 
