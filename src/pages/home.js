@@ -174,8 +174,8 @@ const Home = (props)=>{
                 </div>
                 <Col style={{margin:isMobile?'60px auto auto auto':'150px auto auto auto'}}>
                     <RevealFadeAnimation>
-                        <div style={{margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'20px':'30px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'#f5ca9f',textAlign:isMobile?'center':'center',zIndex:3}} className="home-title">
-                            "A great building must begin WITH THE IMMEASURABLE, MUST GO THROUGH MEASURABLE MEANS WHEN IT IS BEING DESIGNED, AND IN THE END MUST BE UNMEASURED."
+                        <div style={{textTransform: 'uppercase', margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'20px':'30px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'#f5ca9f',textAlign:isMobile?'center':'center',zIndex:3}} className="home-title">
+                            "A GREAT BUILDING MUST BEGIN WITH THE IMMEASURABLE, MUST GO THROUGH MEASURABLE MEANS WHEN IT IS BEING DESIGNED, AND IN THE END MUST BE UNMEASURED."
                         </div>
                     </RevealFadeAnimation>
                     <div style={{textTransform: 'uppercase', margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'30px':'40px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'black',textAlign:'center',zIndex:3}} className="home-title">
