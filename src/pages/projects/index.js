@@ -21,13 +21,20 @@ const Projects = ()=>{
 
     
     return(
-        <motion.div exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
+        <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{ease:'easeInOut', duration:1, delay:0.7}} 
+        exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} 
+        style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Container fluid style={{margin:'0px 0px 100px 0px', padding:0, height: '100vh', backgroundImage:`url(${isMobile?MobileBG:MainBG})`, backgroundSize:'cover'}}>
                 <div style={{height:'100vh'}} className="contact-overlay"></div>
                 <Row style={{padding:isMobile?'60% 0 0 0':'20% 0 0 0', margin:0, zIndex:3}}>
-                    <RevealFadeAnimation>
-                        <div style={{fontSize:'60px', margin:'auto', zIndex:3}} className="projects-title">Our Work</div>
-                    </RevealFadeAnimation>
+                <RevealFadeAnimation>
+                    <div style={{fontSize:'60px', margin:'auto', zIndex:3}} className="projects-title">
+                        Our Work
+                    </div>
+                </RevealFadeAnimation>
                 </Row>
             </Container>
             <div className="projects-main">

@@ -16,7 +16,11 @@ const AboutPage = (props)=>{
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
 
     return(
-        <motion.div exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
+        <motion.div 
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{ease:'easeInOut', duration:1, delay:0.7}} 
+        exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Helmet>
                 <title>About</title>
                 <meta name="description" content="Architecture,Interiors,Construction,Project Planning,Project Estimation,Architecture Designs,Architecture Designing,Beautiful Interior Designs,Best Architecture Designs,Interior Designs,Interior Designing,Interior Designing Companies,Best Interior Designs,Beautiful Interior Designs,Best Project Planning,Project Planning Companies,Project Estimation Companies,Best Project Estimation Companies" />

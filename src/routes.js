@@ -43,7 +43,7 @@ const Routes = ()=>{
     ];
 
     return(
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence>
             <Switch location={location} key={location.key}>
                   <Route path="/" exact component={Home} />
                   <Route path="/contact" exact component={ContactPage} />
