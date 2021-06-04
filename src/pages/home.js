@@ -66,7 +66,7 @@ const Home = (props)=>{
         initial={{opacity:0}}
         animate={{opacity:1}}
         transition={{ease:'easeInOut', duration:1, delay:0.7}} 
-        exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:1}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
+        exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:0.6}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Helmet>
                 <title>Ayushman Architects</title>
                 <meta name="description" content="Architecture,Interiors,Construction,Project Planning,Project Estimation,Architecture Designs,Architecture Designing,Beautiful Interior Designs,Best Architecture Designs,Interior Designs,Interior Designing,Interior Designing Companies,Best Interior Designs,Beautiful Interior Designs,Best Project Planning,Project Planning Companies,Project Estimation Companies,Best Project Estimation Companies" />
@@ -101,9 +101,9 @@ const Home = (props)=>{
                 </Col>
             </Row>
 
-            <Row style={{margin:'200px 0 200px 0', padding:0}}>
+            <Row style={{margin:'200px 20px 200px 20px', padding:0}}>
                 <FadeInContainer FadeIn={FadeInFromBottom}>
-                    <div style={{fontSize:isMobile?'22px':'26px',textAlign:'center',color:'#f5ca9f'}} className="home-description">
+                    <div style={{fontSize:isMobile?'18px':'26px',color:'#f5ca9f',textAlign:'justify'}} className="home-description">
                         We believe that well designed spaces encourage joy and connectivity between people. We design by exploring, investigating and testing which creates meaningful spaces to live, work and play.
                     </div>
                 </FadeInContainer>
