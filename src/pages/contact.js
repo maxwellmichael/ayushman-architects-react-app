@@ -27,7 +27,7 @@ const ContactPage = (props)=>{
         <meta name="description" content="Architecture,Interiors,Construction,Project Planning,Project Estimation,Architecture Designs,Architecture Designing,Beautiful Interior Designs,Best Architecture Designs,Interior Designs,Interior Designing,Interior Designing Companies,Best Interior Designs,Beautiful Interior Designs,Best Project Planning,Project Planning Companies,Project Estimation Companies,Best Project Estimation Companies" />
       </Helmet>
       <Container fluid style={{backgroundImage:`url(${BG1})`, backgroundSize: 'cover', backgroundPosition:'center', width: '100%', height: '100vh', padding: 0, margin:0}}>
-        <Row style={{margin:0}}><div className="contact-overlay"></div></Row>
+        <Row style={{margin:0,padding:0}}><div style={{height:'100vh'}} className="contact-overlay"></div></Row>
         <RevealFadeAnimation>
           <div style={{color:'#f5ca9f',zIndex:3, textAlign:'center',paddingTop: isMobile?'50%':'20%', fontSize: '60px'}} className="contact-title">Contact us</div>
         </RevealFadeAnimation>
