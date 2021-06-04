@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import useFirestore from '../../firebase/useFirestore';
 import {Container, Row, Col} from 'react-bootstrap';
 import MainBG from '../../images/backgrounds/uwe-hensel-44Uz2J7z9Rg-unsplash.jpg'
-import MobileBG from '../../images/backgrounds/sebastian-bednarek-OxC3gdWzB-8-unsplash.jpg'
+import MobileBG from '../../images/backgrounds/mobile/izuddin-helmi-adnan-ABKvlwjFT68-unsplash-min.jpg'
 import {RevealFadeAnimation} from '../../components/utils/fadeInAnimation';
 import { useMediaQuery } from 'react-responsive';
 import {motion} from 'framer-motion';
