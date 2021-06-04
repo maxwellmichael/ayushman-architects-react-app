@@ -24,7 +24,7 @@ import {ReactComponent as InteriorLogo} from '../images/icons/services/interior.
 
 
 import Slide3 from '../images/backgrounds/mobile/slide1.jpg';
-import Slide2 from '../images/backgrounds/mobile/slide2.jpg';
+import Slide2 from '../images/backgrounds/mobile/izuddin-helmi-adnan-ABKvlwjFT68-unsplash-min.jpg';
 import Slide1 from '../images/backgrounds/mobile/slide3.jpg';
 import Slide4 from '../images/backgrounds/mobile/slide4.jpg';
 
