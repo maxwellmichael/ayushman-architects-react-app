@@ -101,9 +101,9 @@ const Home = (props)=>{
                 </Col>
             </Row>
 
-            <Row style={{margin:'200px 20px 200px 20px', padding:0}}>
+            <Row style={{margin:'40px 20px 200px 20px', padding:0}}>
                 <FadeInContainer FadeIn={FadeInFromBottom}>
-                    <div style={{fontSize:isMobile?'18px':'26px',color:'#f5ca9f',textAlign:'justify'}} className="home-description">
+                    <div style={{fontSize:isMobile?'18px':'26px',color:'#f5ca9f',textAlign:isMobile?'justify':'center'}} className="home-description">
                         We believe that well designed spaces encourage joy and connectivity between people. We design by exploring, investigating and testing which creates meaningful spaces to live, work and play.
                     </div>
                 </FadeInContainer>
@@ -112,7 +112,7 @@ const Home = (props)=>{
             {/*-----------------------Services Start---------------------*/}
             <Row xs={1} style={{margin:'100px 0 40px 0', padding:0}}>
                 <RevealFadeAnimation>
-                    <div style={{fontSize:isMobile?'40px':'60px', margin:'auto'}} className="home-title">What we do</div>
+                    <div style={{fontSize:isMobile?'40px':'60px', margin:'auto auto 30px auto'}} className="home-title">EXPERTISE</div>
                 </RevealFadeAnimation>
                 <div style={{padding:0,margin:'auto',textAlign:'center',fontSize:'18px'}} className="home-description">We are a full service architecture, interiors, construction, planning & estimation firm.</div>
             </Row>
@@ -169,13 +169,13 @@ const Home = (props)=>{
                     </FadeInContainer>
                 </Col>
             </Row>
-            <Row style={{margin:'100px 0px 100px 0px',padding:0,width:'100%',height:isMobile?'50vh':'80vh',backgroundColor:'white',position:'relative'}}>
+            <Row style={{margin:'100px 0px 100px 0px',padding:0,width:'100%',height:isMobile?'60vh':'80vh',backgroundColor:'white',position:'relative'}}>
                 <div style={{width:'100%',height:'100%',margin:0,position:'absolute',backgroundImage:`url(${ArchitectureDrawings})`,backgroundAttachment:'fixed',backgroundSize:'cover'}}>
                 </div>
                 <Col style={{margin:isMobile?'60px auto auto auto':'150px auto auto auto'}}>
                     <RevealFadeAnimation>
-                        <div style={{textTransform: 'uppercase', margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'20px':'30px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'#f5ca9f',textAlign:isMobile?'justify':'center',zIndex:3}} className="home-title">
-                            "A GREAT BUILDING MUST BEGIN WITH THE IMMEASURABLE, MUST GO THROUGH MEASURABLE MEANS WHEN IT IS BEING DESIGNED, AND IN THE END MUST BE UNMEASURED."
+                        <div style={{margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'20px':'30px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'#f5ca9f',textAlign:isMobile?'center':'center',zIndex:3}} className="home-title">
+                            "A great building must begin WITH THE IMMEASURABLE, MUST GO THROUGH MEASURABLE MEANS WHEN IT IS BEING DESIGNED, AND IN THE END MUST BE UNMEASURED."
                         </div>
                     </RevealFadeAnimation>
                     <div style={{textTransform: 'uppercase', margin: 0, padding: isMobile?'auto':'auto 50px auto 50px', fontFamily: `Libre Baskerville, sans-serif`, fontSize:isMobile?'30px':'40px',letterSpacing: '0.005em', fontWeight: '700', lineHeight: isMobile?'1.6em':'1.4em', color:'black',textAlign:'center',zIndex:3}} className="home-title">
