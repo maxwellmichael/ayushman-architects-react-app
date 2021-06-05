@@ -1,63 +1,39 @@
-import React, {Component} from 'react';
-import {ReactComponent as Instagram} from '../../images/icons/instagram-original.svg';
-import {ReactComponent as Facebook} from '../../images/icons/facebook-original.svg';
-import {ReactComponent as Twitter} from '../../images/icons/twitter-original.svg';
+import React from 'react';
+import {Row, Col} from 'react-bootstrap'
+import {Link} from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 
-import {ReactComponent as Phone} from '../../images/icons/phone.svg';
-import {ReactComponent as Envelope} from '../../images/icons/envelope.svg';
-import {ReactComponent as Marker} from '../../images/icons/map-marker.svg';
-
-
+import {ReactComponent as FacebookLogo} from '../../images/icons/social/facebook-original.svg';
+import {ReactComponent as InstagramLogo} from '../../images/icons/social/instagram-original.svg';
+import {ReactComponent as TwitterLogo} from '../../images/icons/social/twitter-original.svg';
 
 
 
-class Footer extends Component{
 
+const Footer = ()=>{
+    const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
 
-    render(){
+    return(
+        <div className="footer-main">
+            <Row xs={1} style={{margin:0}}>
+                <Row xs={1} style={{margin:'0px 0px 30px 0px'}}>
+                    <Col><div style={{margin:'auto'}} className="footer-title">Ayushman Architects</div></Col>
+                    <Col><div style={{width:isMobile?'60%':'30%'}} className="footer-line"></div></Col>
 
-        return(
-            <React.Fragment>
-                <footer className="footer-distributed">
- 
-                    <div className="footer-left">
-                        <h3>AYUSHMAN ARCHITECTS</h3>
-                        <p className="footer-company-name">Ayushman-Architects &copy; 2021</p>
-                    </div>
-
-                    <div className="footer-center">
-
-                        <div className="center-item">
-                            <i><Marker /></i>
-                            <p>21 Revolution Street Delhi, India</p>
-                        </div>
-
-                        <div className="center-item">
-                            <i><Phone /></i>
-                            <p>+91 7356102087</p>
-                        </div>
-
-                        <div className="center-item">
-                            <i><Envelope/></i>
-                            <p><a href="mailto:maxwellmichael522@gmail.com">contact@</a>Ayushman-Architects.com</p>
-                        </div>
-
-                    </div>
-
-                    <div className="footer-right">
-                        <div className="footer-icons">
-                            <a href="/"><Facebook/></a>
-                            <a href="/"><Twitter/></a>
-                            <a href="http://instagram.com/ayushman_architects"><Instagram/></a>
-                        </div>
-                    </div>
-
-                </footer>
-          
-            </React.Fragment>
-        );
-    }
+                    <Col><div style={{margin:'auto'}} className="footer-description">Copyright © 2021 Ayushmanarchitects.com</div></Col>
+                </Row>
+                
+            </Row>
+            <Row style={{margin:'auto auto 30px auto', width:'200px'}} xs={3}>
+                <Col><div className="social-logo"><Link to="/projects"><InstagramLogo/></Link></div></Col>
+                <Col><div className="social-logo"><Link to="/about"><TwitterLogo/></Link></div></Col>
+                <Col><div className="social-logo"><Link to="/contact"><FacebookLogo/></Link></div></Col>
+            </Row>
+            <Row style={{margin:0}}>
+                <div style={{margin:'auto', fontSize:'12px'}} className="footer-heading">Website Developed & Designed by <span className="creator-name"><a href="https://www.google.com">MAXWELL</a></span></div>
+            </Row>
+        </div>
+    )
 }
-
 
 export default Footer;

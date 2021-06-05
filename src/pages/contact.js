@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
-import BG1 from '../images/backgrounds/planetorium.jpg';
+import BG1 from '../images/backgrounds/mobile/peter-osmenda-X2gePOvpgRE-unsplash.jpg';
 import {useForm} from "react-hook-form";
 import {SUBMIT_CONTACT_FORM} from '../redux/contact/contact.actions';
 import {connect} from 'react-redux';
@@ -39,7 +39,7 @@ const ContactPage = (props)=>{
       <Row md={2} xs={1} style={{padding: isMobile?'80px 12px 100px 12px':'80px 12px 100px 70px'}}>
         <Col md={{span:7, order:0}} xs={{span:12, order:1}} style={{marginBottom:'60px'}} >
           <form onSubmit={onSubmit}>
-            <Row><div style={{padding:0}} className="contact-title">Arrange a free Consultation</div></Row>
+            <Row><div style={{padding:isMobile?'0px 5px 0px 5px':0}} className="contact-title">Arrange a free Consultation</div></Row>
             <Row><input className="contact-input" type="text" placeholder="Full name" name="fullname" ref={register} /></Row>
             <Row><input className="contact-input" type="email" placeholder="Email" name="email" ref={register} /></Row>
             <Row><input className="contact-input" type="text" placeholder="Telephone" name="telephone" ref={register} /></Row>

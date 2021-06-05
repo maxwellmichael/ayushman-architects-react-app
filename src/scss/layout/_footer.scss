@@ -1,260 +1,102 @@
-$text-main: #2b3747;
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+$gold-dark: rgba(243,149,59,0.73);
+$green: #00ec7a;
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
 
-footer {
-	position: relative;
-	bottom: 0;
-}
-.footer-distributed {
-	background-color: white;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-	box-sizing: border-box;
-	width: 100%;
-	text-align: left;
-	font-family: Rajdhani,Arial,Verdana,Helvetica,sans-serif;
-	font-size: 16px;
-	font-weight: bold;
-	color: $text-main;
-	padding: 55px 50px;
-	margin-top: 0;
-	.footer-left {
-		display: inline-block;
-		vertical-align: top;
-		width: 40%;
-		font-family: Rajdhani,Arial,Verdana,Helvetica,sans-serif;
 
-		h3{
-			font-family: Rajdhani,Arial,Verdana,Helvetica,sans-serif;
-			font-weight: bold;
-			letter-spacing: 0.5;
-		}
-	}
-	.footer-center {
-		vertical-align: top;
-		width: 35%;
-		display: inline-block;
-		.center-item{
-			margin-bottom: 16px;
-			i {
-				color: $text-main;
-				font-size: 25px;
-				width: 38px;
-				height: 38px;
-				border-radius: 50%;
-				text-align: center;
-				line-height: 42px;
-				margin: 10px 15px;
-				vertical-align: middle;
-	
-				svg{
-					width: 32px;
-					height: 32px;
-				}
-			}
-			i.fa-envelope {
-				font-size: 17px;
-				line-height: 38px;
-			}
-			p {
-				display: inline-block;
-				color: $text-main;
-				vertical-align: middle;
-				margin: 0;
-				span {
-					display: block;
-					font-weight: normal;
-					font-size: 14px;
-					line-height: 2;
-				}
-				a {
-					color: $text-main;
-					text-decoration: none;
-				}
-			}
+.footer-main{
+	max-width: 100vw;
+	height: auto;
+	margin:30px 0px 0px 0px;
 
-		}
-		
-	}
-
-	.footer-right {
-		display: inline-block;
-		vertical-align: top;
-		width: 20%;
-	}
-	h3 {
-		color: $text-main;
-		font: normal 36px 'Cookie', cursive;
-		margin: 0;
-		span {
-			color: #5383d3;
-		}
-	}
-	.footer-links {
-		color: $text-main;
-		margin: 20px 0 12px;
-		padding: 0;
-		a {
-			display: inline-block;
-			line-height: 1.8;
-			text-decoration: none;
-			color: inherit;
-		}
-	}
-	.footer-company-name {
-		color: rgba(0, 0, 0, 0.863);
-		font-size: 14px;
-		font-weight: normal;
-		margin: 0;
-	}
-	.footer-company-about {
-		line-height: 20px;
-		color: $text-main;
-		font-size: 13px;
-		font-weight: normal;
-		margin: 0;
-		span {
-			display: block;
-			color: $text-main;
-			font-size: 14px;
-			font-weight: bold;
-			margin-bottom: 20px;
-		}
-	}
-	.footer-icons {
-		margin-bottom: 25px;
-		a {
-			display: inline-block;
-			width: 43px;
-			height: 43px;
-			cursor: pointer;
-			border-radius: 2px;
-			font-size: 20px;
-			color: $text-main;
-			text-align: center;
-			line-height: 35px;
-			margin: 0 0 5px 16px;
-		}
-
+	.footer-title{
+		line-height: 1.4em;
+		font-weight: 500;
+		text-align: center;
+		position: relative;
+		padding: 6px;
+		font-size: 35px;
+		margin-bottom: 1rem;
+		font-family: 'Libre Baskerville', serif;
+		letter-spacing: 0.05em;
+		color: $gold;
 		@media screen and(max-width: 900px) {
-			margin: 25px 16px 0 0;
-			
+		  font-size: 22px;
+		  padding: auto;
+		  letter-spacing: 0.02em;
+		  word-spacing: 0.01em;
+		  line-height: 1.2em;
 		}
 	}
-}
 
-@media (max-width: 1000px) {
-	.footer-distributed {
-		font: bold 14px sans-serif;
-		padding: 12px 0px 12px 0px;
-
-		.footer-left {
-			display: block;
-			width: 100%;
-			margin-bottom: 40px;
-			text-align: center;
-		}
-
-		.footer-center {
-			display: block;
-			width: 100%;
-			text-align: center;
-
-			.center-item{
-				display: block;
-				width: 50%;
-				padding: 12px;
-				margin: 0px 25% 0px 25%;
-				text-align: justify;
-
-
-				i {
-					left:0;
-					text-align: center;
-				}
-	
-				p {
-
-					font-size: 12px;
-					padding: auto;
-					text-align: center;
-
-					a {
-						color: $text-main;
-						text-decoration: none;
-					}
-				}
-			}
-			
-		}
-		.footer-right {
-			display: block;
-			width: 100%;
-			margin-bottom: 40px;
-			text-align: center;
+	.footer-heading{
+		line-height: 1.3em;
+		font-weight: 400;
+		text-align: left;
+		position: relative;
+		padding: 6px;
+		font-size: 18px;
+		margin-bottom: 1rem;
+		font-family: 'Libre Baskerville', serif;
+		letter-spacing: 0.05em;
+		color: $gold;
+		@media screen and(max-width: 900px) {
+		  font-size: 18px;
+		  padding: auto;
+		  letter-spacing: 0.02em;
+		  word-spacing: 0.01em;
+		  line-height: 1.2em;
 		}
 	}
-	
-}
 
-@media (max-width: 600px) {
-	.footer-distributed {
-		font: bold 14px sans-serif;
-		padding: 12px 0px 12px 0px;
-
-		.footer-left {
-			display: block;
-			width: 100%;
-			margin-bottom: 40px;
-			text-align: center;
-			h3{
-				font-family: Rajdhani,Arial,Verdana,Helvetica,sans-serif;
-				font-weight: bold;
-				letter-spacing: 0.3;
-				font-size: 26px;
-	
-				span{
-					color: rgba(0, 0, 0, 0.863);
-				}
-			}
+	.footer-description{
+		font-size: 16px;
+		letter-spacing: .1em;
+		line-height: 1.818181818em;
+		text-align: center;
+		position: relative;
+		padding: 6px;
+		font-family: 'Roboto', Arial, sans-serif;
+		color: white;
+		@media screen and(max-width: 900px) {
+		  font-size: 13px;
+		  line-height: 1.918181818em;
+		  padding: 12px 10px 12px 18px;
 		}
+	  }
+	  .footer-line{
+		width: 60%;
+		margin: 6px auto 8px auto;
+		height: 1px;
+		background-color: $gold;
+		@media screen and(max-width: 900px) {
+		  width: 40%;
+		}
+	}
 
-		.footer-center {
-			display: block;
-			width: 100%;
-			text-align: center;
-
-			.center-item{
-				display: block;
-				width: 100%;
-				padding: 12px;
-				margin: 0px;
-				text-align: justify;
-
-
-				i {
-					text-align: center;
-					padding: auto;
-				}
+	.social-logo{
+		margin: auto;
+		width: 50px;
+		height: 50px;
+		margin-top: 12px;
+		margin-bottom: 12px;
+		background-color: $light-gold;
+		padding: 12px;
+		border-radius: 8px;
+		transition: all 0.5s ease-in-out;
+		&:hover{
+			box-shadow: 0 0 17px 3px $dark-gold,0 0 4px 2px $dark-gold;
+		}	
+	  }
 	
-				p {
-
-					font-size: 16px;
-					padding: auto;
-					text-align: center;
-
-					a {
-						color: $text-main;
-						text-decoration: none;
-					}
-				}
-			}
-			
-		}
-		.footer-right {
-			display: block;
-			width: 100%;
-			margin-bottom: 40px;
-			text-align: center;
-		}
+	.creator-name{
+		line-height: 1.4em;
+		font-weight: 500;
+		font-size: 12px;
+		font-family: 'Libre Baskerville', serif;
+		letter-spacing: 0.1em;
+		color: $gold;
 	}
 	
 }

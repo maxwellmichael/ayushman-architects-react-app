@@ -1,4 +1,8 @@
 $white: rgba(255, 255, 255, 0.993);
+$gold: #ba9774;
+$light-gold: #f5ca9f;
+$green: #00ec7a;
+
 
 $mobile-width: 1000px;
 
@@ -13,6 +17,11 @@ $mobile-width: 1000px;
     font-family: inherit;
     font-size: inherit;
     text-decoration: none;
+    transition: all 1s linear;
+    &:hover{
+      text-decoration: none;
+      color: $light-gold
+    }
   }
   
   
@@ -20,8 +29,8 @@ $mobile-width: 1000px;
                             Navbar
     ======================================================*/
   #navbar {
-    background: $white;
-    color: rgb(13, 26, 38);
+    background: black;
+    color: $gold;
     position: relative;
     top: 0;
     height: 60px;
@@ -29,9 +38,12 @@ $mobile-width: 1000px;
     width: 100%;
     z-index: 10;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 8px 0px;
+    transition: all 1s ease-in-out;
+
     ul{
       margin-bottom: 0;
     }
+  
   }
   
   .nav-wrapper {
@@ -88,7 +100,7 @@ $mobile-width: 1000px;
     float: right;
     list-style: none;
     /* margin-right: 14px; */
-    margin-top: -2px;
+    margin-top: 0;
     text-align: right;
     transition: transform 0.5s ease-out;
     -webkit-transition: transform 0.5s ease-out;
@@ -105,25 +117,24 @@ $mobile-width: 1000px;
   
   #navbar li a {
     text-decoration: none;
-    color: rgb(13, 26, 38);
+    color: $gold;
     display: block;
-    font-size: 0.7em;
+    font-size: 0.8em;
     height: 50px;
     letter-spacing: 1px;
-    margin: 0 20px;
+    margin: auto 20px auto auto;
     padding: 0 7px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
-    
-    
   }
   
   #navbar li a:hover {
     /* border-bottom: 1px solid rgb(28, 121, 184); */
-    color: rgb(0, 0, 0);
+    color: $light-gold;
+    text-shadow: -2px 0px 12px $gold-dark;
     transition: all 1s ease;
     -webkit-transition: all 1s ease;
   }
@@ -135,7 +146,7 @@ $mobile-width: 1000px;
     width: 0%;
     height: 1px;
     bottom: -1px;
-    background: rgb(13, 26, 38);
+    background: $gold-dark;
   }
   
   #navbar li a:before {
@@ -144,13 +155,13 @@ $mobile-width: 1000px;
   }
   
   #navbar li a:after {
-    background: rgb(13, 26, 38);
+    background: $gold-dark;
     right: 0;
     /* transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1); */
   }
   
   #navbar li a:hover:before {
-    background: rgb(13, 26, 38);
+    background: $gold-dark;
     width: 100%;
     transition: width 0.5s cubic-bezier((0.22, 0.61, 0.36, 1));
   }
@@ -180,7 +191,7 @@ $mobile-width: 1000px;
   
     /* Icon Bars */
     .icon-bars {
-      background: rgb(13, 26, 38);
+      background: $light-gold;
       position: absolute;
       left: 1px;
       top: 45%;
@@ -191,7 +202,7 @@ $mobile-width: 1000px;
     } 
   
     .icon-bars::before {
-      background: rgb(13, 26, 38);
+      background: $light-gold;
       content: '';
       position: absolute;
       left: 0;
@@ -206,7 +217,7 @@ $mobile-width: 1000px;
   
     .icon-bars::after {
       margin-top: 0px;
-      background: rgb(13, 26, 38);
+      background: $light-gold;
       content: '';
       position: absolute;
       left: 0;
@@ -222,7 +233,7 @@ $mobile-width: 1000px;
     /* Bars Shadows */
     .icon-bars.overlay {
       background: black;
-      background: white;
+      background: black;
       width: 20px;
       animation: middleBar 3s infinite 0.5s;
       -webkit-animation: middleBar 3s infinite 0.5s;
@@ -238,7 +249,7 @@ $mobile-width: 1000px;
   
     .icon-bars.overlay::before {
       background: rgb(97, 114, 129);
-      background: rgb(183, 199, 211);
+      background: black;
       width: 10px;
       animation: topBar 3s infinite 0.2s;
       -webkit-animation: topBar 3s infinite 0s;
@@ -254,7 +265,7 @@ $mobile-width: 1000px;
   
     .icon-bars.overlay::after {
       background: rgb(97, 114, 129);
-      background: rgb(183, 199, 211);
+      background: black;
       width: 15px;
       animation: bottomBar 3s infinite 1s;
       -webkit-animation: bottomBar 3s infinite 1s;
@@ -303,8 +314,8 @@ $mobile-width: 1000px;
                      Responsive Mobile Menu 
     ======================================================*/
   .overlay-menu {
-    background: $white;
-    color: rgb(13, 26, 38);
+    background: black;
+    color: $gold;
     display: flex;
     align-items: center;
     justify-content: center;
