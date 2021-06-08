@@ -101,7 +101,7 @@ const AboutPage = (props)=>{
                                 <div className="about-dash"></div>
                             </Col>
                             
-                            <Col sm={8} xs={12} style={{paddingRight: 0}}><div className="about-small-description">Real design solutions inspire. SCB’s work is tangible, and our projects strive to make positive contributions to people’s lives and the urban fabric.</div></Col>
+                            <Col sm={8} xs={12} style={{paddingRight: 0}}><div className="about-small-description">Real design solutions inspire. Our work is tangible, and our projects strive to make positive contributions to people’s lives and the urban fabric.</div></Col>
                         </Row>
                     </FadeInContainer>
 

@@ -26,8 +26,6 @@ $gold-dark: rgba(243,149,59,0.73);
             color: $gold;
             letter-spacing: 0.05em;
             line-height: 1.4em;
-            display: inline-block;
-            position: relative;
             text-transform: uppercase;
         }
 
@@ -83,6 +81,7 @@ $gold-dark: rgba(243,149,59,0.73);
             .project-page-title{
                 font-size: 20px;
                 text-align: center;
+                margin:auto;
             }
 
             .project-page-location{
@@ -122,7 +121,7 @@ $gold-dark: rgba(243,149,59,0.73);
 
 
             .project-page-title{
-                font-size: 20px;
+                font-size: 24px;
                 letter-spacing: 0.1em;
                 line-height: 1.7em;
                 text-align: 'center';
