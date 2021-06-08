@@ -11,6 +11,29 @@ import { ReactComponent as Svglogo } from '../../images/ayushman_logo.svg';
 const NewNavigation = (props)=>{
 
     const [menuToggle, setMenuToggle] = useState(false);
+    const ServiceRoutes = [
+        {
+            path:'/services/architecture',
+            name: "Architecture"
+        },
+        {
+            path:'/services/interiordesign',
+            name: "Interior"
+        },
+        {
+            path:'/services/construction',
+            name: "Construction"
+        },
+        {
+            path:'/services/planning',
+            name: "Planning"
+        },
+        {
+            path:'/services/estimation',
+            name: "Estimation"
+        }
+
+    ];
 
     const overlayTransition = useTransition(menuToggle, null, {
         from: {opacity: 0, transform: `translateX(-50vw)`},
@@ -34,6 +57,14 @@ const NewNavigation = (props)=>{
 
                 <ul id="menu">
                     <li><Link to="/">HOME</Link></li>
+                    <li>
+                        <div className="nav-dropdown">
+                            <div className="dropdown-title">Services</div>
+                            <div className="dropdown-list">
+                                {ServiceRoutes.map((route, i)=><div className="item" key={i}><Link to={route.path}>{route.name}</Link></div>)}
+                            </div>
+                        </div>
+                    </li>
                     <li><Link to="/projects">PROJECTS</Link></li>
                     <li><Link to="/about">ABOUT</Link></li>
                     <li><Link to="/contact">CONTACT</Link></li>
@@ -52,9 +83,18 @@ const NewNavigation = (props)=>{
                 item && <animated.div key={key} style={style} className="overlay-menu">
                         <ul id="menu">
                             <li><Link onClick={()=>setMenuToggle(false)} to="/">HOME</Link></li>
+                            <li>
+                                <div className="nav-dropdown">
+                                    <div className="dropdown-title">Services</div>
+                                    <div className="dropdown-list">
+                                        {ServiceRoutes.map((route, i)=><div className="item" key={i}><Link onClick={()=>setMenuToggle(false)} to={route.path}>{route.name}</Link></div>)}
+                                    </div>
+                                </div>
+                            </li>
                             <li><Link onClick={()=>setMenuToggle(false)} to="/projects">PROJECTS</Link></li>
                             <li><Link onClick={()=>setMenuToggle(false)} to="/about">ABOUT</Link></li>
                             <li><Link onClick={()=>setMenuToggle(false)} to="/contact">CONTACT</Link></li>
+                            
                         </ul>
                 </animated.div>
             ))}

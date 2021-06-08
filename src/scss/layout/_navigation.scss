@@ -23,6 +23,89 @@ $mobile-width: 1000px;
       color: $light-gold
     }
   }
+
+
+  .nav-dropdown{
+   
+    .dropdown-title{
+      text-decoration: none;
+      color: $gold;
+      display: block;
+      font-size: 0.8em;
+      height: 50px;
+      letter-spacing: 1px;
+      margin: auto 20px auto auto;
+      padding: 0 7px;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      
+      @media screen and(max-width:1000px) {
+        display: block;
+        margin: auto;
+        font-size: 1em;
+        letter-spacing: 3px;
+        padding: 10px 0;
+        text-align: right;
+        text-transform: uppercase;
+        -webkit-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+      }
+    }
+
+    .dropdown-list{
+      display: block;
+      opacity:0;
+      height: 1px;
+      position: absolute;
+      overflow: hidden;
+      background-color: black;
+      border: 1px solid $gold;
+      transition: all 0.5s linear;
+      .item{
+        color: $gold;
+        display: block;
+        font-size: 0.8em;
+        height: 50px;
+        letter-spacing: 1px;
+        margin: auto auto 10px auto;
+        padding: 0 7px;
+        position: relative;
+        text-align: left;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+        -webkit-transition: all 0.5s ease;
+
+        @media screen and(max-width:1000px){
+          text-align: justify;
+          padding: 6px;
+          a{
+            text-align: justify;
+          }
+         
+        }
+
+        &:hover{
+          color: $light-gold;
+          text-shadow: -2px 0px 12px $gold-dark;
+          transition: all 1s ease;
+          -webkit-transition: all 1s ease;
+        }
+      }
+    }
+
+    &:hover{
+      .dropdown-list{
+        height: auto;
+        opacity: 1;
+        z-index: 3;
+      }
+    }
+    
+  }
   
   
   /*======================================================
@@ -43,7 +126,8 @@ $mobile-width: 1000px;
     ul{
       margin-bottom: 0;
     }
-  
+
+    
   }
   
   .nav-wrapper {
@@ -100,7 +184,7 @@ $mobile-width: 1000px;
     float: right;
     list-style: none;
     /* margin-right: 14px; */
-    margin-top: 0;
+    margin: 0px 100px 0px auto;
     text-align: right;
     transition: transform 0.5s ease-out;
     -webkit-transition: transform 0.5s ease-out;
@@ -114,6 +198,8 @@ $mobile-width: 1000px;
   #navbar li {
     display: inline-block;
   }
+
+  
   
   #navbar li a {
     text-decoration: none;
@@ -350,7 +436,7 @@ $mobile-width: 1000px;
   
   .overlay-menu li a:hover,
   .overlay-menu li a:active {
-    color: rgb(28, 121, 184);
+    color: $light-gold;
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
   }

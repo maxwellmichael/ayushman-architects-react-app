@@ -10,6 +10,15 @@ import ContactPage from './pages/contact';
 import AboutPage from './pages/about';
 import RoutesWithSubRoutes from './components/utils/RouteWithSubRoutes';
 import {AnimatePresence} from 'framer-motion';
+import ArchitecturePage from './pages/services/architecture';
+import InteriorDesignPage from './pages/services/interiordesign';
+import ConstructionPage from './pages/services/construction';
+import PlanningPage from './pages/services/planning';
+import EstimationPage from './pages/services/estimation';
+
+
+
+
 
 
 
@@ -21,23 +30,23 @@ const Routes = ()=>{
     const ServiceRoutes = [
         {
             path:'/services/architecture',
-            component: Home
+            component: ArchitecturePage
         },
         {
             path:'/services/interiordesign',
-            component: Home
+            component: InteriorDesignPage
         },
         {
             path:'/services/construction',
-            component: Home
+            component: ConstructionPage
         },
         {
             path:'/services/planning',
-            component: Home
+            component: PlanningPage
         },
         {
             path:'/services/estimation',
-            component: Home
+            component: EstimationPage
         }
 
     ];

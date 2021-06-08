@@ -188,13 +188,13 @@ $dark-gold: rgba(243,149,59,0.73);
 
 
 .home-card{
-  width: 100%;
+  width: 80%;
   height: 350px;
   min-height: 350px;
   background-color: black;
   border: 2px solid $gold;
   padding:0;
-  margin:0;
+  margin: auto auto 40px auto;
   transition: all 0.5s linear;
     &:hover{
       box-shadow: 0 0 17px 3px $dark-gold,0 0 4px 2px $dark-gold;
@@ -269,6 +269,7 @@ $dark-gold: rgba(243,149,59,0.73);
 
   @media screen and(max-width:900px){
     height: 400px;
+    width: 100%;
     
   }
 
