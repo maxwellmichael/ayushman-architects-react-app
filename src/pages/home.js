@@ -1,16 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import { useTransition, animated, config } from 'react-spring'
 import {Image, Col, Row} from 'react-bootstrap';
 import { useMediaQuery } from 'react-responsive';
 import { withRouter } from 'react-router-dom';
-import useFirestore from '../firebase/useFirestore';
+import {projectDatabase} from '../firebase/config';
 import {Helmet} from 'react-helmet';
 import {motion} from 'framer-motion';
 import ProjectCard from './projects/projectCard';
 
-import Building1 from '../images/backgrounds/daniel-chen-cNaEqXSsZ0k-unsplash.jpg';
-import image1 from '../images/backgrounds/architecture_bg2.jpg';
 import image2 from '../images/backgrounds/lucas-franco-aRTjFXs6HNc-unsplash.jpg';
+import mobilebg from '../images/backgrounds/mobile/slide3.jpg'
 import Building2 from '../images/backgrounds/sean-pollock-PhYq704ffdA-unsplash.jpg';
 import ArchitectureDrawings from '../images/backgrounds/architecture_drawings.png';
 
@@ -23,12 +21,6 @@ import {ReactComponent as InteriorLogo} from '../images/icons/services/interior.
 
 
 
-import Slide3 from '../images/backgrounds/mobile/slide1.jpg';
-import Slide2 from '../images/backgrounds/mobile/izuddin-helmi-adnan-ABKvlwjFT68-unsplash-min.jpg';
-import Slide1 from '../images/backgrounds/mobile/slide3.jpg';
-import Slide4 from '../images/backgrounds/mobile/slide4.jpg';
-
-
 
 import Building from '../images/backgrounds/building.jpg';
 
@@ -36,29 +28,22 @@ import Building from '../images/backgrounds/building.jpg';
 import FadeInContainer, {FadeInFromLeft, FadeInFromRight, FadeInFromBottom, FadeInFromTop, RevealFadeAnimation} from '../components/utils/fadeInAnimation';
 
 const Home = (props)=>{
-    const {docs} = useFirestore('projects') 
+    const [projects, setProjects] = useState([])
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
-    const slides = [
-        { id: 0, url: isMobile?Slide1:Building1, content: 'Slide 1' },
-        { id: 1, url: isMobile?Slide2:Building2, content: 'Slide 2' },
-        { id: 2, url: isMobile?Slide3:image1, content: 'Slide 3' },
-        { id: 3, url: isMobile?Slide4:image2, content: 'Slide 4' },
-      ]
-    const [index, set] = useState(0)
-    const transitions = useTransition(slides[index], item => item.id, {
-        from: { opacity: 0 },
-        enter: { opacity: 1 },
-        leave: { opacity: 0 },
-        config: config.molasses,
-    })
+       
 
     useEffect(() =>{ 
-        const sliderInterval = setInterval(() => set(state => (state + 1) % 4), 4000)
-
-        return () => {
-            clearInterval(sliderInterval)
-          }
-    }, [index])
+        
+        projectDatabase.collection('projects').where("featured","==","true")
+        .onSnapshot((snap)=>{
+            let documents = []
+            snap.forEach(doc=>{
+                documents.push({...doc.data(), id:doc.id})
+            })
+            setProjects(documents);
+        })
+        
+    }, [])
 
 
     return(
@@ -72,14 +57,12 @@ const Home = (props)=>{
                 <meta name="description" content="Architecture,Interiors,Construction,Project Planning,Project Estimation,Architecture Designs,Architecture Designing,Beautiful Interior Designs,Best Architecture Designs,Interior Designs,Interior Designing,Interior Designing Companies,Best Interior Designs,Beautiful Interior Designs,Best Project Planning,Project Planning Companies,Project Estimation Companies,Best Project Estimation Companies" />
             </Helmet>
             <Row style={{width: '100%', height: '100vh', overflow: 'hidden', margin:0, padding:0, position: 'relative'}}>
-                {transitions.map(({item, props, key})=>(
-                    <animated.div key={key} style={{...props, position: 'absolute', backgroundImage: `url(${item.url})`, backgroundSize:'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100%', width: '100%', margin: 0, paddingRight: 0, overflow: 'hidden'}}>
-                        <Row md={1} style={{width: '100%', height: '100%', marginRight:0, marginLeft:0, padding:0}}>
-                            <div style={{color:'#f5ca9f', zIndex: '3', paddingTop: isMobile?'50%':'20%', fontSize: '60px'}} className="home-title">Ayushman Architects</div>
-                            <div style={{width: '100%', height: '100%', backgroundImage: 'radial-gradient(circle, hsla(240, 100%, 0%, 0.7) 41%, hsla(0, 0%, 0%, 0.4) 96%)', opacity: 0.6, margin:0}} className="home-overlay"></div>
-                        </Row>
-                    </animated.div>
-                ))}
+                <div style={{...props, position: 'absolute', backgroundImage: `url(${isMobile?mobilebg:image2})`, backgroundSize:'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', height: '100%', width: '100%', margin: 0, paddingRight: 0, overflow: 'hidden'}}>
+                    <Row md={1} style={{width: '100%', height: '100%', marginRight:0, marginLeft:0, padding:0}}>
+                        <div style={{color:'#f5ca9f', zIndex: '3', paddingTop: isMobile?'50%':'20%', fontSize: '60px'}} className="home-title">Ayushman Architects</div>
+                        <div style={{width: '100%', height: '100%', backgroundImage: 'radial-gradient(circle, hsla(240, 100%, 0%, 0.7) 41%, hsla(0, 0%, 0%, 0.4) 96%)', opacity: 0.6, margin:0}} className="home-overlay"></div>
+                    </Row>
+                </div>
              </Row>
 
             <Row md={2} xs={1} style={{margin: '100px 0px 0px 0px', padding: 0}} >
@@ -236,11 +219,11 @@ const Home = (props)=>{
                 
             <Row style={{margin:'100px 0 20px 0', padding:0}}>
                 <RevealFadeAnimation>
-                    <div style={{fontSize:'60px', margin:'auto'}} className="home-title">Architecture Projects</div>
+                    <div style={{fontSize:'60px', margin:'auto'}} className="home-title">Featured Projects</div>
                 </RevealFadeAnimation>
             </Row>
             <Row md={2} xs={1} style={{width:'100%', margin:0, padding:0}}>
-                    {docs.map((project, i)=><Col key={i} style={{marginTop: 60}}>
+                    {projects.map((project, i)=><Col key={i} style={{marginTop: 60}}>
                                             <FadeInContainer FadeIn={FadeInFromBottom}>
                                                 <ProjectCard data={project} />
                                             </FadeInContainer>
