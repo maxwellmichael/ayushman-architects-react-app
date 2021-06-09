@@ -12,13 +12,14 @@ import {Helmet} from 'react-helmet';
 
 const Projects = ()=>{
     const isMobile = useMediaQuery({ query: '(max-width: 900px)' });
-    const {docs} = useFirestore('projects')
     const [projectsType, setProjectsType] = useState('ARCHITECTURE');
-    const [projectsSort, setProjectsSort] = useState('FEATURED');
+    const [projectsSort, setProjectsSort] = useState('createdAt');
+    const {docs} = useFirestore('projects', projectsType, projectsSort)
+
     
     useEffect(()=>{
         console.log(projectsType,projectsSort)
-    }, [projectsType, projectsSort])
+    }, [projectsType, projectsSort, docs])
 
     
     return(
@@ -46,16 +47,15 @@ const Projects = ()=>{
                 <div className="projects-nav">
                     <div className="projects-nav-link-container">
                         <select onChange={(event)=>{setProjectsSort(event.target.value)}} className="projects-nav-dropdown" >
-                            <option className="projects-nav-dropdown-option" value='FEATURED'>Featured</option>
-                            <option className="projects-nav-dropdown-option" value='NEWEST'>Newest</option>
+                            <option className="projects-nav-dropdown-option" value='title'>Name</option>
+                            <option className="projects-nav-dropdown-option" value='createdAt'>Date</option>
                         </select>
                     </div>
 
                     <div className="projects-nav-link-container">
                         <select onChange={(event)=>{setProjectsType(event.target.value)}} className="projects-nav-dropdown">
-                            <option className="projects-nav-dropdown-option" value='ALL'>All</option>
                             <option className="projects-nav-dropdown-option" value='ARCHITECTURE'>Architecture</option>
-                            <option className="projects-nav-dropdown-option" value='INTERIOR_DESIGN'>Interior Design</option>
+                            <option className="projects-nav-dropdown-option" value='INTERIOR'>Interior Design</option>
                             <option className="projects-nav-dropdown-option" value='CONSTRUCTION'>Construction</option>
                         </select>
                     </div>

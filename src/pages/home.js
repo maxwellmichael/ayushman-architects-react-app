@@ -236,7 +236,7 @@ const Home = (props)=>{
                 
             <Row style={{margin:'100px 0 20px 0', padding:0}}>
                 <RevealFadeAnimation>
-                    <div style={{fontSize:'60px', margin:'auto'}} className="home-title">Featured Projects</div>
+                    <div style={{fontSize:'60px', margin:'auto'}} className="home-title">Architecture Projects</div>
                 </RevealFadeAnimation>
             </Row>
             <Row md={2} xs={1} style={{width:'100%', margin:0, padding:0}}>
