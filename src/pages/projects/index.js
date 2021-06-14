@@ -26,7 +26,7 @@ const Projects = ()=>{
         <motion.div 
         initial={{opacity:0}}
         animate={{opacity:1}}
-        transition={{ease:'easeInOut', duration:1, delay:0.7}} 
+        transition={{ease:'easeInOut', duration:0.6, delay:0.5}} 
         exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:0.6}}} 
         style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Helmet>

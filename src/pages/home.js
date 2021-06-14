@@ -50,7 +50,7 @@ const Home = (props)=>{
         <motion.div 
         initial={{opacity:0}}
         animate={{opacity:1}}
-        transition={{ease:'easeInOut', duration:1, delay:0.7}} 
+        transition={{ease:'easeInOut', duration:0.6, delay:0.5}} 
         exit={{x:'-100vw', opacity:0, transition:{ease:'easeInOut', duration:0.6}}} style={{ padding: 0, backgroundColor: 'black', overflowX: 'hidden', maxWidth:'100vw'}}>
             <Helmet>
                 <title>Ayushman Architects</title>
@@ -107,7 +107,7 @@ const Home = (props)=>{
                         <div className="card-logo"><ArchitectureLogo /></div>
                         <div className="card-title">Architecture</div>
                         <div className="card-description">Building Design, Feasibility Studies & Zoning Studies Adaptive Re-Use, Building Evaluation & Analysis...</div>
-                        <button className="card-button">View More</button>
+                        <button onClick={()=>{props.history.push('/services/architecture')}} className="card-button">View More</button>
                     </div>
                     </FadeInContainer>
                 </Col>
@@ -117,7 +117,7 @@ const Home = (props)=>{
                         <div className="card-logo"><InteriorLogo /></div>
                         <div className="card-title">Interior</div>
                         <div className="card-description">Space Planning/Test Fits, Full Service Interior Design, Furniture Selection, 3-D Visualization..</div>
-                        <button className="card-button">View More</button>
+                        <button onClick={()=>{props.history.push('/services/interiordesign')}} className="card-button">View More</button>
                     </div>
                     </FadeInContainer>
                 </Col>
@@ -127,7 +127,7 @@ const Home = (props)=>{
                         <div className="card-logo"><PlanningLogo style={{width:'56px', height:'56px'}} /></div>
                         <div className="card-title">Planning</div>
                         <div className="card-description">Site Evaluation & Analysis Site/Master/Campus Planning Green Roof Design, Site Logistic Planning...</div>
-                        <button className="card-button">View More</button>
+                        <button onClick={()=>{props.history.push('/services/planning')}} className="card-button">View More</button>
                     </div>
                     </FadeInContainer>
                 </Col>
@@ -137,7 +137,7 @@ const Home = (props)=>{
                         <div className="card-logo"><ConstructionLogo style={{width:'56px', height:'56px'}} /></div>
                         <div className="card-title">Construction</div>
                         <div className="card-description">Marking & Grading, Excavation, Concreting, Brick masonry, Plumbing, Welding, Electrical, Roof laying...</div>
-                        <button className="card-button">View More</button>
+                        <button onClick={()=>{props.history.push('/services/construction')}} className="card-button">View More</button>
                     </div>
                     </FadeInContainer>
                 </Col>
@@ -147,7 +147,7 @@ const Home = (props)=>{
                         <div className="card-logo"><EstimationLogo style={{width:'56px', height:'56px'}} /></div>
                         <div className="card-title">Estimation</div>
                         <div className="card-description">Top-down estimate, Comparative or analogous estimation, Bottom-up estimate & Expert judgement...</div>
-                        <button className="card-button">View More</button>
+                        <button onClick={()=>{props.history.push('/services/estimation')}} className="card-button">View More</button>
                     </div>
                     </FadeInContainer>
                 </Col>
